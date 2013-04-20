@@ -1,0 +1,38 @@
+{% if page.locale == 'fr' %}
+  {% assign footer_links = site.footer.fr %}
+{% else %}
+  {% assign footer_links = site.footer.en %}
+{% endif %}
+
+<footer class="background">
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <a class="brand" href="../{{ page.locale }}/">
+          <img class="logo" src="../assets/img/logo-white.png" title="SonetIN" alt="SonetIN">
+        </a>
+        <hr>
+        <address>
+          <strong>SONETIN SAS</strong><br>
+          <i class="icon-map-marker"></i>
+          <a href="http://goo.gl/jWDE3" target="_blank">166 bd du Montparnasse<br>
+          <i class="icon-map-marker hidden"></i>
+          75015 Paris</a><br>
+          <abbr title="Phone"><i class="icon-phone"></i></abbr>
+          <a href="tel:+33142795757">+33 (0)1 42 79 57 57</a>
+        </address>
+      </div>
+      {% for category in footer_links %}
+        <div class="span2">
+          <h5>{{ category | first | first | capitalize }}</h5>
+          {% assign category_links = category.first.last %}
+          <ul class="unstyled">
+            {% for link in category_links %}
+              <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</footer>

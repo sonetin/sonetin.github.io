@@ -1,0 +1,10 @@
+<style>
+* { display: none }
+</style>
+
+<script>
+var language = window.navigator.userLanguage || window.navigator.language;
+language = language.split('-')[0];
+if(language != 'en' && language != 'fr') language = 'en';
+window.location.href = language + '/';
+</script>

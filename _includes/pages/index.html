@@ -1,0 +1,76 @@
+
+<div class="section background" id="presentation">
+  <div class="container">
+    <div class="row">
+      <div class="span5 centered">
+        <img class="logo-big" src="../assets/img/logo-white-big.png" title="SonetIN" alt="SonetIN">
+        <p id="tagline">Social Network Intelligence</p>
+        <span class="logo-pointer hidden-tablet">↪</span><a class="btn btn-primary btn-large" href="signup.html" data-toggle="modal" data-target="#signup">{{ page.signup_button }}</a>
+        <!--<span class="written">it's free for 10 users</span>-->
+      </div>
+      <div class="span7">
+        <div id="preview" class="carousel slide hidden-phone" data-pause="no" style="text-align: right; border-radius: 3px">
+          <ol class="carousel-indicators">
+            <li data-target="#preview" data-slide-to="0" class="active"></li>
+            <li data-target="#preview" data-slide-to="1"></li>
+            <li data-target="#preview" data-slide-to="2"></li>
+          </ol>
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item glossy">
+              <img src="../assets/img/previews/sonetin_ub.png">
+            </div>
+            <div class="item glossy">
+              <img src="../assets/img/previews/sonetin_ou.png">
+            </div>
+            <div class="item glossy">
+              <img src="../assets/img/previews/sonetin_bo.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="features">
+  <div class="container">
+
+    <h3 class="centered">{{ page.tagline }}</h3>
+    <hr>
+
+    <div class="row">
+      {% for feature in page.features %}
+        <div class="span4">
+          <div class="feature">
+            <div class="bubble">
+              <i class="icon-{{ feature.icon }} icon-4x"></i>
+            </div>
+            <h4>{{ feature.title }}</h4>
+            <p>{{ feature.content }}</p>
+          </div>
+        </div>
+        {% if forloop.index == 3 %}
+          </div>
+          <div class="row">
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <br><br><br>
+
+    <hr>
+    <h2 class="inline-title centered"><span>{{ page.references }}</span></h2>
+    <br>
+
+    <div id="clients" class="centered">
+      <img class="grayscale" src="../assets/img/clients/epwn.png">
+      <img class="grayscale" src="../assets/img/clients/mma.png">
+      <img class="grayscale" src="../assets/img/clients/insead.png">
+      <img class="grayscale" src="../assets/img/clients/maaf.png">
+      <img class="grayscale" src="../assets/img/clients/oudinot.png">
+    </div>
+
+  </div>
+</div>
+

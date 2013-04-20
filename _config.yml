@@ -1,0 +1,64 @@
+markdown: rdiscount
+pygments: true
+description:
+  en: Social Network Intelligence for startups, SMBs and Enterprises
+  fr: Réseau Sociaux Intelligents pour les startups, petites et moyennes entreprises, et associations
+navigation:
+  en:
+    - text: Home
+      url: ../en/
+    - text: Solution
+      url: solution.html
+    - text: Contact
+      url: contact.html
+  fr:
+    - text: Accueil
+      url: ../fr/
+    - text: Solution
+      url: solution.html
+    - text: Nous contacter
+      url: contact.html
+footer:
+  en:
+    - company:
+      - text: About us
+        url: about.html
+      - text: Help & Contact
+        url: contact.html
+      - text: Press
+        url: press.html
+    - community:
+      - text: Blog
+        url: http://blog.sonetin.com
+      - text: Twitter
+        url: http://twitter.com/sonet_in
+      - text: Facebook
+        url: http://facebook.com/sonetin
+    - language: ''
+      - text: English
+        url: ../en/
+      - text: Français
+        url: ../fr/
+  fr:
+    - entreprise:
+      - text: A propos
+        url: a-propos.html
+      - text: Aide & Contact
+        url: contact.html
+      - text: Presse
+        url: presse.html
+    - communauté:
+      - text: Blog
+        url: http://blog.sonetin.com
+      - text: Twitter
+        url: http://twitter.com/sonet_in
+      - text: Facebook
+        url: http://facebook.com/sonetin
+    - langue:
+      - text: English
+        url: "../en/{{ page.locale }}"
+      - text: Français
+        url: ../fr/
+analytics:
+  google:
+    tracking_id: UA-XXXX-XX

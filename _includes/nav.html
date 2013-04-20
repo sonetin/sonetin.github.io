@@ -1,0 +1,33 @@
+<div class="navbar navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      {% if page.main_page != true %}
+        <a class="brand" href="../{{ page.locale }}/">
+          {% include logo.html %}
+          <span id="tagline"><span class="visible-desktop">— Social Network Intelligence</span></span>
+        </a>
+      {% endif %}
+      <div class="pull-right">
+        <ul class="nav">
+          {% if page.locale == 'fr' %}
+            {% assign nav_links = site.navigation.fr %}
+          {% else %}
+            {% assign nav_links = site.navigation.en %}
+          {% endif %}
+          {% for link in nav_links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <a class="btn btn-primary" href="signup.html" data-toggle="modal" data-target="#signup">
+          {% if page.locale == 'fr' %}
+          S'enregistrer
+          {% else %}
+          Sign Up
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
