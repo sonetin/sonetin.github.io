@@ -121,12 +121,6 @@ footer {
   }
 }
 
-img.grayscale {
-  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
-  filter: gray; /* IE6-9 */
-  -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
-}
-
 .inline-title {
   span {
     background: @background;
@@ -277,7 +271,7 @@ footer .active>a {
   background-position: bottom;
   background-size: 80%;
   #tagline {
-    margin: 20px 0 30px;
+    margin: 10px 0 50px;
     color: #fff;
     font-size: 28px;
     line-height: 32px;
@@ -325,10 +319,11 @@ footer .active>a {
 
 #clients {
   margin: 20px 0;
-  padding-top: 10px;
+  padding: 10px;
   img {
     height: 60px;
     margin: 0 30px;
+    display: inline;
   }
 }
 
