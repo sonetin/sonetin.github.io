@@ -2,7 +2,7 @@
 <div class="section background" id="presentation">
   <div class="container">
     <div class="row">
-      <div class="span5 centered">
+      <div class="span5">
         <img class="logo-big" src="../assets/img/logo-white-big.png" title="SonetIN" alt="SonetIN">
         <p id="tagline"><img src="../assets/img/tagline.png" title="Social Network Intelligence" alt="Social Network Intelligence"></p>
         <span class="logo-pointer hidden-tablet">↪</span><a class="btn btn-primary btn-large" href="contact.html">{{ page.signup_button }}</a>
@@ -36,7 +36,7 @@
 <div class="section" id="features">
   <div class="container">
 
-    <h3 class="centered">{{ page.tagline }}</h3>
+    <h3>{{ page.tagline }}</h3>
     <hr>
 
     <div class="row">
@@ -59,18 +59,19 @@
 
     <br><br><br>
 
-    <hr>
-    <h2 class="inline-title centered"><span>{{ page.references }}</span></h2>
-
   </div>
+</div>
 
+<div class="section" id="references">
+  <h3><span>{{ page.references }}</span></h3>
+  <br>
   <div id="clients" class="carousel slide" data-pause="no" data-interval="3000" style="">
     <ol class="carousel-indicators">
       <li data-target="#clients" data-slide-to="0" class="active"></li>
       <li data-target="#clients" data-slide-to="1"></li>
     </ol>
     <!-- Carousel items -->
-    <div class="carousel-inner centered">
+    <div class="carousel-inner">
       <div class="active item">
         <img src="../assets/img/clients/auchan.png">
         <img src="../assets/img/clients/insead.png">
@@ -90,5 +91,10 @@
     <a class="carousel-control left" href="#clients" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#clients" data-slide="next">&rsaquo;</a>
   </div>
+</div>
 
+<div class="section">
+  <p>{{ page.reminder }}
+    <a class="btn btn-primary btn-large" href="contact.html">{{ page.signup_button }}</a>
+  </p>
 </div>
