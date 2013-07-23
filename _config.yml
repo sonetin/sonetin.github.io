@@ -52,7 +52,7 @@ footer:
         url: http://twitter.com/sonet_in
     - langue:
       - text: English
-        url: ../en/{{ page.locale }}
+        url: ../en/
       - text: Français
         url: ../fr/
 analytics:
