@@ -34,7 +34,7 @@ footer:
         url: http://blog.sonetin.com
       - text: Twitter
         url: http://twitter.com/sonet_in
-    - language: ''
+    - language:
       - text: English
         url: ../en/
       - text: Français
