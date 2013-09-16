@@ -275,9 +275,81 @@ footer .active>a {
     vertical-align: middle;
   }
   #preview {
-    width: 620px;
-    height: 307px;
-    .box-shadow(0 10px 12px rgba(0, 0, 0, .5));
+    position: relative;
+    margin: 30px 0 400px;
+  }
+  .preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 644px;
+    height: 385px;
+    .transition(all 100ms ease-out);
+    .box-shadow(0 4px 4px rgba(0, 0, 0, .5));
+    img {
+      .rounded-corners(5px);
+    }
+  }
+  .preview:nth-child(1) {
+    left: -40px;
+    top: -30px;
+  }
+  .preview:nth-child(2) {
+    left: 20px;
+    top: 15px;
+  }
+  .preview:nth-child(3) {
+    left: 40px;
+    top: 30px;
+  }
+  .preview:nth-child(4) {
+    left: -20px;
+    top: -15px;
+  }
+  .preview:nth-child(5) {
+    left: 0;
+    top: 0;
+  }
+  #fullscreen {
+    z-index: 1;
+    color: #fff;
+    font-size: 48px;
+    line-height: 70px;
+    height: 70px;
+    width: 80px;
+    background: #ddd;
+    background: rgba(0,0,0,.2);
+    position: absolute;
+    top: 160px;
+    left: 280px;
+    .rounded-corners(15px);
+    .transition(opacity 20ms linear);
+  }
+  #preview:hover {
+    #fullscreen {
+      opacity: 0;
+    }
+    .preview:nth-child(1) {
+      left: -120px;
+      top: -60px;
+    }
+    .preview:nth-child(2) {
+      left: -60px;
+      top: 30px;
+    }
+    .preview:nth-child(3) {
+      left: 80px;
+      top: 60px;
+    }
+    .preview:nth-child(4) {
+      left: -40px;
+      top: -10px;
+    }
+    .preview:nth-child(5) {
+      left: 0;
+      top: 0;
+      opacity: .1;
+    }
   }
 }
 .feature {
@@ -435,11 +507,11 @@ footer .active>a {
   writing-mode: lr-tb;
 }
 
-.transition(@transition) {
-  -webkit-transition: @transition;  /* Chrome 1-25, Safari 3.2+ */
-     -moz-transition: @transition;  /* Firefox 4-15 */
-       -o-transition: @transition;  /* Opera 10.50–12.00 */
-          transition: @transition;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.50+ */
+.transition(...) {
+  -webkit-transition: @arguments;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: @arguments;  /* Firefox 4-15 */
+       -o-transition: @arguments;  /* Opera 10.50–12.00 */
+          transition: @arguments;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.50+ */
 }
 
 .rounded-corners(@rounded) {
