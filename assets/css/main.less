@@ -502,10 +502,10 @@ footer .active>a {
   -webkit-background-clip: padding-box; background-clip: padding-box;
 }
 
-.box-shadow(@params) {
-  -webkit-box-shadow: @params;
-     -moz-box-shadow: @params;
-          box-shadow: @params;
+.box-shadow(...) {
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
 }
 
 .rotate3d(@rotatex: 0, @rotatey: 0, @perspective: 0) {
@@ -641,7 +641,9 @@ footer .active>a {
   }
 }
 #integrations {
-  .box-shadow(#aaa 0 2px 2px inset);
+  height: 210px;
+  overflow: hidden;
+  .box-shadow(~"#aaa 0 2px 2px inset, rgb(153,153,153) 0 -20px 20px inset");
 }
 
 #tenant_name {
