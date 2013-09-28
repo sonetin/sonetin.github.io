@@ -3,7 +3,6 @@
 @blue: #4A96D2;
 @red: #F04800;
 @lightgrey: #FAF9F8;
-@light: lighten(@grey, 70%);
 @dark: darken(@grey, 10%);
 @orange: #E63;
 
@@ -65,6 +64,10 @@ h1, h2 {
   text-shadow: 0 0 6px #fff;
 }
 
+h1 {
+  text-transform: uppercase;
+}
+
 h2 {
   line-height: 48px;
 }
@@ -77,54 +80,17 @@ h3 {
   font-size: 20px;
 }
 
-h1 {
-  text-transform: uppercase;
+h4 {
+  color: @blue;
+}
+
+h5 {
+  font-size: 16px;
 }
 
 .logo {
   width: 176px;
   height: 51px;
-}
-
-.navbar {
-  //position: absolute;
-  //left: 0;
-  //right: 0;
-
-  .navbar-inner {
-    padding: 5px 0;
-    background: transparent;
-    border: 0;
-    .box-shadow(initial);
-    //.gradient(@lightgrey, darken(@lightgrey, 10%));
-
-    .pull-right {
-      & a {
-        font-size: 16px;
-      }
-      & li > a {
-        margin: 10px 20px;
-        padding: 2px 0;
-        color: #fff;
-        text-shadow: initial;
-        border-bottom: 1px solid transparent;
-        &:hover {
-          border-color: #fff;
-        }
-      }
-    }
-  }
-}
-
-#main {
-  //padding-top: 120px;
-
-  // overflow that makes .backgroundify work
-  position: relative;
-  overflow: hidden;
-}
-
-#content {
 }
 
 footer {
@@ -137,38 +103,6 @@ footer {
     vertical-align: 3px;
     padding-right: 12px;
   }
-}
-
-.written {
-  font-family: 'Nothing You Could Do', cursive;
-  color: #777;
-  position: absolute;
-  padding-left: 10px;
-  margin-top: -5px;
-  .rotate(355deg);
-}
-
-h4 {
-  color: @blue;
-}
-
-h5 {
-  font-size: 16px;
-}
-
-.centered {
-  &, & th, & td {
-    text-align: center;
-  }
-}
-
-.normal {
-  font-weight: normal;
-}
-
-.highlight {
-  background: #FFB;
-  padding: 2px;
 }
 
 .btn-primary {
@@ -193,79 +127,6 @@ h5 {
   background:      linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
 }
 
-.backgroundify {
-  position: absolute;
-  top: -500px;
-  left: -200px;
-  right: -200px;
-  .rotate3d(16deg, -10deg, 2200);
-  z-index: -1;
-  transition: background-position 1.4s  cubic-bezier(.49,.22,.52,1.35);
-  img {
-    width: 100%;
-  }
-  &:after {
-    content: '';
-    .overlay();
-    .subtle();
-  }
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.subtle {
-  .gradient(@colortop: #fff, @colorbottom: rgba(255,255,255,.4));
-}
-
-// active menus
-
-.navbar .nav>.active>a,
-.navbar .nav>.active>a:hover,
-.navbar .nav>.active>a:focus,
-footer .active>a {
-  background-color: initial;
-  .box-shadow(initial);
-}
-footer .active>a {
-  text-decoration: underline;
-}
-.navbar .nav>.active>a,
-.navbar .nav>.active>a:hover,
-.navbar .nav>.active>a:focus {
-  border-bottom: 1px solid #fff !important;
-  color: #fff;
-}
-
-//
-// Bootstrap customization
-//
-
-.carousel {
-  .carousel-inner .item img {
-    .rounded-corners(3px);
-  }
-  .carousel-indicators {
-    top: initial;
-    bottom: -24px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 50px;
-    li {
-      cursor: pointer;
-    }
-  }
-  .carousel-control {
-    font-size: 3em;
-  }
-}
-
 //
 // Page-specific
 //
@@ -275,16 +136,6 @@ footer .active>a {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 80%;
-  .logo-big {
-    margin-top: 30px;
-    width: 350px;
-    max-height: 101px;
-  }
-  .logo-pointer {
-    color: #fff;
-    padding-right: 10px;
-    vertical-align: middle;
-  }
   #preview {
     position: absolute;
     width: 428px;
@@ -449,35 +300,9 @@ footer .active>a {
   }
 }
 
-#contact {
-  input, textarea {
-    .calculated-width('100% - 15px')
-  }
-  input {
-    .calculated-width('100% - 15px')
-  }
-}
-
 //
 // Mixins
 //
-
-.gradient(@colortop: #1e5799, @colorbottom: #7db9e8) {
-  background: @colorbottom; /* Old browsers */
-  background:        -webkit-gradient(linear, left top, left bottom, color-stop(0%,@colortop), color-stop(100%,@colorbottom)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, @colortop 0%, @colorbottom 100%); /* Chrome10+,Safari5.1+ */
-  background:    -moz-linear-gradient(top, @colortop 0%, @colorbottom 100%); /* FF3.6+ */
-  background:     -ms-linear-gradient(top, @colortop 0%, @colorbottom 100%); /* IE10+ */
-  background:      -o-linear-gradient(top, @colortop 0%, @colorbottom 100%); /* Opera 11.10+ */
-  background:         linear-gradient(to bottom, @colortop 0%, @colorbottom 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@colortop', endColorstr='@colorbottom', GradientType=0 ); /* IE6-9 */
-}
-
-.calculated-width(@width) {
-  width: -webkit-calc(e(@width));
-  width:    -moz-calc(e(@width));
-  width:         calc(e(@width));
-}
 
 .rotate(@angle) {
   -webkit-transform: rotate(@angle);
@@ -507,25 +332,6 @@ footer .active>a {
      -moz-box-shadow: @arguments;
           box-shadow: @arguments;
 }
-
-.rotate3d(@rotatex: 0, @rotatey: 0, @perspective: 0) {
-  -webkit-perspective: @perspective;  /* Chrome 12+, Safari 4+ */
-     -moz-perspective: @perspective;  /* Firefox 10+ */
-      -ms-perspective: @perspective;  /* IE 10 */
-          perspective: @perspective;
-  img {
-    -webkit-transform: rotateX(@rotatex) rotateY(@rotatey);
-       -moz-transform: rotateX(@rotatex) rotateY(@rotatey);
-        -ms-transform: rotateX(@rotatex) rotateY(@rotatey);
-            transform: rotateX(@rotatex) rotateY(@rotatey);
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
-        -ms-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-  }
-}
-
-
 
 
 
