@@ -1,55 +1,84 @@
-@inputHeight: 20px;
-@import "bootstrap-mixins.less";
-
 // Colors
 @grey: #514F58;
 @blue: #4A96D2;
 @red: #F04800;
 @lightgrey: #FAF9F8;
+@light: lighten(@grey, 70%);
+@dark: darken(@grey, 10%);
 @orange: #E63;
-
-@background: @lightgrey;
-
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600|Fjalla+One|Nothing+You+Could+Do);
 
 //
 // Common
 //
 
 body {
-  background: @blue;
   font-size: 16px;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #232323;
 }
 
-.section {
-  padding: 30px 0;
+section {
   text-align: center;
+  padding-top: 49px;
+  .container {
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
-.background {
+section:first-child {
+  padding-top: 69px;
+}
+
+section:last-child {
+  padding-bottom: 20px;
+}
+
+.section-blue {
   background: @blue;
+  *, a:hover {
+    color: #fff;
+  }
+}
+
+.section-light {
+  background: @lightgrey;
+}
+
+.section-dark {
+  background: @dark;
+  *, a:hover {
+    color: #eee;
+  }
+}
+
+.section-thin {
+  .container {
+    padding: 0 0 20px;
+    margin-top: -20px;
+    margin-bottom: 0;
+  }
 }
 
 h1, h2 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Merriweather', sans-serif;
   text-shadow: 0 0 6px #fff;
+}
+
+h2 {
+  line-height: 48px;
 }
 
 h3 {
   color: @grey;
-}
-
-.modal-header {
-  font-family: 'Fjalla One', sans-serif;
+  font-variant: small-caps;
+  letter-spacing: .15em;
+  font-weight: 300;
+  font-size: 20px;
 }
 
 h1 {
   text-transform: uppercase;
-}
-
-#titles {
-  padding: 40px 0;
 }
 
 .logo {
@@ -61,18 +90,6 @@ h1 {
   //position: absolute;
   //left: 0;
   //right: 0;
-  margin: 20px 0;
-
-  .brand {
-    padding: 0 20px;
-    text-shadow: initial;
-  }
-
-  #tagline {
-    color: #fff;
-    font-size: 22px;
-    vertical-align: middle;
-  }
 
   .navbar-inner {
     padding: 5px 0;
@@ -101,7 +118,6 @@ h1 {
 
 #main {
   //padding-top: 120px;
-  background: @background;
 
   // overflow that makes .backgroundify work
   position: relative;
@@ -114,11 +130,12 @@ h1 {
 footer {
   padding: 40px 0;
 
-  &, a, a:hover {
-    color: #fff;
-  }
-  li {
-    padding: 5px 0;
+  li + li::before {
+    content: "\f111";
+    font-family: FontAwesome;
+    font-size: 5px;
+    vertical-align: 3px;
+    padding-right: 12px;
   }
 }
 
@@ -156,8 +173,9 @@ h5 {
 
 .btn-primary {
   &, &:hover, &:active, &:focus {
-    .rounded-corners(3px);
+    color: #fff;
     background: @orange;
+    border-color: darken(@orange, 10%);
   }
 }
 
@@ -253,18 +271,10 @@ footer .active>a {
 //
 
 #presentation {
-  padding: 30px 0 60px;
   background-image: url(../img/silhouettes.png);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 80%;
-  height: 440px;
-  #tagline {
-    margin: 10px 0 50px;
-    color: #fff;
-    font-size: 28px;
-    line-height: 32px;
-  }
   .logo-big {
     margin-top: 30px;
     width: 350px;
@@ -276,15 +286,20 @@ footer .active>a {
     vertical-align: middle;
   }
   #preview {
-    position: relative;
-    margin: 30px 0;
+    position: absolute;
+    width: 428px;
+    height: 256px;
+    margin: 0px;
+    top: 110px;
+    left: 50px;
+    margin-left: 45%;
   }
   .preview {
     position: absolute;
     left: 0;
     top: 0;
-    width: 644px;
-    height: 385px;
+    width: 428px;
+    height: 256px;
     .transition(all 100ms ease-out);
     .box-shadow(0 2px 2px rgba(0, 0, 0, .4));
     img {
@@ -313,16 +328,17 @@ footer .active>a {
   }
   #fullscreen {
     z-index: 1;
-    color: #fff;
+    color: #eee;
     font-size: 48px;
     line-height: 70px;
+    text-align: center;
     height: 70px;
     width: 80px;
     background: #ddd;
     background: rgba(0,0,0,.2);
     position: absolute;
-    top: 160px;
-    left: 280px;
+    top: 100px;
+    left: 170px;
     .rounded-corners(15px);
     .transition(opacity 20ms linear);
   }
@@ -353,45 +369,6 @@ footer .active>a {
     }
   }
 }
-.feature {
-  text-align: center;
-  padding: 20px 0;
-  h4 {
-    margin: 30px 0 10px;
-  }
-}
-.bubble {
-  background: #999;
-  display: inline-block;
-  width: 120px;
-  height: 120px;
-  text-align: center;
-  color: #fff;
-  border-radius: 60px;
-  i:before {
-    font-size: 60px;
-    line-height: 120px;
-    background: -webkit-linear-gradient(#fff, #ccc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: initial;
-  }
-}
-
-#references {
-  background: #eee;
-}
-#clients {
-  margin: 20px 0;
-  padding: 10px;
-  .carousel-inner {
-    height: 80px;
-  }
-  img {
-    margin: 0 2%;
-    display: inline;
-  }
-}
 
 #team {
   .member {
@@ -402,11 +379,13 @@ footer .active>a {
     font-size: 14px;
     &:after {
       content: attr(data-name);
-      font-family: 'Nothing You Could Do', cursive;
       position: absolute;
       left: 0;
       right: 0;
       bottom: 10px;
+      font-size: 12px;
+      line-height: 12px;
+      color: #555;
     }
     .member-pic {
       width: 100px;
@@ -544,4 +523,179 @@ footer .active>a {
         -ms-transform-style: preserve-3d;
             transform-style: preserve-3d;
   }
+}
+
+
+
+
+
+
+
+
+.navbar {
+  background: rgba(255,255,255,.96);
+  .navbar-right {
+    padding: 19.5px 0;
+  }
+}
+
+#presentation {
+  text-align: left;
+  min-height: 550px;
+  .container {
+    position: relative;
+  }
+}
+
+#features {
+  //.icon-circle {
+  //  color: #999;
+  //}
+  .icon-circle-blank {
+    color: transparent;
+    color: rgba(255,255,255,.2);
+    font-size: 120px;
+  }
+  .feature {
+    text-align: left;
+    h4 {
+      display: inline-block;
+    }
+    p {
+      margin-left: 90px;
+    }
+  }
+  .feature:nth-child(odd) {
+    clear: left;
+  }
+}
+
+#features2 {
+  height: 900px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-bottom: 2px solid #999;
+  .box-shadow(#aaa 0 2px 2px);
+  img {
+    max-width: 100%;
+    min-width: 473.5px;
+  }
+  #features-details {
+    position: relative;
+    .feature {
+      position: absolute;
+      width: 22%;
+      h3 {
+        display: inline-block;
+        white-space: nowrap;
+        background: rgb(220,230,240);
+        padding: 5px 10px;
+      }
+      p {
+        font-size: 13px;
+        padding: 5px 2px;
+        background: rgba(255,255,255,.5);
+      }
+    }
+    .feature:nth-child(-n+4) {
+      right: 87%;
+      text-align: right;
+      h3 {
+        margin-right: -20px;
+        border-right: 1px solid rgb(190,200,210);
+        border-top: 1px solid rgb(170,200,230);
+      }
+    }
+    .feature:nth-child(n+5) {
+      left: 87%;
+      text-align: left;
+      h3 {
+        margin-left: -20px;
+        border-left: 1px solid rgb(190,200,210);
+        border-top: 1px solid rgb(170,200,230);
+      }
+    }
+    .feature:nth-child(1) {
+      margin-top: 100px;
+    }
+    .feature:nth-child(2) {
+      margin-top: 225px;
+    }
+    .feature:nth-child(3) {
+      margin-top: 350px;
+    }
+    .feature:nth-child(4) {
+      margin-top: 525px;
+    }
+    .feature:nth-child(5) {
+      margin-top: 100px;
+    }
+    .feature:nth-child(6) {
+      margin-top: 225px;
+    }
+    .feature:nth-child(7) {
+      margin-top: 350px;
+    }
+    .feature:nth-child(8) {
+      margin-top: 475px;
+    }
+  }
+}
+
+#tenant_name {
+  border: 0;
+  border-bottom: 2px solid @orange;
+  .box-shadow(none);
+  .rounded-corners(0);
+  text-align: right;
+  padding: 5px 0;
+  font-family: 'Merriweather', sans-serif;
+  text-shadow: 0 0 6px #fff;
+  font-size: 30px;
+  vertical-align: bottom;
+  background: initial;
+  width: 200px;
+  text-transform: lowercase;
+}
+#tenant_name:focus {
+  background: #eee;
+}
+
+#tenant_name::-webkit-input-placeholder {
+  color: #aaa;
+}
+#tenant_name::-moz-placeholder {
+  color: #aaa;
+}
+#tenant_name:-ms-input-placeholder {
+  color: #aaa;
+}
+
+.color-green {
+  color: #9c7;
+}
+.color-orange {
+  color: #ea5;
+}
+.color-purple {
+  color: #c7c;
+}
+.color-blue {
+  color: #58b;
+}
+.color-red {
+  color: #e66;
+}
+.color-yellow {
+  color: #dd5;
+}
+
+.pricing-icon {
+  position: absolute;
+  left: 30px;
+  top: -10px;
+}
+
+.placeholder {
+  color: #aaa;
 }

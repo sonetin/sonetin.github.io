@@ -50,11 +50,11 @@ footer:
         url: http://blog.sonetin.com
       - text: Twitter
         url: http://twitter.com/sonet_in
-    - langue:
-      - text: English
-        url: ../en/
-      - text: Français
-        url: ../fr/
+    #- langue:
+    #  - text: English
+    #    url: ../en/
+    #  - text: Français
+    #    url: ../fr/
 analytics:
   google:
     tracking_id: UA-XXXX-XX

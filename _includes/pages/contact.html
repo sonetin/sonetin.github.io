@@ -1,62 +1,61 @@
-<div class="section">
+<section class="section-light">
   <div class="container">
-    <!-- Fast Secure Contact Form plugin 2.9.8.4 - begin - http://www.FastSecureContactForm.com -->
     <form id="contact" action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-horizontal">
       <div class="row">
-        <div class="span4 offset1">
-          <div class="control-group">
-            <label class="control-label" for="name">{{ page.labels.name }}
-              <sup class="text-error">*</sup>
-            </label>
-            <div class="controls">
-              <input type="text" id="name" name="name" value="" size="40" required>
+        <div class="col-lg-offset-2 col-lg-4">
+          <div class="row">
+            <div class="form-group">
+              <label class="col-lg-4 control-label" for="name">{{ page.labels.name }}
+                <sup class="text-error">*</sup>
+              </label>
+              <div class="col-lg-8">
+                <input type="text" id="name" name="name" class="form-control" value="" size="40" required>
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="email">{{ page.labels.email }}
-              <sup class="text-error">*</sup>
-            </label>
-            <div class="controls">
-              <input type="email" id="email" name="email" value="" size="40" required>
+            <div class="form-group">
+              <label class="col-lg-4 control-label" for="email">{{ page.labels.email }}
+                <sup class="text-error">*</sup>
+              </label>
+              <div class="col-lg-8">
+                <input type="email" id="email" name="email" class="form-control" value="" size="40" required>
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="company">{{ page.labels.company }}</label>
-            <div class="controls">
-              <input type="text" id="company" name="company" value="" size="40">
+            <div class="form-group">
+              <label class="col-lg-4 control-label" for="company">{{ page.labels.company }}</label>
+              <div class="col-lg-8">
+                <input type="text" id="company" name="company" class="form-control" value="" size="40">
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="role">{{ page.labels.job }}</label>
-            <div class="controls">
-              <input type="text" id="role" name="role" value="" size="40">
+            <div class="form-group">
+              <label class="col-lg-4 control-label" for="role">{{ page.labels.job }}</label>
+              <div class="col-lg-8">
+                <input type="text" id="role" name="role" class="form-control" value="" size="40">
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="phone">{{ page.labels.phone }}</label>
-            <div class="controls">
-              <input type="text" id="phone" name="phone" value="" size="40">
+            <div class="form-group">
+              <label class="col-lg-4 control-label" for="phone">{{ page.labels.phone }}</label>
+              <div class="col-lg-8">
+                <input type="text" id="phone" name="phone" class="form-control" value="" size="40">
+              </div>
             </div>
           </div>
         </div>
-        <div class="span5">
-          <div class="control-group">
-            <label class="control-label" for="message">{{ page.labels.message }}
-              <sup class="text-error">*</sup>
-            </label>
-            <div class="controls">
-              <textarea id="message" name="message" rows="11" required></textarea>
+        <div class="col-lg-4">
+          <div class="row">
+            <div class="form-group">
+              <label class="col-lg-4 control-label" for="message">{{ page.labels.message }}
+                <sup class="text-error">*</sup>
+              </label>
+              <div class="col-lg-8">
+                <textarea id="message" name="message" class="form-control" rows="11" required></textarea>
+              </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-4">
+              <button type="submit" class="btn btn-primary btn-block">{{ page.labels.submit }}</button>
             </div>
           </div>
-
-          <div class="controls">
-            <button type="submit" class="btn btn-primary btn-block">{{ page.labels.submit }}</button>
-          </div>
-
         </div>
       </div>
-
     </form>
-    <!-- Fast Secure Contact Form plugin 2.9.8.4 - end - http://www.FastSecureContactForm.com -->
   </div>
-</div>
+</section>

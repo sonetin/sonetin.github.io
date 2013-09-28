@@ -1,67 +1,92 @@
+<section class="section-blue" id="presentation">
+  <div class="container">
+    <h2 style="text-align: left">{{ page.tagline }}</h2>
+    <h2 style="text-align: left; font-size: 24px; line-height: 36px">{{ page.tagline2 }}</h2>
+    <br>
+    <ul class="list-unstyled icons-ul">
+      <li><i class="icon-li icon-ok"></i>Votre réseau social d'entreprise clés en main.</li>
+      <li><i class="icon-li icon-ok"></i>Une solution pour les entreprises, associations et écoles.</li>
+      <li><i class="icon-li icon-ok"></i>De belles références clients & une grande proximité.</li>
+      <li><i class="icon-li icon-ok"></i>Développé et hébergé en France.</li>
+    </ul>
+    <br>
+    <a class="btn btn-lg btn-primary action-book scrollable-link" href="#booking">Je crée mon espace collaboratif</a>
+    <small>— <a href="#features2" class="scrollable-link">en savoir plus</a></small>
 
-<div class="section background" id="presentation">
+    <a id="preview" class="scrollable-link visible-md visible-lg" href="#features2">
+      <div class="preview glossy">
+        <img src="../assets/img/previews/preview2p.png">
+      </div>
+      <div class="preview glossy">
+        <img src="../assets/img/previews/preview1b.png">
+      </div>
+      <div class="preview glossy">
+        <img src="../assets/img/previews/preview1g.png">
+      </div>
+      <div class="preview glossy">
+        <img src="../assets/img/previews/preview2b.png">
+      </div>
+      <div class="preview glossy">
+        <img src="../assets/img/previews/preview1r.png">
+      </div>
+      <i id="fullscreen" class="icon-search"></i>
+    </div>
+  </a>
+</section>
+
+<section class="section-dark section-thin" id="references">
   <div class="container">
     <div class="row">
-      <div class="span5">
-        <img class="logo-big" src="../assets/img/logo-white-big.png" title="SonetIN" alt="SonetIN">
-        <p id="tagline"><img src="../assets/img/tagline.png" title="Social Network Intelligence" alt="Social Network Intelligence"></p>
-        <span class="logo-pointer hidden-tablet">↪</span><a class="btn btn-primary btn-large" href="contact.html">{{ page.signup_button }}</a>
-        <!--<span class="written">it's free for 10 users</span>-->
+      <div class="col-md-2" style="font-size: 14px; font-weight: bold;">
+        <h4>{{ page.references }}</h4>
       </div>
-      <div class="span7">
-        <div id="preview">
-          <div class="preview glossy">
-            <img src="../assets/img/previews/preview2p.png">
-          </div>
-          <div class="preview glossy">
-            <img src="../assets/img/previews/preview1b.png">
-          </div>
-          <div class="preview glossy">
-            <img src="../assets/img/previews/preview1g.png">
-          </div>
-          <div class="preview glossy">
-            <img src="../assets/img/previews/preview2b.png">
-          </div>
-          <div class="preview glossy">
-            <img src="../assets/img/previews/preview1r.png">
-          </div>
-          <i id="fullscreen" class="icon-fullscreen"></i>
-        </div>
+      <div class="col-md-8">
+        <ul class="list-inline nav-justified">
+          <li><img src="../assets/img/clients/alstom.png"></li>
+          <li><img src="../assets/img/clients/auchan.png"></li>
+          <li><img src="../assets/img/clients/insead.png"></li>
+          <li><img src="../assets/img/clients/mma.png"></li>
+          <li><img src="../assets/img/clients/lybernet.png"></li>
+          <li><img src="../assets/img/clients/maaf.png"></li>
+          <li><img src="../assets/img/clients/hec.png"></li>
+          <!--<li><img src="../assets/img/clients/lixir.png"></li>-->
+          <!--<li><img src="../assets/img/clients/oudinot.png"></li>-->
+        </ul>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="section" id="features">
+<section id="features">
   <div class="container">
 
-    <h3>{{ page.tagline }}</h3>
-    <hr>
+    <h2>{{ page.usages_title }}</h2>
 
-    <div class="row">
-      {% for feature in page.features %}
-        <div class="span4">
-          <div class="feature">
-            <div class="bubble">
-              <i class="icon-{{ feature.icon }} icon-4x"></i>
-            </div>
-            <h4>{{ feature.title }}</h4>
-            <p>{{ feature.content }}</p>
+    <div class="features">
+      <div class="row">
+        {% for usage in page.usages %}
+          <div class="feature col-md-6">
+            <h3>
+              <span class="icon-stack icon-2x">
+                <i class="icon-circle color-{{ usage.color }} icon-stack-base"></i>
+                <i class="icon-circle-blank icon-stack-base"></i>
+                <i class="icon-{{ usage.icon }} icon-light"></i>
+              </span>
+              {{ usage.title }}
+            </h3>
+            <p>{{ usage.content }}</p>
           </div>
-        </div>
-        {% if forloop.index == 3 %}
-          </div>
-          <div class="row">
-        {% endif %}
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
 
     <br><br><br>
 
   </div>
-</div>
+</section>
 
-<div class="section" id="references">
+<!--
+<section id="references">
   <h3><span>{{ page.references }}</span></h3>
   <br>
   <div id="clients" class="carousel slide" data-pause="no" data-interval="3000" style="">
@@ -69,7 +94,6 @@
       <li data-target="#clients" data-slide-to="0" class="active"></li>
       <li data-target="#clients" data-slide-to="1"></li>
     </ol>
-    <!-- Carousel items -->
     <div class="carousel-inner">
       <div class="active item">
         <img src="../assets/img/clients/lixir.png">
@@ -85,14 +109,166 @@
         <img src="../assets/img/clients/oudinot.png">
       </div>
     </div>
-    <!-- Carousel nav -->
     <a class="carousel-control left" href="#clients" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#clients" data-slide="next">&rsaquo;</a>
   </div>
-</div>
+</section>
+-->
 
-<div class="section">
-  <p>{{ page.reminder }}
-    <a class="btn btn-primary btn-large" href="contact.html">{{ page.signup_button }}</a>
-  </p>
-</div>
+<section id="features2" class="section-light">
+  <div class="container">
+    <h2>{{ page.features_title }}</h2>
+    <div id="features-details" class="visible-md visible-lg">
+      {% for feature in page.features %}
+        <div class="feature">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.content }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <img src="/assets/img/previews/preview3.png">
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <h2>Nos offres</h2>
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <span class="pricing-icon icon-stack icon-2x">
+              <i class="icon-circle text-success icon-stack-base"></i>
+              <i class="icon-beaker icon-light"></i>
+            </span>
+            Startup ou Projet
+          </div>
+          <div class="panel-body">
+            <p><strong>20 membres</strong><br>5 communautés</p>
+            <h3 class="text-danger"><strong>Gratuit</strong></h3>
+          </div>
+          <table class="table table-hover table-condensed">
+            <tr><td>
+              <span title="discussions, wikis, documents, photos, vidéos">Contenus riches</span>
+            </td></tr>
+            <tr><td>Recherche globale</td></tr>
+            <tr><td>Gestion de communautés</td></tr>
+            <tr><td>Gestion d'événements</td></tr>
+            <tr><td>Personnalisation</td></tr>
+            <tr><td>Mobilité</td></tr>
+            <tr><td>Sécurité</td></tr>
+          </table>
+          <div class="panel-footer">
+            <a class="btn btn-success btn-lg btn-block action-book scrollable-link" href="#booking">Créer <small>mon espace collaboratif</small></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <span class="pricing-icon icon-stack icon-2x">
+              <i class="icon-circle text-warning icon-stack-base"></i>
+              <i class="icon-group icon-light"></i>
+            </span>
+            Association
+          </div>
+          <div class="panel-body">
+            <p>Nombre <strong>illimité</strong> de membres<br>et de communautés</p>
+            <h3 class="text-danger">3 € <small>/ mois / utilisateur</small></h3>
+          </div>
+          <table class="table table-hover table-condensed">
+            <tr class="active text-muted"><td>contenu de l'offre Startup plus :</td></tr>
+            <tr><td>Cotisation des membres</td></tr>
+            <tr><td>Intégration avec LinkedIN</td></tr>
+            <tr><td>Evénements payants</td></tr>
+            <tr><td>Gestion des rôles</td></tr>
+            <tr><td>Personnalisation avancée</td></tr>
+            <tr><td>Support en ligne</td></tr>
+          </table>
+          <div class="panel-footer">
+            <a class="btn btn-warning btn-lg btn-block" href="contact.html">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <span class="pricing-icon icon-stack icon-2x">
+              <i class="icon-circle text-info icon-stack-base"></i>
+              <i class="icon-building icon-light"></i>
+            </span>
+            Entreprise
+          </div>
+          <div class="panel-body">
+            <p>Nombre <strong>illimité</strong> de membres<br>et de communautés</p>
+            <h3 class="text-danger">5 € <small>/ mois / utilisateur</small></h3>
+          </div>
+          <table class="table table-hover table-condensed">
+            <tr class="active text-muted"><td>contenu de l'offre Association plus :</td></tr>
+            <tr><td>Gamification</td></tr>
+            <tr><td>Intégration annuaire LDAP</td></tr>
+            <tr><td>Recherche dans les documents</td></tr>
+            <tr><td>Infrastructure dédiée <small>(en option)</small></td></tr>
+            <tr><td>Hébergement sur site <small>(en option)</small></td></tr>
+            <tr><td>Support VIP</td></tr>
+          </table>
+          <div class="panel-footer">
+            <a class="btn btn-info btn-lg btn-block" href="contact.html">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="section-light section-thin">
+  <div class="container">
+    <form action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-inline" role="form">
+      <div id="booking-check">
+        <h2>{{ page.booking_title }}</h2>
+        <div class="form-group">
+          <label class="sr-only" for="tenant_name">name</label>
+          <input id="tenant_name" name="tenant_name" maxlength="16" pattern=".{3,16}" placeholder="{{ page.booking_placeholder }}" required>
+        </div>
+        <div class="checkbox" style="vertical-align: bottom">
+          <h3 style="margin: 14px 0">.sonetin.com</h3>
+        </div>
+        <button id="booking-check-submit" type="submit" class="btn btn-lg btn-primary">{{ page.booking_action }}</button>
+        <br><br>
+        <p class="text-muted">{{ page.booking_desc }}</p>
+      </div>
+      <div id="booking-account" class="hide">
+        <h2>
+          <i class="icon-ok-sign icon-large color-green"></i>
+          Ce nom est disponible !
+          <small><a href="#" onclick="change_tenant_name(); return false">— changer de nom</a></small>
+        </h2>
+        <p class="text-muted">Veuillez renseigner les informations pour la création de votre compte administrateur :</p>
+        <div class="form-group">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" class="form-control" type="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="password">Mot de passe</label>
+          <input id="password" name="password" class="form-control" type="password" placeholder="Mot de passe" pattern=".{8,}" required>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="firstname">Prénom</label>
+          <input id="firstname" name="firstname" class="form-control" placeholder="Prénom" required>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="lastname">Nom</label>
+          <input id="lastname" name="lastname" class="form-control" placeholder="Nom" required>
+        </div>
+        <button id="booking-account-submit" type="submit" class="btn btn-primary">Créer l'espace collaboratif</button>
+        <br><br>
+      </div>
+      <div id="booking-success" class="hide">
+        <h2>Bienvenue !</h2>
+        <h4>Votre espace collaboratif est en cours de mise en place.</h4>
+        <h4>Un email vous sera envoyé sous peu à <code class="email">bob@bob.com</code></h4>
+      </div>
+    </form>
+  </div>
+</section>

@@ -4,35 +4,33 @@
   {% assign footer_links = site.footer.en %}
 {% endif %}
 
-<footer class="background">
+<footer class="section-dark">
   <div class="container">
     <div class="row">
-      <div class="span3">
+      <div class="col-xs-6 col-sm-6 col-md-4">
         <a class="brand" href="../{{ page.locale }}/">
-          <img class="logo" src="../assets/img/logo-white.png" title="SonetIN" alt="SonetIN">
+          <img class="logo" src="../assets/img/logo-white.png" title="SonetIN" alt="SonetIN S.A.S">
         </a>
-        <hr>
-        <address>
-          <strong>SonetIN S.A.S</strong><br>
-          <i class="icon-map-marker"></i>
-          <a href="http://goo.gl/jWDE3" target="_blank">166 bd du Montparnasse<br>
-          <i class="icon-map-marker hidden"></i>
-          75014 Paris</a><br>
-          <abbr title="Phone"><i class="icon-phone"></i></abbr>
-          <a href="tel:+33142795214">+33 (0)1 42 79 52 14</a>
-        </address>
+        <p>
+          <address>
+            <i class="icon-map-marker"></i>
+            <a href="http://goo.gl/jWDE3" target="_blank">166 bd du Montparnasse, 75014 Paris</a><br>
+            <abbr title="Phone"><i class="icon-phone"></i></abbr>
+            <a href="tel:+33142795214">+33 (0)1 42 79 52 14</a>
+          </address>
+        </p>
       </div>
-      {% for category in footer_links %}
-        <div class="span2">
-          <h5>{{ category | first | first | capitalize }}</h5>
+      <div>
+        {% for category in footer_links %}
           {% assign category_links = category.first.last %}
-          <ul class="unstyled">
+          <ul class="list-inline">
+            <li><h5>{{ category | first | first | capitalize }}</h5></li>
             {% for link in category_links %}
               <li><a href="{{ link.url }}">{{ link.text }}</a></li>
             {% endfor %}
           </ul>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </footer>
