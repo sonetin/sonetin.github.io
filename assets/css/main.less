@@ -96,7 +96,12 @@ h5 {
 footer {
   padding: 40px 0;
 
-  li + li::before {
+  h5 {
+    font-weight: bold;
+    width: 120px;
+  }
+
+  li + li + li::before {
     content: "\f111";
     font-family: FontAwesome;
     font-size: 5px;
