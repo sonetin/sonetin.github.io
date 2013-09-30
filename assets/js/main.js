@@ -10,15 +10,16 @@ function booking_check() {
     $('#tenant_name').focus();
     return false;
   }
-  //$.post('https://api.sonetin.com/v1/tenants/check',
-  //  { tenant_name: $('#tenant_name').val() },
-  //  function() {
+  $.get('http://community.sonetin.net/api/tenants/exists',
+    { domain: $('#tenant_name').val()+".sonetin.net" },
+    function(data) {
+      if(data['exists']) return;
       //$('#tenant_name').parents('form-group').addClass('has-success');
       $('#booking-check').fadeOut('normal', function() {
         $('#booking-account').removeClass('hide').fadeIn('normal');
       });
-  //  }
-  //);
+    }
+  );
   return false;
 }
 
@@ -32,8 +33,7 @@ function change_tenant_name() {
 }
 
 function booking_create() {
-  var endpoint = 'https://api.sonetin.com/v1/tenants/create';
-  endpoint = $("#booking form").attr('action');
+  var endpoint = $("#booking form").attr('action');
   $.post(endpoint,
     $("#booking form").serialize(),
     function(data) {

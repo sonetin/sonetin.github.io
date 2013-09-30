@@ -46,8 +46,8 @@ footer:
       - text: Nous contacter
         url: contact.html
     - communauté:
-      - text: Blog
-        url: http://blog.sonetin.com
+      #- text: Blog
+      #  url: http://blog.sonetin.com
       - text: Twitter
         url: http://twitter.com/sonet_in
     #- langue:

@@ -4,8 +4,8 @@
     <h2 style="text-align: left; font-size: 24px; line-height: 36px">{{ page.tagline2 }}</h2>
     <br>
     <ul class="list-unstyled icons-ul">
-      <li><i class="icon-li icon-ok"></i>Votre <strong>réseau social d'entreprise</strong> clés en main.</li>
-      <li><i class="icon-li icon-ok"></i>Une solution pour les entreprises, associations et écoles.</li>
+      <li><i class="icon-li icon-ok"></i>Votre <strong>réseau social d'entreprise</strong> clé en main.</li>
+      <li><i class="icon-li icon-ok"></i>Pour les entreprises, associations et écoles.</li>
       <li><i class="icon-li icon-ok"></i>De belles références clients & une grande proximité.</li>
       <li><i class="icon-li icon-ok"></i>Développé et hébergé <strong>en France</strong>.</li>
     </ul>
@@ -86,7 +86,7 @@
 <section id="features2" class="section-light">
   <div class="container">
     <h2>{{ page.features_title }}</h2>
-    <div id="features-details" class="visible-md visible-lg">
+    <div id="features-details" class="visible-lg">
       {% for feature in page.features %}
         <div class="feature">
           <h3>{{ feature.title }}</h3>
@@ -193,7 +193,8 @@
           </div>
           <div class="panel-body">
             <p>Nombre <strong>illimité</strong> de membres<br>et de communautés</p>
-            <h3 class="text-danger">3 € <small>/ mois / utilisateur</small></h3>
+            <h3 class="text-danger" style="line-height: 0">3 € TTC</h3>
+            <small class="text-muted">par mois / utilisateur</small>
           </div>
           <table class="table table-hover table-condensed">
             <tr class="active text-muted"><td>contenu de <span class="text-success">l'offre Startup</span> plus :</td></tr>
@@ -220,7 +221,8 @@
           </div>
           <div class="panel-body">
             <p>Nombre <strong>illimité</strong> de membres<br>et de communautés</p>
-            <h3 class="text-danger">5 € <small>/ mois / utilisateur</small></h3>
+            <h3 class="text-danger" style="line-height: 0">5 € HT</h3>
+            <small class="text-muted">par mois / utilisateur</small>
           </div>
           <table class="table table-hover table-condensed">
             <tr class="active text-muted"><td>contenu de <span class="text-warning">l'offre Association</span> plus :</td></tr>
@@ -250,7 +252,7 @@
           <input id="tenant_name" name="tenant_name" maxlength="16" pattern=".{3,16}" placeholder="{{ page.booking_placeholder }}" required>
         </div>
         <div class="checkbox" style="vertical-align: bottom">
-          <h3 style="margin: 14px 0">.sonetin.com</h3>
+          <h3 style="margin: 14px 0">.sonetin.net</h3>
         </div>
         <button id="booking-check-submit" type="submit" class="btn btn-lg btn-primary">{{ page.booking_action }}</button>
         <br><br>
