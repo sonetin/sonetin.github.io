@@ -3,23 +3,27 @@ function goto(element, func) {
   return false;
 }
 
+function booking_error() {
+  $('#tenant_name').focus().parents('.form-group').addClass('has-error');
+  return false;
+}
+
+function booking_success(data) {
+  if(data['exists']) return booking_error();
+  $('#tenant_name').parents('.form-group').removeClass('has-error');
+  $('#booking-check').fadeOut('normal', function() {
+    $('#booking-account').removeClass('hide').fadeIn('normal');
+  });
+}
+
 function booking_check() {
   var tenant_name = $('#tenant_name').val();
   if($.inArray(tenant_name, ['', 'www', 'api']) != -1) {
-    //$('#tenant_name').parents('form-group').addClass('has-error');
-    $('#tenant_name').focus();
-    return false;
+    return booking_error();
   }
   $.get('http://community.sonetin.net/api/tenants/exists',
-    { domain: $('#tenant_name').val()+".sonetin.net" },
-    function(data) {
-      if(data['exists']) return;
-      //$('#tenant_name').parents('form-group').addClass('has-success');
-      $('#booking-check').fadeOut('normal', function() {
-        $('#booking-account').removeClass('hide').fadeIn('normal');
-      });
-    }
-  );
+    { domain: $('#tenant_name').val()+".sonetin.net" }
+  ).done(booking_success).fail(booking_error);
   return false;
 }
 
