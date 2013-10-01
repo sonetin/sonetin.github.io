@@ -24,12 +24,12 @@ navigation:
 #      url: contact.html
 footer:
   en:
-    - company:
+    - "company :":
       - text: About us
         url: about.html
       - text: Contact us
         url: contact.html
-    - community:
+    - "community :":
       - text: Blog
         url: http://blog.sonetin.com
       - text: Twitter
@@ -40,12 +40,12 @@ footer:
       - text: Français
         url: ../fr/
   fr:
-    - entreprise:
+    - "entreprise :":
       - text: A propos
         url: a-propos.html
       - text: Nous contacter
         url: contact.html
-    - communauté:
+    - "communauté :":
       #- text: Blog
       #  url: http://blog.sonetin.com
       - text: Twitter
