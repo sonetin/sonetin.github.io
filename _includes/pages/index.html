@@ -4,14 +4,12 @@
     <h2 style="text-align: left; font-size: 24px; line-height: 36px">{{ page.tagline2 }}</h2>
     <br>
     <ul class="list-unstyled icons-ul">
-      <li><i class="icon-li icon-ok"></i>Votre <strong>Réseau Social d'Entreprise</strong> clé en main</li>
-      <li><i class="icon-li icon-ok"></i>Pour les Entreprises, Associations et Écoles</li>
-      <li><i class="icon-li icon-ok"></i><strong>Personnalisé</strong> selon vos usages</li>
-      <li><i class="icon-li icon-ok"></i>Disponible sur ordinateur, mobile et tablette</li>
-      <li><i class="icon-li icon-ok"></i>Développé et Hébergé <strong>en France</strong></li>
+      {% for feature in page.main_features %}
+        <li><i class="icon-li icon-ok"></i>{{ feature }}</li>
+      {% endfor %}
     </ul>
     <br>
-    <a class="btn btn-lg btn-primary action-book scrollable-link" href="#booking">Je crée mon réseau social privé</a>
+    <a class="btn btn-lg btn-primary action-book scrollable-link" href="#booking">{{ page.booking.button }}</a>
 
     <a id="preview" class="scrollable-link visible-md visible-lg" href="#features2">
       <div class="preview glossy">
@@ -100,7 +98,7 @@
 
 <section id="integrations" class="section-light section-thin">
   <div class="container">
-    <h3 class="text-muted">Une intégration avec plus de 20 services</h3>
+    <h3 class="text-muted">{{ page.integration_title }}</h3>
     <ul class="list-inline nav-justified">
       <li style="color: #00acee">
         <i class="icon-twitter icon-3x"></i>
@@ -142,7 +140,7 @@
       </li>
       <li class="text-muted">
         <i class="icon-ellipsis-horizontal icon-3x"></i>
-        <p><small>et bien plus</small></p>
+        <p><small>{{ page.integration_more }}</small></p>
       </li>
     </ul>
   </div>
@@ -150,94 +148,31 @@
 
 <section id="pricing">
   <div class="container">
-    <h2>Nos offres</h2>
+    <h2>{{ page.plans_title }}</h2>
     <br>
     <div class="row">
-      <div class="col-md-4">
-        <div class="panel panel-success">
-          <div class="panel-heading">
-            <span class="pricing-icon icon-stack icon-2x">
-              <i class="icon-circle text-success icon-stack-base"></i>
-              <i class="icon-beaker icon-light"></i>
-            </span>
-            Startups
-          </div>
-          <div class="panel-body">
-            <p><strong>20 membres</strong><br>5 communautés</p>
-            <h3 class="text-danger"><strong>Gratuit</strong></h3>
-          </div>
-          <table class="table table-hover table-condensed">
-            <tr><td>
-              <span title="discussions, wikis, documents, photos, vidéos">Contenus riches</span>
-            </td></tr>
-            <tr><td>Recherche globale</td></tr>
-            <tr><td>Gestion de communautés</td></tr>
-            <tr><td>Gestion d'événements</td></tr>
-            <tr><td>Personnalisation</td></tr>
-            <tr><td>Mobilité</td></tr>
-            <tr><td>Sécurité</td></tr>
-          </table>
-          <div class="panel-footer">
-            <a class="btn btn-success btn-lg btn-block action-book scrollable-link" href="#booking">Créer <small>mon réseau social privé</small></a>
+      {% for plan in page.plans %}
+        <div class="col-md-4">
+          <div class="panel panel-{{ plan.color }}">
+            <div class="panel-heading" style="{{ plan.style }}">
+              <span class="pricing-icon icon-stack icon-2x">
+                <i class="icon-circle text-{{ plan.color }} icon-stack-base"></i>
+                <i class="icon-{{ plan.icon }} icon-light"></i>
+              </span>
+              {{ plan.name }}
+            </div>
+            <div class="panel-body">
+              {{ plan.highlight }}
+            </div>
+            <table class="table table-hover table-condensed">
+              {{ plan.details }}
+            </table>
+            <div class="panel-footer panel-heading">
+              {{ plan.submit_button }}
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="panel panel-warning">
-          <div class="panel-heading">
-            <span class="pricing-icon icon-stack icon-2x">
-              <i class="icon-circle text-warning icon-stack-base"></i>
-              <i class="icon-group icon-light"></i>
-            </span>
-            Associations & Écoles
-          </div>
-          <div class="panel-body">
-            <p>Nombre <strong>illimité</strong> de membres<br>et de communautés</p>
-            <h3 class="text-danger" style="line-height: 0">3 € TTC</h3>
-            <small class="text-muted">par mois / utilisateur</small>
-          </div>
-          <table class="table table-hover table-condensed">
-            <tr class="active text-muted"><td>contenu de <span class="text-success">l'offre Startups</span> plus :</td></tr>
-            <tr><td>Cotisation des membres</td></tr>
-            <tr><td>Intégration avec LinkedIn</td></tr>
-            <tr><td>Événements payants</td></tr>
-            <tr><td>Gestion des rôles</td></tr>
-            <tr><td>Personnalisation avancée</td></tr>
-            <tr><td>Support en ligne</td></tr>
-          </table>
-          <div class="panel-footer">
-            <a class="btn btn-warning btn-lg btn-block" href="contact.html">Nous contacter</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <span class="pricing-icon icon-stack icon-2x">
-              <i class="icon-circle text-info icon-stack-base"></i>
-              <i class="icon-building icon-light"></i>
-            </span>
-            Entreprises
-          </div>
-          <div class="panel-body">
-            <p>Nombre <strong>illimité</strong> de membres<br>et de communautés</p>
-            <h3 class="text-danger" style="line-height: 0">5 € HT</h3>
-            <small class="text-muted">par mois / utilisateur</small>
-          </div>
-          <table class="table table-hover table-condensed">
-            <tr class="active text-muted"><td>contenu de <span class="text-warning">l'offre Associations</span> plus :</td></tr>
-            <tr><td>Gamification</td></tr>
-            <tr><td>Intégration annuaire LDAP</td></tr>
-            <tr><td>Recherche dans les documents</td></tr>
-            <tr><td>Infrastructure dédiée <small>(en option)</small></td></tr>
-            <tr><td>Hébergement sur site <small>(en option)</small></td></tr>
-            <tr><td>Support VIP</td></tr>
-          </table>
-          <div class="panel-footer">
-            <a class="btn btn-info btn-lg btn-block" href="contact.html">Nous contacter</a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -261,35 +196,33 @@
       <div id="booking-account" class="hide">
         <h2>
           <i class="icon-ok-sign icon-large color-green"></i>
-          Ce nom est disponible !
-          <small><a href="#" onclick="change_tenant_name(); return false">— changer de nom</a></small>
+          {{ page.booking.name_available }}
+          <small><a href="#" onclick="change_tenant_name(); return false">— {{ page.booking.change_name }}</a></small>
         </h2>
-        <p class="text-muted">Veuillez renseigner les informations pour la création de votre compte administrateur :</p>
+        <p class="text-muted">{{ page.booking.form.help }}</p>
         <div class="form-group">
-          <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" class="form-control" type="email" placeholder="Email" required>
+          <label class="sr-only" for="email">{{ page.booking.form.email }}</label>
+          <input id="email" name="email" class="form-control" type="email" placeholder="{{ page.booking.form.email }}" required>
         </div>
         <!--
         <div class="form-group">
-          <label class="sr-only" for="password">Mot de passe</label>
-          <input id="password" name="password" class="form-control" type="password" placeholder="Mot de passe" pattern=".{8,}" required>
+          <label class="sr-only" for="password">{{ page.booking.form.password }}</label>
+          <input id="password" name="password" class="form-control" type="password" placeholder="{{ page.booking.form.password }}" pattern=".{8,}" required>
         </div>
         -->
         <div class="form-group">
-          <label class="sr-only" for="firstname">Prénom</label>
-          <input id="firstname" name="firstname" class="form-control" placeholder="Prénom" required>
+          <label class="sr-only" for="firstname">{{ page.booking.form.first }}</label>
+          <input id="firstname" name="firstname" class="form-control" placeholder="{{ page.booking.form.first }}" required>
         </div>
         <div class="form-group">
-          <label class="sr-only" for="lastname">Nom</label>
-          <input id="lastname" name="lastname" class="form-control" placeholder="Nom" required>
+          <label class="sr-only" for="lastname">{{ page.booking.form.last }}</label>
+          <input id="lastname" name="lastname" class="form-control" placeholder="{{ page.booking.form.last }}" required>
         </div>
-        <button id="booking-account-submit" type="submit" class="btn btn-primary">Créer votre réseau social privé</button>
+        <button id="booking-account-submit" type="submit" class="btn btn-primary">{{ page.booking.form.submit }}</button>
         <br><br>
       </div>
       <div id="booking-success" class="hide">
-        <h2>Bienvenue !</h2>
-        <h4>Votre réseau social privé est en cours de mise en place.</h4>
-        <h4>Un email vous sera envoyé sous peu à l'adresse indiquée.</h4>
+        {{ page.booking.success }}
       </div>
     </form>
   </div>
