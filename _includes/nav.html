@@ -24,7 +24,13 @@
           Pricing
         {% endif %}
         </a></li>
-        <li><a class="scrollable-link color-red action-book" href="/{{ page.locale }}/#booking"><strong>Réserver</strong></a></li>
+        <li><a class="scrollable-link color-red action-book" href="/{{ page.locale }}/#booking"><strong>
+        {% if page.locale == 'fr' %}
+          Réserver
+        {% else %}
+          Reserve mine
+        {% endif %}
+        </strong></a></li>
         {% if page.locale == 'fr' %}
           {% assign nav_links = site.navigation.fr %}
         {% else %}
