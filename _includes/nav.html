@@ -12,25 +12,13 @@
         <img class="logo" src="/assets/img/logo.png" title="SonetIN" alt="SonetIN">
       </a>
     </div>
-`
+
     <div class="collapse navbar-collapse">
       <ul id="nav" class="nav navbar-nav navbar-right">
         <li><a class="scrollable-link" href="/{{ page.locale }}/#features">Usages</a></li>
         <li><a class="scrollable-link" href="/{{ page.locale }}/#features2">Solution</a></li>
-        <li><a class="scrollable-link" href="/{{ page.locale }}/#pricing">
-        {% if page.locale == 'fr' %}
-          No offres
-        {% else %}
-          Pricing
-        {% endif %}
-        </a></li>
-        <li><a class="scrollable-link color-red action-book" href="/{{ page.locale }}/#booking"><strong>
-        {% if page.locale == 'fr' %}
-          Réserver
-        {% else %}
-          Reserve mine
-        {% endif %}
-        </strong></a></li>
+        <li><a class="scrollable-link" href="/{{ page.locale }}/#pricing">{% if page.locale == 'fr' %}No offres{% else %}Pricing{% endif %}</a></li>
+        <li><a class="scrollable-link color-red action-book" href="/{{ page.locale }}/#booking"><strong>{% if page.locale == 'fr' %}Réserver{% else %}Reserve mine{% endif %}</strong></a></li>
         {% if page.locale == 'fr' %}
           {% assign nav_links = site.navigation.fr %}
         {% else %}
