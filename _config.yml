@@ -24,17 +24,17 @@ navigation:
 #      url: contact.html
 footer:
   en:
-    - "company :":
+    - "company:":
       - text: About us
         url: about.html
       - text: Contact us
         url: contact.html
-    - "community :":
+    - "community:":
       - text: Blog
         url: http://blog.sonetin.com
       - text: Twitter
         url: http://twitter.com/sonet_in
-    - language:
+    - "language:":
       - text: English
         url: ../en/
       - text: Français
@@ -46,11 +46,11 @@ footer:
       - text: Nous contacter
         url: contact.html
     - "communauté :":
-      #- text: Blog
-      #  url: http://blog.sonetin.com
+      - text: Blog
+        url: http://blog.sonetin.com
       - text: Twitter
         url: http://twitter.com/sonet_in
-    - langue:
+    - "langue :":
       - text: English
         url: ../en/
       - text: Français
