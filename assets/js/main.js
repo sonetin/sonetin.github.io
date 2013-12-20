@@ -21,7 +21,7 @@ function booking_check() {
   if($.inArray(tenant_name, ['', 'www', 'api']) != -1) {
     return booking_error();
   }
-  $.get('http://corp.sonetin.com/api/tenants/exists',
+  $.get('https://corp.sonetin.com/api/tenants/exists',
     { domain: $('#tenant_name').val()+".sonetin.com" }
   ).done(booking_success).fail(booking_error);
   return false;
