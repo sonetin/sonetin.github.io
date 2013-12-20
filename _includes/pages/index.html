@@ -154,7 +154,7 @@
       {% for plan in page.plans %}
         <div class="col-md-4">
           <div class="panel panel-{{ plan.color }}">
-            <div class="panel-heading" style="{{ plan.style }}">
+            <div class="panel-heading" style="{{ plan.header_style }}">
               <span class="pricing-icon icon-stack icon-2x">
                 <i class="icon-circle text-{{ plan.color }} icon-stack-base"></i>
                 <i class="icon-{{ plan.icon }} icon-light"></i>
@@ -223,6 +223,7 @@
 <section id="booking" class="section-light section-thin">
   <div class="container">
     <form action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-inline" role="form">
+      <input type="hidden" value="{{ page.locale }}">
       <div id="booking-check">
         <h2>{{ page.booking_title }}</h2>
         <div class="form-group">
