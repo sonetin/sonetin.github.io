@@ -40,13 +40,13 @@
       </div>
       <div class="col-md-8">
         <ul class="list-inline nav-justified">
-          <li><img src="../assets/img/clients/alstom.png"></li>
           <li><img src="../assets/img/clients/auchan.png"></li>
           <li><img src="../assets/img/clients/insead.png"></li>
           <li><img src="../assets/img/clients/mma.png"></li>
           <li><img src="../assets/img/clients/lybernet.png"></li>
           <li><img src="../assets/img/clients/maaf.png"></li>
           <li><img src="../assets/img/clients/hec.png"></li>
+          <li><img src="../assets/img/clients/oudinot.png"></li>
         </ul>
       </div>
     </div>
@@ -81,7 +81,7 @@
   </div>
 </section>
 
-<section id="features2" class="section-light">
+<section id="features2" class="section-light hide">
   <div class="container">
     <h2>{{ page.features_title }}</h2>
     <div id="features-details" class="visible-lg">
@@ -93,6 +93,21 @@
       {% endfor %}
     </div>
     <img src="/assets/img/previews/preview3.png">
+  </div>
+</section>
+
+<section id="overview" class="section-light">
+  <div class="container">
+    <h2>{{ page.features_title }}</h2>
+    <div class="hidden-xs">
+      <img src="/assets/img/overview/overview-desktop.png">
+    </div>
+    <div class="visible-lg" style="position:absolute;margin-top:-413px;margin-left:810px">
+      <img width="210" src="/assets/img/overview/overview-phone.png">
+    </div>
+    <div class="visible-xs">
+      <img src="/assets/img/overview/overview-phone.png">
+    </div>
   </div>
 </section>
 
@@ -175,42 +190,28 @@
       {% endfor %}
     </div>
 
-    <div class="row hide" id="accompagnement">
-      <h4 style="text-align: left; margin: 5px 20px 20px">Mais aussi :</h4>
+    <div class="row" id="accompagnement">
+      <h4 style="text-align: left; margin: 5px 20px 20px">{{ page.plans_accelerator.label }}</h4>
       <div class="col-md-12">
-        <div class="panel panel-primary">
+        <div class="panel panel-{{ page.plans_accelerator.color }}">
           <div class="panel-heading" style="text-align: left; padding-left: 80px">
             <span class="pricing-icon icon-stack icon-2x">
-              <i class="icon-circle text-primary icon-stack-base"></i>
-              <i class="icon-rocket icon-light"></i>
+              <i class="icon-circle text-{{ page.plans_accelerator.color }} icon-stack-base"></i>
+              <i class="icon-{{ page.plans_accelerator.icon }} icon-light"></i>
             </span>
-            Accompagnement sur mesure
+            {{ page.plans_accelerator.name }}
           </div>
           <div class="panel-body">
             <style>
             #accompagnement table { margin-bottom: 0; }
-            #accompagnement table td { text-align: left; }
+            #accompagnement table td { border-top: 0; }
             </style>
             <div class="row">
-              <div class="col-md-4">
-                <table class="table table-hover table-condensed"><tr><td>Animation d'une communauté thématique</td></tr></table>
+              <div class="col-md-6">
+                <table class="table table-hover table-condensed"><tr><td>{{ page.plans_accelerator.launch }}</td></tr></table>
               </div>
-              <div class="col-md-4">
-                <table class="table table-hover table-condensed"><tr><td>Newsletter mensuelle</td></tr></table>
-              </div>
-              <div class="col-md-4">
-                <table class="table table-hover table-condensed"><tr><td>Veille collaborative</td></tr></table>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <table class="table table-hover table-condensed"><tr><td>Diagnostic personnalisé</td></tr></table>
-              </div>
-              <div class="col-md-4">
-                <table class="table table-hover table-condensed"><tr><td>Session de formation online</td></tr></table>
-              </div>
-              <div class="col-md-4">
-                <table class="table table-hover table-condensed"><tr><td>Ateliers thématiques</td></tr></table>
+              <div class="col-md-6">
+                <table class="table table-hover table-condensed"><tr><td>{{ page.plans_accelerator.community_management }}</td></tr></table>
               </div>
             </div>
           </div>
