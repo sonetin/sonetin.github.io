@@ -532,3 +532,31 @@ footer {
   border-width: 2px;
 }
 
+
+#overview img {
+  transition: margin 200ms ease-in;
+}
+#overview .text {
+  position: absolute;
+  left: 35%;
+  right: 5%;
+  opacity: 0;
+  text-align: left;
+  transition: opacity 200ms ease-in, left 200ms ease-in, right 200ms ease-in;
+  h3 {
+    margin: 15px 0 5px;
+  }
+}
+#overview:hover {
+  img {
+    margin-left: -95%;
+  }
+  .visible-lg img {
+    margin-left: -1050px;
+  }
+  .text {
+    opacity: 1;
+    left: 40%;
+    right: 0;
+  }
+}

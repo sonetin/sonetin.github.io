@@ -99,6 +99,14 @@
 <section id="overview" class="section-light">
   <div class="container">
     <h2>{{ page.features_title }}</h2>
+    <div class="text">
+      {% for feature in page.features %}
+        <div class="feature">
+          <h3>{{ feature.title }}</h3>
+          <p class="hidden-xs">{{ feature.content }}</p>
+        </div>
+      {% endfor %}
+    </div>
     <div class="hidden-xs">
       <img src="/assets/img/overview/overview-desktop.png">
     </div>
