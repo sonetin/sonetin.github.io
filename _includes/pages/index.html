@@ -232,7 +232,7 @@
 <section id="booking" class="section-light section-thin">
   <div class="container">
     <form action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-inline" role="form">
-      <input type="hidden" value="{{ page.locale }}">
+      <input type="hidden" name="lang" value="{{ page.locale }}">
       <div id="booking-check">
         <h2>{{ page.booking_title }}</h2>
         <div class="form-group">
@@ -270,6 +270,10 @@
         <div class="form-group">
           <label class="sr-only" for="lastname">{{ page.booking.form.last }}</label>
           <input id="lastname" name="lastname" class="form-control" placeholder="{{ page.booking.form.last }}" required>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="promo">{{ page.booking.form.promo }}</label>
+          <input id="promo" name="promo" class="form-control" placeholder="{{ page.booking.form.promo }}">
         </div>
         <button id="booking-account-submit" type="submit" class="btn btn-primary">{{ page.booking.form.submit }}</button>
         <br><br>
