@@ -237,7 +237,7 @@
         <h2>{{ page.booking_title }}</h2>
         <div class="form-group">
           <label class="sr-only" for="tenant_name">name</label>
-          <input id="tenant_name" name="tenant_name" maxlength="16" pattern=".{3,16}" placeholder="{{ page.booking_placeholder }}" required>
+          <input id="tenant_name" name="tenant_name" maxlength="16" pattern=".{3,16}" placeholder="{{ page.booking_placeholder }}" data-error-msg="{{ page.booking_error }}" required>
         </div>
         <div class="checkbox" style="vertical-align: bottom">
           <h3 style="margin: 14px 0">.sonetin.com</h3>

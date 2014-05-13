@@ -5,11 +5,13 @@ function goto(element, func) {
 
 function booking_error() {
   $('#tenant_name').focus().parents('.form-group').addClass('has-error');
+  $('#tenant_name').tooltip({trigger: 'manual', placement: 'bottom', title: $('#tenant_name').data('error-msg')}).tooltip('show');
   return false;
 }
 
 function booking_success(data) {
   if(data['exists']) return booking_error();
+  $('#tenant_name').tooltip('hide');
   $('#tenant_name').parents('.form-group').removeClass('has-error');
   $('#booking-check').fadeOut('normal', function() {
     $('#booking-account').removeClass('hide').fadeIn('normal');
