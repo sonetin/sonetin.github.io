@@ -3,9 +3,9 @@
     <h2 style="text-align: left">{{ page.tagline }}</h2>
     <h2 style="text-align: left; font-size: 24px; line-height: 36px">{{ page.tagline2 }}</h2>
     <br>
-    <ul class="list-unstyled icons-ul">
+    <ul class="list-unstyled fa-ul">
       {% for feature in page.main_features %}
-        <li><i class="icon-li icon-ok"></i>{{ feature }}</li>
+        <li><i class="fa fa-li fa-check"></i>{{ feature }}</li>
       {% endfor %}
     </ul>
     <br>
@@ -27,7 +27,7 @@
       <div class="preview glossy">
         <img src="../assets/img/previews/preview1r.png">
       </div>
-      <i id="fullscreen" class="icon-search"></i>
+      <i id="fullscreen" class="fa fa-search"></i>
     </div>
   </a>
 </section>
@@ -63,10 +63,10 @@
         {% for usage in page.usages %}
           <div class="feature col-md-6">
             <h3>
-              <span class="icon-stack icon-2x">
-                <i class="icon-circle color-{{ usage.color }} icon-stack-base"></i>
-                <i class="icon-circle-blank icon-stack-base"></i>
-                <i class="icon-{{ usage.icon }} icon-light"></i>
+              <span class="fa-stack fa-2x">
+                <i class="fa fa-stack-2x fa-circle color-{{ usage.color }}"></i>
+                <i class="fa fa-stack-1x fa-circle-o"></i>
+                <i class="fa fa-stack-1x fa-{{ usage.icon }} fa-light"></i>
               </span>
               {{ usage.title }}
             </h3>
@@ -124,45 +124,45 @@
     <h3 class="text-muted">{{ page.integration_title }}</h3>
     <ul class="list-inline nav-justified">
       <li style="color: #00acee">
-        <i class="icon-twitter icon-3x"></i>
+        <i class="fa fa-twitter fa-3x"></i>
         <p><small>Twitter</small></p>
       </li>
       <li style="color: #3d9ae8">
-        <i class="icon-dropbox icon-3x"></i>
+        <i class="fa fa-dropbox fa-3x"></i>
         <p><small>Dropbox</small></p>
       </li>
       <li style="color: #c4302b">
-        <i class="icon-youtube-play icon-3x"></i>
+        <i class="fa fa-youtube-play fa-3x"></i>
         <p><small>YouTube</small></p>
       </li>
       <li style="color: #0e76a8">
-        <i class="icon-linkedin-sign icon-3x"></i>
+        <i class="fa fa-linkedin-square fa-3x"></i>
         <p><small>LinkedIn</small></p>
       </li>
       <li style="color: #34526f">
-        <i class="icon-tumblr-sign icon-3x"></i>
+        <i class="fa fa-tumblr-square fa-3x"></i>
         <p><small>Tumblr</small></p>
       </li>
     </ul>
     <ul class="list-inline nav-justified">
       <li class="text-muted">
-        <i class="icon-quote-right icon-3x"></i>
+        <i class="fa fa-quote-right fa-3x"></i>
         <p><small>Sites d'actualité</small></p>
       </li>
       <li style="color: #3f729b">
-        <i class="icon-instagram icon-3x"></i>
+        <i class="fa fa-instagram fa-3x"></i>
         <p><small>Instagram</small></p>
       </li>
       <li style="color: #3b5998">
-        <i class="icon-facebook-sign icon-3x"></i>
+        <i class="fa fa-facebook-square fa-3x"></i>
         <p><small>Facebook</small></p>
       </li>
       <li style="color: #ff0084">
-        <i class="icon-flickr icon-3x"></i>
+        <i class="fa fa-flickr fa-3x"></i>
         <p><small>Flickr</small></p>
       </li>
       <li class="text-muted">
-        <i class="icon-ellipsis-horizontal icon-3x"></i>
+        <i class="fa fa-ellipsis-h fa-3x"></i>
         <p><small>{{ page.integration_more }}</small></p>
       </li>
     </ul>
@@ -178,9 +178,9 @@
         <div class="col-md-4">
           <div class="panel panel-{{ plan.color }}">
             <div class="panel-heading" style="{{ plan.header_style }}">
-              <span class="pricing-icon icon-stack icon-2x">
-                <i class="icon-circle text-{{ plan.color }} icon-stack-base"></i>
-                <i class="icon-{{ plan.icon }} icon-light"></i>
+              <span class="pricing-icon fa-stack fa-2x">
+                <i class="fa fa-stack-2x fa-circle text-{{ plan.color }}"></i>
+                <i class="fa fa-stack-1x fa-{{ plan.icon }} fa-light"></i>
               </span>
               {{ plan.name }}
             </div>
@@ -203,9 +203,9 @@
       <div class="col-md-12">
         <div class="panel panel-{{ page.plans_accelerator.color }}">
           <div class="panel-heading" style="text-align: left; padding-left: 80px">
-            <span class="pricing-icon icon-stack icon-2x">
-              <i class="icon-circle text-{{ page.plans_accelerator.color }} icon-stack-base"></i>
-              <i class="icon-{{ page.plans_accelerator.icon }} icon-light"></i>
+            <span class="pricing-icon fa-stack fa-2x">
+              <i class="fa fa-stack-2x fa-circle text-{{ page.plans_accelerator.color }}"></i>
+              <i class="fa fa-stack-1x fa-{{ page.plans_accelerator.icon }} fa-light"></i>
             </span>
             {{ page.plans_accelerator.name }}
           </div>
@@ -248,7 +248,7 @@
       </div>
       <div id="booking-account" class="hide">
         <h2>
-          <i class="icon-ok-sign icon-large color-green"></i>
+          <i class="fa fa-check-circle fa-lg color-green"></i>
           {{ page.booking.name_available }}
           <small><a href="#" onclick="change_tenant_name(); return false">— {{ page.booking.change_name }}</a></small>
         </h2>
