@@ -1,15 +1,52 @@
-<section class="section-blue" id="presentation">
+<section id="intro" class="section-dark section-dashed section-background">
   <div class="container">
-    <h2 style="text-align: left">{{ page.tagline }}</h2>
-    <h2 style="text-align: left; font-size: 24px; line-height: 36px">{{ page.tagline2 }}</h2>
+    <h1>{{ page.mynetwork.header }}</h1>
+    <h2>{{ page.mynetwork.pricing }}</h2>
+    <hr>
+    {% include booking.html %}
+    <hr>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container">
+    <h2>{{ page.yourdata.header }}</h2>
+    <p class="lead">{{ page.yourdata.text }}</p>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <h2>{{ page.usages.header }}</h2>
+    <h3>{{ page.usages.subheader }}</h3>
+    <ul class="list-unstyled fa-ul row">
+      {% for usage in page.usages.list %}
+        <li class="col-md-6 text-left">
+          <h4>
+            <span class="fa-stack fa-2x">
+              <i class="fa fa-stack-2x fa-circle color-blue"></i>
+              <i class="fa fa-stack-1x fa-{{ usage.icon }} fa-light"></i>
+            </span>
+            {{ usage.title }}
+          </h4>
+          <p class="text-muted">{{ usage.content }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section-blue section-thin" id="intelligence">
+  <div class="container">
+    <h2>{{ page.intelligence.header }}</h2>
     <br>
     <ul class="list-unstyled fa-ul">
-      {% for feature in page.main_features %}
-        <li><i class="fa fa-li fa-check"></i>{{ feature }}</li>
+      {% for item in page.intelligence.list %}
+        <li><i class="fa fa-li fa-check"></i>{{ item }}</li>
       {% endfor %}
     </ul>
     <br>
-    <a class="btn btn-lg btn-primary action-book scrollable-link" href="#booking">{{ page.booking.button }}</a>
+    <a class="btn btn-lg btn-primary action-book scrollable-link" href="#intro">{{ page.booking.title }}</a>
 
     <a id="preview" class="scrollable-link visible-md visible-lg" href="#features2">
       <div class="preview glossy">
@@ -40,247 +77,118 @@
       </div>
       <div class="col-md-8">
         <ul class="list-inline nav-justified">
-          <li><img src="../assets/img/clients/auchan.png"></li>
-          <li><img src="../assets/img/clients/insead.png"></li>
           <li><img src="../assets/img/clients/mma.png"></li>
           <li><img src="../assets/img/clients/lybernet.png"></li>
           <li><img src="../assets/img/clients/maaf.png"></li>
-          <li><img src="../assets/img/clients/hec.png"></li>
           <li><img src="../assets/img/clients/oudinot.png"></li>
+          <li><img src="../assets/img/clients/esmt.png"></li>
+          <li><img src="../assets/img/clients/optimonial.png"></li>
+          <li><img src="../assets/img/clients/covea.png"></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="features">
+<section id="overview" class="section-light section-shadow">
   <div class="container">
-
-    <h2>{{ page.usages_title }}</h2>
-
-    <div class="features">
-      <div class="row">
-        {% for usage in page.usages %}
-          <div class="feature col-md-6">
-            <h3>
-              <span class="fa-stack fa-2x">
-                <i class="fa fa-stack-2x fa-circle color-{{ usage.color }}"></i>
-                <i class="fa fa-stack-1x fa-circle-o"></i>
-                <i class="fa fa-stack-1x fa-{{ usage.icon }} fa-light"></i>
-              </span>
-              {{ usage.title }}
-            </h3>
-            <p>{{ usage.content }}</p>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <br><br><br>
-
-  </div>
-</section>
-
-<section id="features2" class="section-light hide">
-  <div class="container">
-    <h2>{{ page.features_title }}</h2>
-    <div id="features-details" class="visible-lg">
-      {% for feature in page.features %}
-        <div class="feature">
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.content }}</p>
-        </div>
-      {% endfor %}
-    </div>
-    <img src="/assets/img/previews/preview3.png">
-  </div>
-</section>
-
-<section id="overview" class="section-light">
-  <div class="container">
-    <h2>{{ page.features_title }}</h2>
-    <div class="text">
-      {% for feature in page.features %}
-        <div class="feature">
-          <h3>{{ feature.title }}</h3>
-          <p class="hidden-xs">{{ feature.content }}</p>
-        </div>
-      {% endfor %}
-    </div>
     <div class="hidden-xs">
-      <img src="/assets/img/overview/overview-desktop.png">
+      <img src="/assets/img/overview/overview-desktop-2.png">
     </div>
     <div class="visible-lg" style="position:absolute;margin-top:-413px;margin-left:810px">
-      <img width="210" src="/assets/img/overview/overview-phone.png">
+      <img width="200" src="/assets/img/overview/overview-phone-2.png">
     </div>
     <div class="visible-xs">
-      <img src="/assets/img/overview/overview-phone.png">
+      <img src="/assets/img/overview/overview-phone-2.png">
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <ul class="list-unstyled fa-ul row">
+      {% for feature in page.features %}
+        <li class="col-md-6 text-left">
+          <p class="fa-stack fa-2x pull-left">
+            <i class="fa fa-stack-2x fa-circle color-blue"></i>
+            <i class="fa fa-stack-1x fa-{{ feature.icon }} fa-light"></i>
+          </p>
+          <h4 style="display: inline">{{ feature.title }}</h4>
+          <span class="text-muted">{{ feature.desc }}</span>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
 
 <section id="integrations" class="section-light section-thin">
   <div class="container">
-    <h3 class="text-muted">{{ page.integration_title }}</h3>
-    <ul class="list-inline nav-justified">
-      <li style="color: #00acee">
-        <i class="fa fa-twitter fa-3x"></i>
-        <p><small>Twitter</small></p>
-      </li>
-      <li style="color: #3d9ae8">
-        <i class="fa fa-dropbox fa-3x"></i>
-        <p><small>Dropbox</small></p>
-      </li>
-      <li style="color: #c4302b">
-        <i class="fa fa-youtube-play fa-3x"></i>
-        <p><small>YouTube</small></p>
-      </li>
-      <li style="color: #0e76a8">
-        <i class="fa fa-linkedin-square fa-3x"></i>
-        <p><small>LinkedIn</small></p>
-      </li>
-      <li style="color: #34526f">
-        <i class="fa fa-tumblr-square fa-3x"></i>
-        <p><small>Tumblr</small></p>
-      </li>
-    </ul>
-    <ul class="list-inline nav-justified">
-      <li class="text-muted">
-        <i class="fa fa-quote-right fa-3x"></i>
-        <p><small>Sites d'actualité</small></p>
-      </li>
-      <li style="color: #3f729b">
-        <i class="fa fa-instagram fa-3x"></i>
-        <p><small>Instagram</small></p>
-      </li>
-      <li style="color: #3b5998">
-        <i class="fa fa-facebook-square fa-3x"></i>
-        <p><small>Facebook</small></p>
-      </li>
-      <li style="color: #ff0084">
-        <i class="fa fa-flickr fa-3x"></i>
-        <p><small>Flickr</small></p>
-      </li>
-      <li class="text-muted">
-        <i class="fa fa-ellipsis-h fa-3x"></i>
-        <p><small>{{ page.integration_more }}</small></p>
-      </li>
-    </ul>
+    <h3 class="text-muted">
+      <ul class="list-inline pull-left">
+        <li><i class="fa fa-twitter fa-lg" title="Twitter"></i></li>
+        <li><i class="fa fa-dropbox fa-lg" title="Dropbox"></i></li>
+        <li><i class="fa fa-youtube-play fa-lg" title="YouTube"></i></li>
+        <li><i class="fa fa-linkedin-square fa-lg" title="LinkedIn"></i></li>
+        <li><i class="fa fa-tumblr-square fa-lg" title="Tumblr"></i></li>
+      </ul>
+      <ul class="list-inline pull-right">
+        <li><i class="fa fa-rss-square fa-lg" title="RSS"></i></li>
+        <li><i class="fa fa-facebook-square fa-lg" title="Facebook"></i></li>
+        <li><i class="fa fa-flickr fa-lg" title="Flickr"></i></li>
+        <li><i class="fa fa-google-plus-square fa-lg" title="Google+"></i></li>
+        <li><i class="fa fa-pinterest-square fa-lg" title="Pinterest"></i></li>
+      </ul>
+      <span>{{ page.integrations.title }}</span>
+    </h3>
   </div>
 </section>
 
-<section id="pricing">
+<section id="services" class="section-shadow">
   <div class="container">
-    <h2>{{ page.plans_title }}</h2>
+    <h2>{{ page.services.header }}</h2>
+    <h3>{{ page.services.subheader }}</h3>
     <br>
     <div class="row">
-      {% for plan in page.plans %}
+      {% for service in page.services.list %}
         <div class="col-md-4">
-          <div class="panel panel-{{ plan.color }}">
-            <div class="panel-heading" style="{{ plan.header_style }}">
-              <span class="pricing-icon fa-stack fa-2x">
-                <i class="fa fa-stack-2x fa-circle text-{{ plan.color }}"></i>
-                <i class="fa fa-stack-1x fa-{{ plan.icon }} fa-light"></i>
-              </span>
-              {{ plan.name }}
-            </div>
-            <div class="panel-body">
-              {{ plan.highlight }}
-            </div>
-            <table class="table table-hover table-condensed">
-              {{ plan.details }}
-            </table>
-            <div class="panel-footer panel-heading">
-              {{ plan.submit_button }}
-            </div>
-          </div>
+          <h4>{{ service.title }}</h4>
+          <p class="fa-stack fa-3x">
+            <i class="fa fa-stack-2x fa-circle color-blue"></i>
+            <i class="fa fa-stack-1x fa-{{ service.icon }} fa-light"></i>
+          </p>
+          <p class="text-muted"><small>{{ service.desc }}</small></p>
         </div>
       {% endfor %}
     </div>
-
-    <div class="row" id="accompagnement">
-      <h4 style="text-align: left; margin: 5px 20px 20px">{{ page.plans_accelerator.label }}</h4>
-      <div class="col-md-12">
-        <div class="panel panel-{{ page.plans_accelerator.color }}">
-          <div class="panel-heading" style="text-align: left; padding-left: 80px">
-            <span class="pricing-icon fa-stack fa-2x">
-              <i class="fa fa-stack-2x fa-circle text-{{ page.plans_accelerator.color }}"></i>
-              <i class="fa fa-stack-1x fa-{{ page.plans_accelerator.icon }} fa-light"></i>
-            </span>
-            {{ page.plans_accelerator.name }}
-          </div>
-          <div class="panel-body">
-            <style>
-            #accompagnement table { margin-bottom: 0; }
-            #accompagnement table td { border-top: 0; }
-            </style>
-            <div class="row">
-              <div class="col-md-6">
-                <table class="table table-hover table-condensed"><tr><td>{{ page.plans_accelerator.launch }}</td></tr></table>
-              </div>
-              <div class="col-md-6">
-                <table class="table table-hover table-condensed"><tr><td>{{ page.plans_accelerator.community_management }}</td></tr></table>
-              </div>
-            </div>
-          </div>
-        </div>
+    <br>
+    <div class="well well-sm text-left text-muted">
+      <div class="pull-right">
+        <a class="btn btn-lg btn-primary" href="contact.html">{{ page.services.more.submit }}</a>
       </div>
+      <small>{{ page.services.more.text}}</small>
     </div>
   </div>
 </section>
 
-<section id="booking" class="section-light section-thin">
+<section id="api" class="section-light section-dashed">
   <div class="container">
-    <form action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-inline" role="form">
-      <input type="hidden" name="lang" value="{{ page.locale }}">
-      <div id="booking-check">
-        <h2>{{ page.booking_title }}</h2>
-        <div class="form-group">
-          <label class="sr-only" for="tenant_name">name</label>
-          <input id="tenant_name" name="tenant_name" maxlength="16" pattern=".{3,16}" placeholder="{{ page.booking_placeholder }}" data-error-msg="{{ page.booking_error }}" required>
-        </div>
-        <div class="checkbox" style="vertical-align: bottom">
-          <h3 style="margin: 14px 0">.sonetin.com</h3>
-        </div>
-        <button id="booking-check-submit" type="submit" class="btn btn-lg btn-primary">{{ page.booking_action }}</button>
-        <br><br>
-        <p class="text-muted">{{ page.booking_desc }}</p>
-      </div>
-      <div id="booking-account" class="hide">
-        <h2>
-          <i class="fa fa-check-circle fa-lg color-green"></i>
-          {{ page.booking.name_available }}
-          <small><a href="#" onclick="change_tenant_name(); return false">— {{ page.booking.change_name }}</a></small>
-        </h2>
-        <p class="text-muted">{{ page.booking.form.help }}</p>
-        <div class="form-group">
-          <label class="sr-only" for="email">{{ page.booking.form.email }}</label>
-          <input id="email" name="email" class="form-control" type="email" placeholder="{{ page.booking.form.email }}" required>
-        </div>
-        <!--
-        <div class="form-group">
-          <label class="sr-only" for="password">{{ page.booking.form.password }}</label>
-          <input id="password" name="password" class="form-control" type="password" placeholder="{{ page.booking.form.password }}" pattern=".{8,}" required>
-        </div>
-        -->
-        <div class="form-group">
-          <label class="sr-only" for="firstname">{{ page.booking.form.first }}</label>
-          <input id="firstname" name="firstname" class="form-control" placeholder="{{ page.booking.form.first }}" required>
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="lastname">{{ page.booking.form.last }}</label>
-          <input id="lastname" name="lastname" class="form-control" placeholder="{{ page.booking.form.last }}" required>
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="promo">{{ page.booking.form.promo }}</label>
-          <input id="promo" name="promo" class="form-control" placeholder="{{ page.booking.form.promo }}">
-        </div>
-        <button id="booking-account-submit" type="submit" class="btn btn-primary">{{ page.booking.form.submit }}</button>
-        <br><br>
-      </div>
-      <div id="booking-success" class="hide">
-        {{ page.booking.success }}
-      </div>
-    </form>
+    <h2>{{ page.api.header }}</h2>
+    <h3>{{ page.api.subheader }}</h3>
+    <br><br>
+    <h4 class="">
+      <i class="fa fa-clock-o"></i>
+      {{ page.api.label }}
+    </h4>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container">
+    <a class="btn btn-lg btn-primary action-book scrollable-link" href="#intro">
+      <i class="fa fa-child"></i><i class="fa fa-child"></i>
+      &nbsp;{{ page.booking.title }}&nbsp;
+      <i class="fa fa-child"></i><i class="fa fa-child"></i>
+    </a>
+    <br><br>
   </div>
 </section>

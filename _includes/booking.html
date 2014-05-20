@@ -1,0 +1,53 @@
+<form action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-inline" role="form">
+  <input type="hidden" name="lang" value="{{ page.locale }}">
+  <div id="booking-check">
+    <h2>{{ page.booking.title }}</h2>
+    <div class="form-group">
+      <label class="sr-only" for="tenant_name">name</label>
+      <input id="tenant_name" name="tenant_name" maxlength="16" pattern=".{3,16}" placeholder="{{ page.booking.placeholder }}" data-error-msg="{{ page.booking.error }}" required>
+    </div>
+    <div class="checkbox" style="vertical-align: bottom">
+      <h3 style="margin: 14px 0">.sonetin.com</h3>
+    </div>
+    <button id="booking-check-submit" type="submit" class="btn btn-lg btn-primary">{{ page.booking.action }}</button>
+    <br><br>
+    <p class="text-muted">{{ page.booking.desc }}</p>
+  </div>
+  <div id="booking-account" class="hide">
+    <h2>
+      <i class="fa fa-check-circle fa-lg color-green"></i>
+      {{ page.booking.name_available }}
+      <small><a href="#" onclick="change_tenant_name(); return false">— {{ page.booking.change_name }}</a></small>
+    </h2>
+    <p class="text-muted">{{ page.booking.form.help }}</p>
+    <div class="form-group">
+      <label class="sr-only" for="email">{{ page.booking.form.email }}</label>
+      <input id="email" name="email" class="form-control" type="email" placeholder="{{ page.booking.form.email }}" required>
+    </div>
+    <!--
+    <div class="form-group">
+      <label class="sr-only" for="password">{{ page.booking.form.password }}</label>
+      <input id="password" name="password" class="form-control" type="password" placeholder="{{ page.booking.form.password }}" pattern=".{8,}" required>
+    </div>
+    -->
+    <div class="form-group">
+      <label class="sr-only" for="firstname">{{ page.booking.form.first }}</label>
+      <input id="firstname" name="firstname" class="form-control" placeholder="{{ page.booking.form.first }}" required>
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="lastname">{{ page.booking.form.last }}</label>
+      <input id="lastname" name="lastname" class="form-control" placeholder="{{ page.booking.form.last }}" required>
+    </div>
+    <!--
+    <div class="form-group">
+      <label class="sr-only" for="promo">{{ page.booking.form.promo }}</label>
+      <input id="promo" name="promo" class="form-control" placeholder="{{ page.booking.form.promo }}">
+    </div>
+    -->
+    <button id="booking-account-submit" type="submit" class="btn btn-primary">{{ page.booking.form.submit }}</button>
+    <br><br>
+  </div>
+  <div id="booking-success" class="hide">
+    {{ page.booking.success }}
+  </div>
+</form>

@@ -6,7 +6,7 @@
         <span class="sr-only">Toggle navigation</span>
         <span class="fa fa-bars"></span>
       </button>
-      <a class="navbar-brand scrollable-link" href="/{{ page.locale }}/#presentation">
+      <a class="navbar-brand scrollable-link" href="/{{ page.locale }}/#intro">
         <img class="logo" src="/assets/img/logo.png" title="SonetIN" alt="SonetIN">
       </a>
     </div>
@@ -15,8 +15,8 @@
       <ul id="nav" class="nav navbar-nav navbar-right">
         <li><a class="scrollable-link" href="/{{ page.locale }}/#features">Usages</a></li>
         <li><a class="scrollable-link" href="/{{ page.locale }}/#overview">Solution</a></li>
-        <li><a class="scrollable-link" href="/{{ page.locale }}/#pricing">{% if page.locale == 'fr' %}Nos offres{% else %}Pricing{% endif %}</a></li>
-        <li><a class="scrollable-link color-red action-book" href="/{{ page.locale }}/#booking"><strong>{% if page.locale == 'fr' %}Réserver{% else %}Reserve{% endif %}</strong></a></li>
+        <li><a class="scrollable-link" href="/{{ page.locale }}/#services">Services</a></li>
+        <li><a class="scrollable-link color-red action-book" href="/{{ page.locale }}/#intro"><strong>{% if page.locale == 'fr' %}Réserver{% else %}Reserve{% endif %}</strong></a></li>
         {% if page.locale == 'fr' %}
           {% assign nav_links = site.navigation.fr %}
         {% else %}
