@@ -1,0 +1,24 @@
+<section id="pricing" class="section-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      {% for plan in page.plans %}
+        <div class="col-md-5">
+          <div class="panel panel-{{ plan.color }}">
+            <div class="panel-heading" style="{{ plan.header_style }}">
+              <span class="pricing-icon fa-stack fa-2x">
+                <i class="fa fa-stack-2x fa-square text-{{ plan.color }}"></i>
+                <i class="fa fa-stack-1x fa-{{ plan.icon }} fa-inverse"></i>
+              </span>
+              {{ plan.name }}
+            </div>
+            {{ plan.details }}
+            <div class="panel-footer panel-heading">
+            <a class="btn btn-{{ plan.color }} btn-lg btn-block" href="{{ plan.submit.href }}">{{ plan.submit.label }}</small></a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

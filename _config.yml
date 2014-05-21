@@ -1,8 +1,8 @@
 markdown: rdiscount
 pygments: true
 description:
-  en: Social Network Intelligence for startups, SMBs and Enterprises
-  fr: Réseau Sociaux Intelligents pour les startups, petites et moyennes entreprises, et associations
+  en: Your Private Social Network. A private free & unlimited space, with your friends, association, company.
+  fr: Votre Réseau Social Privé. Un espace privé, gratuit et illimité, avec vos amis, votre association, votre entreprise.
 navigation:
   en:
     - text: Features
@@ -29,6 +29,8 @@ footer:
         url: about.html
       - text: Contact us
         url: contact.html
+      - text: Terms
+        url: legal.html
     - "community:":
       - text: Blog
         url: http://blog.sonetin.com
@@ -45,6 +47,8 @@ footer:
         url: a-propos.html
       - text: Nous contacter
         url: contact.html
+      - text: Légal
+        url: legal.html
     - "communauté :":
       - text: Blog
         url: http://blog.sonetin.com

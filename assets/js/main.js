@@ -61,5 +61,5 @@ $(function() {
   $('#booking-check-submit').on('click', booking_check);
   $('#booking-account-submit').on('click', booking_create);
 
-  $('input, textarea').placeholder();
+  //$('input, textarea').placeholder();
 });
