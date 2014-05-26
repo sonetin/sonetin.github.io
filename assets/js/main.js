@@ -3,23 +3,12 @@ function goto(element, func) {
   return false;
 }
 
-function booking_error() {
-  $('#tenant_name').focus().parents('.form-group').addClass('has-error');
-  $('#tenant_name').tooltip({trigger: 'manual', placement: 'bottom', title: $('#tenant_name').data('error-msg')}).tooltip('show');
-  return false;
-}
-
-function booking_success(data) {
-  if(data['exists']) return booking_error();
-  $('#tenant_name').tooltip('hide');
-  $('#tenant_name').parents('.form-group').removeClass('has-error');
-  $('#booking-check').fadeOut('normal', function() {
-    $('#booking-account').removeClass('hide').fadeIn('normal');
-  });
-  _kmq.push(['record', 'viewed signup form']);
+function currentPlan() {
+  return document.getElementById('booking_plan').value || 'free';
 }
 
 function booking_check() {
+  analytics.track('Booking check', { step: 1, plan: currentPlan() });
   var tenant_name = $('#tenant_name').val();
   if($.inArray(tenant_name, ['', 'www', 'api']) != -1) {
     return booking_error();
@@ -30,7 +19,25 @@ function booking_check() {
   return false;
 }
 
+function booking_error() {
+  analytics.track('Booking error', { step: 2, plan: currentPlan() });
+  $('#tenant_name').focus().parents('.form-group').addClass('has-error');
+  $('#tenant_name').tooltip({trigger: 'manual', placement: 'bottom', title: $('#tenant_name').data('error-msg')}).tooltip('show');
+  return false;
+}
+
+function booking_success(data) {
+  analytics.track('Booking available', { step: 3, plan: currentPlan() });
+  if(data['exists']) return booking_error();
+  $('#tenant_name').tooltip('hide');
+  $('#tenant_name').parents('.form-group').removeClass('has-error');
+  $('#booking-check').fadeOut('normal', function() {
+    $('#booking-account').removeClass('hide').fadeIn('normal');
+  });
+}
+
 function change_tenant_name() {
+  analytics.track('Booking change', { step: 4, plan: currentPlan() });
   $('#tenant_name').val('');
   $('#booking-account').fadeOut('normal', function() {
     $('#booking-check').fadeIn('normal', function() {
@@ -44,8 +51,7 @@ function booking_create() {
   $.post(endpoint,
     $("#booking form").serialize(),
     function(data) {
-      var plan = document.getElementById('booking_plan').value || 'free';
-      _kmq.push(['record', 'signed up', {'Plan': plan}]);
+      analytics.track('Booking creation', { step: 5, plan: currentPlan() });
     }
   );
   $('#booking-account').fadeOut('normal', function() {
