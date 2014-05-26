@@ -2,7 +2,7 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="fa fa-bars"></span>
       </button>
@@ -13,22 +13,15 @@
 
     <div class="collapse navbar-collapse">
       <ul id="nav" class="nav navbar-nav navbar-right">
-        <li><a class="scrollable-link" href="/{{ page.locale }}/#features">Usages</a></li>
-        <li><a class="scrollable-link" href="/{{ page.locale }}/#overview">Solution</a></li>
-        <li><a class="scrollable-link" href="/{{ page.locale }}/pricing.html">{% if page.locale == 'fr' %}Tarifs{% else %}Pricing{% endif %}</a></li>
-        <li><a class="scrollable-link" href="/{{ page.locale }}/#services">Services</a></li>
-        <li><a class="scrollable-link color-red action-book" href="/{{ page.locale }}/#intro"><strong>{% if page.locale == 'fr' %}Réserver{% else %}Reserve{% endif %}</strong></a></li>
         {% if page.locale == 'fr' %}
           {% assign nav_links = site.navigation.fr %}
         {% else %}
           {% assign nav_links = site.navigation.en %}
         {% endif %}
         {% for link in nav_links %}
-          <!--
           <li>
-            <a href="{{ link.url }}">{{ link.text }}</a>
+            <a class="scrollable-link color-{{ link.color }}" href="{{ link.url }}">{{ link.text }}</a>
           </li>
-          -->
         {% endfor %}
       </ul>
     </div>

@@ -1,9 +1,8 @@
-<section id="pricing" class="section-light">
+<section id="pricing" class="section-light section-thin">
   <div class="container">
     <div class="row">
-      <div class="col-md-1"></div>
       {% for plan in page.plans %}
-        <div class="col-md-5">
+        <div class="col-md-4">
           <div class="panel panel-{{ plan.color }}">
             <div class="panel-heading" style="{{ plan.header_style }}">
               <span class="pricing-icon fa-stack fa-2x">
@@ -13,8 +12,8 @@
               {{ plan.name }}
             </div>
             {{ plan.details }}
-            <div class="panel-footer panel-heading">
-            <a class="btn btn-{{ plan.color }} btn-lg btn-block" href="{{ plan.submit.href }}">{{ plan.submit.label }}</small></a>
+            <div class="panel-footer">
+              <a class="btn btn-primary btn-lg btn-block" href="{{ plan.submit.href }}">{{ plan.submit.label }}</small></a>
             </div>
           </div>
         </div>

@@ -5,23 +5,25 @@ description:
   fr: Votre Réseau Social Privé. Un espace privé, gratuit et illimité, avec vos amis, votre association, votre entreprise.
 navigation:
   en:
-    - text: Features
+    - text: Usages
       url: '../en/#features'
-#    - text: Home
-#      url: ../en/
-#    - text: Solution
-#      url: solution.html
-#    - text: Contact
-#      url: contact.html
+    - text: Solution
+      url: '../en/#overview'
+    - text: Services
+      url: '../en/#services'
+    - text: <strong>Go Premium</strong>
+      url: '../en/pricing.html'
+      color: red
   fr:
-    - text: Fonctionnalités
+    - text: Usages
       url: '../fr/#features'
-#    - text: Accueil
-#      url: ../fr/
-#    - text: Solution
-#      url: solution.html
-#    - text: Nous contacter
-#      url: contact.html
+    - text: Solution
+      url: '../fr/#overview'
+    - text: Services
+      url: '../fr/#services'
+    - text: <strong>Go Premium</strong>
+      url: '../fr/pricing.html'
+      color: red
 footer:
   en:
     - "company:":

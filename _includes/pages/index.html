@@ -104,9 +104,9 @@
 
 <section>
   <div class="container">
-    <ul class="list-unstyled fa-ul row">
+    <ul class="list-unstyled fa-ul">
       {% for feature in page.features %}
-        <li class="col-md-6 text-left">
+        <li class="col-md-6 text-left row">
           <p class="fa-stack fa-2x pull-left">
             <i class="fa fa-stack-2x fa-circle color-blue"></i>
             <i class="fa fa-stack-1x fa-{{ feature.icon }} fa-light"></i>
@@ -183,8 +183,6 @@
 <section class="section-blue">
   <div class="container">
     <h3>
-      <i class="fa fa-child"></i><i class="fa fa-child"></i><i class="fa fa-child"></i><i class="fa fa-child"></i><i class="fa fa-child"></i><i class="fa fa-child"></i><i class="fa fa-child"></i><i class="fa fa-child fa-lg"></i>
-      &nbsp;{{ page.booking.title }}
       <a class="btn btn-lg btn-primary action-book scrollable-link" href="#intro">
         {{ page.booking.now }}
       </a>

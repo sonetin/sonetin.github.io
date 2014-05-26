@@ -409,18 +409,13 @@ footer {
 }
 
 #tenant_name {
-  border: 0;
-  border-bottom: 2px solid @orange;
-  .box-shadow(none);
-  .rounded-corners(0);
+  border: none;
+  box-shadow: none;
   text-align: right;
-  padding: 5px 0;
-  font-family: 'Merriweather', sans-serif;
   font-size: 30px;
-  vertical-align: bottom;
-  background: initial;
   width: 200px;
   text-transform: lowercase;
+  font-weight: 100;  border: 0;
 }
 
 #tenant_name:focus {
@@ -459,6 +454,21 @@ footer {
 #booking-check {
   zoom: 1.1;
   -moz-transform: scale(1.1);
+}
+
+#booking-check-form {
+  background: rgba(255,255,255,.3);
+  margin: 0 auto;
+  padding: 20px 50px;
+  max-width: 690px;
+  .rounded-corners(5px);
+  .box-shadow(rgba(0,0,0,.2) 0 4px);
+}
+
+#booking-check-input {
+  background: #fff;
+  color: #333;
+  .rounded-corners(2px);
 }
 
 #pricing .pricing-icon {
