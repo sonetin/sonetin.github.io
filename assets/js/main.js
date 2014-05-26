@@ -16,6 +16,7 @@ function booking_success(data) {
   $('#booking-check').fadeOut('normal', function() {
     $('#booking-account').removeClass('hide').fadeIn('normal');
   });
+  _kmq.push(['record', 'viewed signup form']);
 }
 
 function booking_check() {
@@ -43,6 +44,8 @@ function booking_create() {
   $.post(endpoint,
     $("#booking form").serialize(),
     function(data) {
+      var plan = document.getElementById('booking_plan').value || 'free';
+      _kmq.push(['record', 'signed up', {'Plan': plan}]);
     }
   );
   $('#booking-account').fadeOut('normal', function() {
