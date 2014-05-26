@@ -14,6 +14,7 @@ navigation:
     - text: <strong>Go Premium</strong>
       url: '../en/pricing.html'
       color: red
+      notscrollable: true
   fr:
     - text: Usages
       url: '../fr/#features'
@@ -24,6 +25,7 @@ navigation:
     - text: <strong>Go Premium</strong>
       url: '../fr/pricing.html'
       color: red
+      notscrollable: true
 footer:
   en:
     - "company:":

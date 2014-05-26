@@ -2,7 +2,7 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="fa fa-bars"></span>
       </button>
@@ -20,7 +20,11 @@
         {% endif %}
         {% for link in nav_links %}
           <li>
-            <a class="scrollable-link color-{{ link.color }}" href="{{ link.url }}">{{ link.text }}</a>
+            {% if link.notscrollable %}
+              <a class="color-{{ link.color }}" href="{{ link.url }}">{{ link.text }}</a>
+            {% else %}
+              <a class="color-{{ link.color }} scrollable-link" href="{{ link.url }}">{{ link.text }}</a>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>
