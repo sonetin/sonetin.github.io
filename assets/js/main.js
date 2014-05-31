@@ -10,7 +10,11 @@ function currentPlan() {
 function booking_check() {
   analytics.track('Booking check', { step: 1, plan: currentPlan() });
   var tenant_name = $('#tenant_name').val();
+  var tenant_name_valid = tenant_name.search(new RegExp($('#tenant_name').attr('pattern'))) >= 0;
   if($.inArray(tenant_name, ['', 'www', 'api']) != -1) {
+    return booking_error();
+  }
+  if(!tenant_name_valid) {
     return booking_error();
   }
   $.get('https://corp.sonetin.com/api/tenants/exists',
@@ -46,7 +50,16 @@ function change_tenant_name() {
   });
 }
 
+function booking_error2() {
+  analytics.track('Booking error2', { step: '5b', plan: currentPlan() });
+  $('#booking-account-submit').tooltip({trigger: 'manual', placement: 'bottom', title: $('#booking').data('error-msg')}).tooltip('show');
+  return false;
+}
+
 function booking_create() {
+  if(!$('#booking').get(0).checkValidity()) {
+    return booking_error2();
+  }
   var endpoint = $("#booking").attr('action');
   $.post(endpoint,
     $("#booking").serialize(),

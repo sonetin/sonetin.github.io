@@ -1,4 +1,4 @@
-<form id="booking" action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-inline" role="form">
+<form id="booking" action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-inline" role="form" data-error-msg="{{ page.booking.formerror }}">
   <input type="hidden" name="lang" value="{{ page.locale }}">
   <input type="hidden" name="plan" value="free" id="booking_plan">
   <script>
@@ -22,7 +22,7 @@
       <div id="booking-check-input" class="inline">
         <div class="form-group">
           <label class="sr-only" for="tenant_name">name</label>
-          <input id="tenant_name" name="tenant_name" maxlength="16" pattern=".{3,16}" placeholder="{{ page.booking.placeholder }}" data-error-msg="{{ page.booking.error }}" required>
+          <input id="tenant_name" name="tenant_name" maxlength="16" pattern="[a-zA-Z0-9][a-zA-Z0-9_-]{1,14}[a-zA-Z0-9]" placeholder="{{ page.booking.placeholder }}" data-error-msg="{{ page.booking.tenanterror }}" required>
         </div>
         <div class="inline" style="vertical-align: middle">
           <h3 style="margin: 14px 0" onclick="$('#tenant_name').focus()">.sonetin.com</h3>
