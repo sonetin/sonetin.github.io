@@ -47,9 +47,9 @@ function change_tenant_name() {
 }
 
 function booking_create() {
-  var endpoint = $("#booking form").attr('action');
+  var endpoint = $("#booking").attr('action');
   $.post(endpoint,
-    $("#booking form").serialize(),
+    $("#booking").serialize(),
     function(data) {
       analytics.track('Booking creation', { step: 5, plan: currentPlan() });
     }
