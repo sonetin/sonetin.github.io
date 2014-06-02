@@ -60,12 +60,11 @@ function booking_create() {
   if(!$('#booking').get(0).checkValidity()) {
     return booking_error2();
   }
+  analytics.track('Booking creation', { step: 5, plan: currentPlan() });
   var endpoint = $("#booking").attr('action');
   $.post(endpoint,
     $("#booking").serialize(),
-    function(data) {
-      analytics.track('Booking creation', { step: 5, plan: currentPlan() });
-    }
+    function(data) {}
   );
   $('#booking-account').fadeOut('normal', function() {
     $('#booking-success').removeClass('hide').fadeIn('normal');
