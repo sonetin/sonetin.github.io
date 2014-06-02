@@ -60,7 +60,7 @@ function booking_create() {
   if(!$('#booking').get(0).checkValidity()) {
     return booking_error2();
   }
-  analytics.track('Booking creation', { plan: currentPlan() });
+  analytics.track('Signed Up', { plan: currentPlan() });
   var endpoint = $("#booking").attr('action');
   $.post(endpoint,
     $("#booking").serialize(),
