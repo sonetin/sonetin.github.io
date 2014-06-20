@@ -1,0 +1,22 @@
+<section id="press" class="section-light section-thin">
+  <div class="container">
+  <h3>{{ page.recent }}</h3>
+  <ul class="media-list">
+    {% for article in page.articles reversed %}
+      <li class="media">
+        <a class="pull-left" href="{{ article.url }}">
+          {% if article.logo %}
+          <img class="media-object" src="../assets/img/press/{{ article.logo }}" alt="{{ article.source }}">
+          {% else %}
+          <h4 class="media-object">{{ article.source }}</h4>
+          {% endif %}
+        </a>
+        <div class="media-body">
+          <a class="media-heading" href="{{ article.url }}">{{ article.title }}</a>
+          <p class="small text-muted">{{ article.date | date: "%-d %B %Y" }} {% if article.author %}— {{ article.author }}{% endif %}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+</section>
