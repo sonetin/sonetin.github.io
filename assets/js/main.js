@@ -92,8 +92,8 @@ function getURLParameter(name) {
 }
 
 function handle_inviter() {
-  var from = getURLParameter('u');
-  var pic = getURLParameter('p');
+  var from = unescape(getURLParameter('u'));
+  var pic = unescape(getURLParameter('p'));
   if((window.atob) && (from !== "null")) {
     from = window.atob(from);
     if(pic !== "null") {
