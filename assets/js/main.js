@@ -85,6 +85,25 @@ function booking_create() {
   return false;
 }
 
+function getURLParameter(name) {
+  return decodeURI(
+    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+  );
+}
+
+function handle_inviter() {
+  var from = getURLParameter('u');
+  var pic = getURLParameter('p');
+  if((window.atob) && (from !== "null")) {
+    from = window.atob(from);
+    if(pic !== "null") {
+      from = '<img src="'+window.atob(pic)+'">' + from;
+    }
+    $('#recommander').html(from);
+    $('#recommandation').fadeIn();
+  }
+}
+
 $(function() {
   $('.action-book').on('click', function(e) {
     return goto(this, function() { $('#tenant_name').focus() });
@@ -96,4 +115,6 @@ $(function() {
   $('#booking-account-submit').on('click', booking_create);
 
   //$('input, textarea').placeholder();
+
+  handle_inviter();
 });
