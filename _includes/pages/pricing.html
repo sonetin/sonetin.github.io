@@ -21,3 +21,18 @@
     </div>
   </div>
 </section>
+
+<section class="section-light section-thin" style="text-align: left">
+  <div class="container">
+    <div class="well">
+      <div class="row">
+        {% for faq in page.faq %}
+          <div class="col-md-6">
+            <h4 id="{{ faq.id }}">{{ faq.question }}</h4>
+            <small>{{ faq.body }}</small>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
