@@ -119,6 +119,62 @@ h5 {
   font-size: 16px;
 }
 
+ul.columns {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+  li {
+    display: inline-block;
+    //align-self: auto | flex-start | flex-end | center | baseline | stretch;
+    width: 25%;
+    min-width: 250px;
+  }
+}
+
+.article {
+
+  text-align: center;
+  background: #fff;
+  .box-shadow(0 0 2px #999);
+  margin: 10px 5px;
+
+  a {
+    color: #222;
+    text-decoration: none;
+    display: inline-block;
+    padding: 25px 10px 30px;
+  }
+
+  hr {
+    background: #333;
+    border: none;
+    height: 2px;
+    margin: 12px auto 8px;
+    width: 60px;
+  }
+  
+  h1 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 24px;
+  }
+
+  h2 {
+    font-family: 'PT Sans', sans-serif;
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  p {
+    font-family: 'PT Serif', serif;
+    text-align: justify;
+    text-indent: 14px;
+    font-size: 14px;
+  }
+}
+
 .logo {
   width: 173px;
   height: 50px;
