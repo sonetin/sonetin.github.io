@@ -117,7 +117,7 @@ function handle_login() {
 
 function handle_being_iframed() {
   if(self !== top) {
-    top.location.assign('http://sonetin.com');
+    top.location.href = 'http://sonetin.com';
   }
 }
 
