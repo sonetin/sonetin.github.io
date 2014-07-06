@@ -5,8 +5,10 @@ title: SonetIN
 header: <i class="fa fa-circle-o-notch fa-spin" alt="Loading..."></i>
 ---
 
-<meta http-equiv="refresh" content="0.5; url=http://sonetin.com/fr/">
+<meta id="redirector" http-equiv="refresh" content="0.5; url=http://sonetin.com/fr/">
 <script>
+  var redirector = document.getElementById('redirector');
+  redirector.parentNode.removeChild(redirector);
   var lang = navigator.language || navigator.userLanguage;
   if(lang == 'fr') {
     window.location.href = "/fr/";
