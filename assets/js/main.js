@@ -104,6 +104,16 @@ function handle_inviter() {
   }
 }
 
+function readCookie(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]}
+
+function handle_login() {
+  var platform = readCookie('platform');
+  if(platform) {
+    $('#signin a').text(platform).attr('href', 'https://'+platform+'.sonetin.com/');
+    $('#signin').show('fast')
+  }
+}
+
 $(function() {
   $('.action-book').on('click', function(e) {
     return goto(this, function() { $('#tenant_name').focus() });
@@ -117,4 +127,5 @@ $(function() {
   //$('input, textarea').placeholder();
 
   handle_inviter();
+  handle_login();
 });
