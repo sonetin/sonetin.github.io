@@ -109,7 +109,7 @@ function readCookie(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2
 function handle_login() {
   var platform = readCookie('platform');
   if(platform) {
-    $('#signin a').text(platform).attr('href', 'https://'+platform+'.sonetin.com/');
+    $('#signin a').text(platform).attr('href', 'http://'+platform);
     $('#signin').show('fast')
   }
 }
