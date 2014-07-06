@@ -115,6 +115,12 @@ function handle_login() {
   }
 }
 
+function handle_being_iframed() {
+  if(self !== top) {
+    top.location.href = self.location.href;
+  }
+}
+
 $(function() {
   $('.action-book').on('click', function(e) {
     return goto(this, function() { $('#tenant_name').focus() });
@@ -127,6 +133,7 @@ $(function() {
 
   //$('input, textarea').placeholder();
 
+  handle_being_iframed();
   handle_inviter();
   handle_login();
 });
