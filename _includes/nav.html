@@ -30,6 +30,11 @@
         <li id="signin" style="display: none">
           <a class="btn btn-primary">
             <i class="fa fa-lg fa-sign-in"></i>
+            {% if page.locale == 'fr' %}
+              Je retourne dans mon réseau
+            {% else %}
+              Roll back to my network
+            {% endif %}
             <span></span>
           </a>
         </li>
