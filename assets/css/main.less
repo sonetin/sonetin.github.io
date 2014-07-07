@@ -130,6 +130,7 @@ ul.columns {
     //align-self: auto | flex-start | flex-end | center | baseline | stretch;
     width: 25%;
     min-width: 250px;
+    position: relative;
   }
 }
 
@@ -144,7 +145,7 @@ ul.columns {
     color: #222;
     text-decoration: none;
     display: inline-block;
-    padding: 25px 10px 30px;
+    padding: 25px 10px 10px;
   }
 
   hr {
@@ -172,6 +173,18 @@ ul.columns {
     text-align: justify;
     text-indent: 14px;
     font-size: 14px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    border-bottom: 8px dashed #FAF9F8;
+    margin: 0 5px 8px;
+    height: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 
