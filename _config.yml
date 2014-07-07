@@ -1,8 +1,11 @@
 markdown: rdiscount
 pygments: true
 description:
-  en: Your Private Social Network. A private free & unlimited space, with your friends, association, company.
-  fr: Votre Réseau Social Privé. Un espace privé, gratuit et illimité, avec vos amis, votre association, votre entreprise.
+  en: "Your Private Social Network. A private free & unlimited space, with your friends, association, company."
+  fr: "Votre Réseau Social Privé. Un espace privé, gratuit et illimité, avec vos amis, votre association, votre entreprise."
+keywords:
+  en: "free,social,network,friends,coworkers"
+  fr: "reseau,social,gratuit,amis,collegues,network,free"
 navigation:
   en:
     - text: Usages
