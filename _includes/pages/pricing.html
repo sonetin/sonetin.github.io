@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       {% for plan in page.plans %}
-        <div class="col-md-4 wow animated fadeInDown">
+        <div class="col-md-4 animated fadeInDown" data-wow-delay=".{{ forloop.index | times: 2 }}s">
           <div class="panel panel-{{ plan.color }}">
             <div class="panel-heading" style="{{ plan.header_style }}">
               <span class="pricing-icon fa-stack fa-2x">

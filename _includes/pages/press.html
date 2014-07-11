@@ -4,14 +4,7 @@
   <h3>{{ page.recent }} →</h3>
   <ul class="columns">
     {% for article in page.articles reversed %}
-      <li class="wow animated fadeInUp">
-        <a class="pull-left hidden" href="{{ article.url }}">
-          {% if article.logo %}
-          <img src="../assets/img/press/{{ article.logo }}" alt="{{ article.source }}">
-          {% else %}
-          <h4>{{ article.source }}</h4>
-          {% endif %}
-        </a>
+      <li class="animated fadeInUp" data-wow-delay=".{{ forloop.index | times: 2 }}s">
         <div class="article">
           <a href="{{ article.url }}">
             <h1>{{ article.display_title }}</h1>

@@ -15,7 +15,7 @@
     <h3>{{ page.usages.subheader }}</h3>
     <ul class="list-unstyled fa-ul row">
       {% for usage in page.usages.list %}
-        <li class="col-md-6 text-left wow animated fadeInUp">
+        <li class="col-md-6 text-left animated fadeInUp">
           <h4>
             <span class="fa-stack fa-2x">
               <i class="fa fa-stack-2x fa-circle color-blue"></i>
@@ -40,7 +40,7 @@
       {% endfor %}
     </ul>
     <br>
-    <a class="btn btn-lg btn-primary action-book scrollable-link wow animated fadeInUp" href="#intro">{{ page.booking.title }}</a>
+    <a class="btn btn-lg btn-primary action-book scrollable-link animated fadeInUp" href="#intro">{{ page.booking.title }}</a>
 
     <a id="preview" class="scrollable-link visible-md visible-lg" href="#features2">
       <div class="preview glossy">
@@ -71,13 +71,13 @@
       </div>
       <div class="col-md-8">
         <ul class="list-inline nav-justified">
-          <li><img class="wow animated fadeInRight"src="../assets/img/clients/mma.png"></li>
-          <li><img class="wow animated fadeInRight"src="../assets/img/clients/lybernet.png"></li>
-          <li><img class="wow animated fadeInRight"src="../assets/img/clients/maaf.png"></li>
-          <li><img class="wow animated fadeInRight"src="../assets/img/clients/oudinot.png"></li>
-          <li><img class="wow animated fadeInRight"src="../assets/img/clients/esmt.png"></li>
-          <li><img class="wow animated fadeInRight"src="../assets/img/clients/optimonial.png"></li>
-          <li><img class="wow animated fadeInRight"src="../assets/img/clients/covea.png"></li>
+          <li><img class="animated fadeInRight" src="../assets/img/clients/mma.png"></li>
+          <li><img class="animated fadeInRight" src="../assets/img/clients/lybernet.png"></li>
+          <li><img class="animated fadeInRight" src="../assets/img/clients/maaf.png"></li>
+          <li><img class="animated fadeInRight" src="../assets/img/clients/oudinot.png"></li>
+          <li><img class="animated fadeInRight" src="../assets/img/clients/esmt.png"></li>
+          <li><img class="animated fadeInRight" src="../assets/img/clients/optimonial.png"></li>
+          <li><img class="animated fadeInRight" src="../assets/img/clients/covea.png"></li>
         </ul>
       </div>
     </div>
@@ -93,10 +93,10 @@
 
 <section id="overview" class="section-light section-shadow">
   <div class="container">
-    <div class="hidden-xs wow animated fadeInUp">
+    <div class="hidden-xs animated fadeInUp">
       <img src="/assets/img/overview/overview-desktop-2.png">
     </div>
-    <div class="visible-lg wow animated fadeInUpBig" style="position:absolute;margin-top:-413px;margin-left:810px">
+    <div class="visible-lg animated fadeInUpBig" style="position:absolute;margin-top:-413px;margin-left:810px">
       <img width="200" src="/assets/img/overview/overview-phone-2.png">
     </div>
     <div class="visible-xs">
@@ -109,7 +109,7 @@
   <div class="container">
     <ul class="list-unstyled fa-ul">
       {% for feature in page.features %}
-        <li class="col-md-6 text-left row wow animated fadeInRight">
+        <li class="col-md-6 text-left row animated fadeInRight">
           <p class="fa-stack fa-2x pull-left">
             <i class="fa fa-stack-2x fa-circle color-blue"></i>
             <i class="fa fa-stack-1x fa-{{ feature.icon }} fa-light"></i>
@@ -126,18 +126,18 @@
   <div class="container">
     <h3 class="text-muted">
       <ul class="list-inline pull-left">
-        <li><i class=" wow animated fadeInRight fa fa-twitter fa-lg" title="Twitter"></i></li>
-        <li><i class=" wow animated fadeInRight fa fa-dropbox fa-lg" title="Dropbox"></i></li>
-        <li><i class=" wow animated fadeInRight fa fa-youtube-play fa-lg" title="YouTube"></i></li>
-        <li><i class=" wow animated fadeInRight fa fa-linkedin-square fa-lg" title="LinkedIn"></i></li>
-        <li><i class=" wow animated fadeInRight fa fa-tumblr-square fa-lg" title="Tumblr"></i></li>
+        <li><i class=" animated fadeInRight fa fa-twitter fa-lg" title="Twitter"></i></li>
+        <li><i class=" animated fadeInRight fa fa-dropbox fa-lg" title="Dropbox"></i></li>
+        <li><i class=" animated fadeInRight fa fa-youtube-play fa-lg" title="YouTube"></i></li>
+        <li><i class=" animated fadeInRight fa fa-linkedin-square fa-lg" title="LinkedIn"></i></li>
+        <li><i class=" animated fadeInRight fa fa-tumblr-square fa-lg" title="Tumblr"></i></li>
       </ul>
       <ul class="list-inline pull-right">
-        <li><i class=" wow animated fadeInLeft fa fa-rss-square fa-lg" title="RSS"></i></li>
-        <li><i class=" wow animated fadeInLeft fa fa-facebook-square fa-lg" title="Facebook"></i></li>
-        <li><i class=" wow animated fadeInLeft fa fa-flickr fa-lg" title="Flickr"></i></li>
-        <li><i class=" wow animated fadeInLeft fa fa-google-plus-square fa-lg" title="Google+"></i></li>
-        <li><i class=" wow animated fadeInLeft fa fa-pinterest-square fa-lg" title="Pinterest"></i></li>
+        <li><i class=" animated fadeInLeft fa fa-rss-square fa-lg" title="RSS"></i></li>
+        <li><i class=" animated fadeInLeft fa fa-facebook-square fa-lg" title="Facebook"></i></li>
+        <li><i class=" animated fadeInLeft fa fa-flickr fa-lg" title="Flickr"></i></li>
+        <li><i class=" animated fadeInLeft fa fa-google-plus-square fa-lg" title="Google+"></i></li>
+        <li><i class=" animated fadeInLeft fa fa-pinterest-square fa-lg" title="Pinterest"></i></li>
       </ul>
       <span>{{ page.integrations.title }}</span>
     </h3>
@@ -151,7 +151,7 @@
     <br>
     <div class="row">
       {% for service in page.services.list %}
-        <div class="col-md-4 wow animated flipInX">
+        <div class="col-md-4 animated flipInX" data-wow-delay=".{{ forloop.index | times: 2 }}s">
           <h4>{{ service.title }}</h4>
           <p class="fa-stack fa-3x">
             <i class="fa fa-stack-2x fa-circle color-blue"></i>
@@ -162,7 +162,7 @@
       {% endfor %}
     </div>
     <br>
-    <div class="well well-sm text-left text-muted wow animated fadeIn">
+    <div class="well well-sm text-left text-muted animated fadeIn">
       <div class="pull-right">
         <a class="btn btn-lg btn-primary" href="contact.html">{{ page.services.more.submit }}</a>
       </div>
@@ -186,7 +186,7 @@
 <section class="section-blue">
   <div class="container">
     <h3>
-      <a class="btn btn-lg btn-primary action-book scrollable-link wow animated fadeInUp" href="#intro">
+      <a class="btn btn-lg btn-primary action-book scrollable-link animated fadeInUp" href="#intro">
         {{ page.booking.now }}
       </a>
     </h3>
