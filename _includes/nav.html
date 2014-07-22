@@ -27,15 +27,15 @@
             {% endif %}
           </li>
         {% endfor %}
-        <li id="signin" style="display: none">
+        <li id="signin" style="display: none" class="hidden-sm">
           <a class="btn btn-primary">
             <i class="fa fa-lg fa-sign-in"></i>
             {% if page.locale == 'fr' %}
-              Je retourne dans mon réseau
+              Retour à <span class="visible-lg-inline">mon réseau</span>
             {% else %}
-              Roll back to my network
+              Back to my network
             {% endif %}
-            <span></span>
+            <span id="network"></span>
           </a>
         </li>
       </ul>
