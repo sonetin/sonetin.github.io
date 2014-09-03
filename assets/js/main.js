@@ -13,6 +13,10 @@ function formValues() {
 function booking_check() {
   analytics.track('Booking check', formValues());
   var tenant_name = $('#tenant_name').val();
+  // dont end with a dash
+  tenant_name = tenant_name.replace(/\-$/, '');
+  // update the value
+  $('#tenant_name').val(tenant_name);
   var tenant_name_valid = tenant_name.search(new RegExp($('#tenant_name').attr('pattern'))) >= 0;
   if($.inArray(tenant_name, ['', 'www', 'api']) != -1) {
     return booking_error();
@@ -230,9 +234,8 @@ function handle_tenant_name_validation() {
     val = val.toLowerCase();
     // remove any unauthorized characters
     val = val.replace(/([^a-z0-9]+)/gi, '-');
-    // dont start nor end with a dash
+    // dont start with a dash
     val = val.replace(/^\-/, '');
-    val = val.replace(/\-$/, '');
     // update the value
     $('#tenant_name').val(val);
   })
