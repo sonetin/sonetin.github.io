@@ -1,0 +1,58 @@
+<nav class="navbar navbar-fixed-bottom" role="navigation">
+  <a class="text-center" href="/{{ page.locale }}/#intro">
+    <img class="logo" src="/assets/img/logo.png" title="SonetIN" alt="SonetIN">
+  </a>
+</nav>
+
+<div class="section-light">
+  <br>
+  <div class="container">
+    <form id="login" class="form-horizontal" role="form" action="/" method="POST" onsubmit="login()">
+      <div class="form-group col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon">https://</span>
+          <input type="text" class="form-control" id="inputPlatform" placeholder="{{ page.form.platform }}" minlength="3" maxlength="16" pattern="[a-zA-Z][a-zA-Z0-9\-]{1,15}" required>
+          <span class="input-group-addon">.sonetin.com</span>
+        </div>
+      </div>
+      <div class="form-group col-sm-12">
+        <input type="text" class="form-control" id="inputEmail" name="user[login]" placeholder="{{ page.form.login }}" required>
+      </div>
+      <div class="form-group col-sm-12">
+        <input type="password" class="form-control" id="inputPassword" name="user[password]" placeholder="{{ page.form.password }}" required>
+      </div>
+      <div class="form-group col-sm-12">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">
+          <i class="fa fa-sign-in fa-lg" style="position: absolute; left: 28px; top: 16px"></i>
+          {{ page.form.submit }}
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="container">
+    <p>No account yet?</p>
+    <a class="btn btn-primary btn-lg btn-block" href="/{{ page.locale }}/#intro">{{ page.booking.title }}</a>
+  </div>
+</div>
+
+<br><br><br>
+
+<script>
+function readCookie(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]}
+function getURLParameter(name) {
+  return decodeURI(
+    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+  );
+}
+var platform = unescape(getURLParameter('p'));
+if(!platform || platform == "null") platform = readCookie('platform');
+if(platform) {
+  document.getElementById('inputPlatform').value = platform;
+  document.getElementById('inputEmail').focus();
+}
+
+function login() {
+  var platform = document.getElementById('inputPlatform').value;
+  document.getElementById('login').action = "http://" + platform + ".sonetin.com/users/sign_in";
+}
+</script>
