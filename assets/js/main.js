@@ -17,7 +17,7 @@ function booking_check() {
   tenant_name = tenant_name.replace(/\-$/, '');
   // update the value
   $('#tenant_name').val(tenant_name);
-  var tenant_name_valid = tenant_name.search(new RegExp($('#tenant_name').attr('pattern'))) >= 0;
+  var tenant_name_valid = tenant_name.search(new RegExp("^"+$('#tenant_name').attr('pattern')+"$")) >= 0;
   if($.inArray(tenant_name, ['', 'www', 'api']) != -1) {
     return booking_error();
   }
