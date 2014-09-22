@@ -27,8 +27,9 @@
             {% endif %}
           </li>
         {% endfor %}
-        <li id="signin" style="display: none" class="hidden-sm">
-          <a class="btn btn-primary">
+        <li>
+          <a id="signin-mult" class="btn btn-primary" href="login.html">Login</a>
+          <a id="signin-back" class="btn btn-primary" style="display: none" class="hidden-sm">
             <i class="fa fa-lg fa-sign-in"></i>
             {% if page.locale == 'fr' %}
               Retour à <span class="visible-lg-inline">mon réseau</span>
