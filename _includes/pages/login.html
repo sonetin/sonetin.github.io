@@ -1,13 +1,21 @@
+{% if page.modal != true %}
 <nav class="navbar navbar-fixed-bottom" role="navigation">
   <a class="text-center" href="/{{ page.locale }}/#intro">
     <img class="logo" src="/assets/img/logo.png" title="SonetIN" alt="SonetIN">
   </a>
 </nav>
+{% endif %}
 
 <div class="section-light">
   <br>
-  <div class="container">
+  <div class="container-fluid">
+
+    {% if page.modal == true %}
+    <div style="max-width: 420px; margin: 0 auto">
+    {% endif %}
+
     <form id="login" class="form-horizontal" role="form" action="/" method="POST" onsubmit="login()">
+      <br>
       <div class="form-group col-sm-12">
         <div class="input-group">
           <span class="input-group-addon">https://</span>
@@ -26,16 +34,23 @@
           <i class="fa fa-sign-in fa-lg" style="position: absolute; left: 28px; top: 16px"></i>
           {{ page.form.submit }}
         </button>
+        <br>
       </div>
     </form>
-  </div>
-  <div class="container">
-    <p>No account yet?</p>
-    <a class="btn btn-primary btn-lg btn-block" href="/{{ page.locale }}/#intro">{{ page.booking.title }}</a>
-  </div>
-</div>
 
-<br><br><br>
+    {% if page.modal == true %}
+    </div>
+    {% endif %}
+
+  </div>
+  {% if page.modal != true %}
+    <div class="container-fluid">
+      <p>No account yet?</p>
+      <a class="btn btn-primary btn-lg btn-block" href="/{{ page.locale }}/#intro">{{ page.booking.title }}</a>
+      <br><br>
+    </div>
+  {% endif %}
+</div>
 
 <script>
 function readCookie(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]}
@@ -47,6 +62,7 @@ function getURLParameter(name) {
 var platform = unescape(getURLParameter('p'));
 if(!platform || platform == "null") platform = readCookie('platform');
 if(platform) {
+  platform = platform.replace('.sonetin.com','')
   document.getElementById('inputPlatform').value = platform;
   document.getElementById('inputEmail').focus();
 }

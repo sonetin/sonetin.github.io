@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ page.locale }}">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body class="section-blue">
+
+    <div class="container-fluid section-blue">
+      <h1 class="text-center">{{ page.header }}</h1>
+      {% if page.subheader %}
+        <h2 class="text-center">{{ page.subheader }}</h2>
+      {% endif %}
+    </div>
+    {{ content }}
+  </body>
+</html>

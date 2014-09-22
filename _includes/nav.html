@@ -28,7 +28,7 @@
           </li>
         {% endfor %}
         <li>
-          <a id="signin-mult" class="btn btn-primary" href="login.html">Login</a>
+          <a id="signin-mult" class="btn btn-primary" href="login-modal.html" data-toggle="modal" data-target="#signin">Login</a>
           <a id="signin-back" class="btn btn-primary" style="display: none" class="hidden-sm">
             <i class="fa fa-lg fa-sign-in"></i>
             {% if page.locale == 'fr' %}
@@ -43,3 +43,9 @@
     </div>
   </div>
 </nav>
+
+<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"></div>
+  </div>
+</div>
