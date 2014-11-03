@@ -1,6 +1,6 @@
-<form id="booking" action="https://corp.sonetin.com/api/tenants" method="post" class="form-inline animated fadeInUp" role="form" data-error-msg="{{ page.booking.formerror }}" data-error-flood="{{ page.booking.flooderror }}">
-  <input type="hidden" name="tenant[lang]" value="{{ page.locale }}">
-  <input type="hidden" name="tenant[current_plan]" value="" id="booking_plan">
+<form id="booking" action="http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a" method="post" class="form-inline animated fadeInUp" role="form" data-error-msg="{{ page.booking.formerror }}">
+  <input type="hidden" name="lang" value="{{ page.locale }}">
+  <input type="hidden" name="plan" value="" id="booking_plan">
   <script>
     function urlParameter(param) {
       param = param.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
@@ -22,7 +22,7 @@
       <div id="booking-check-input" class="inline">
         <div class="form-group">
           <label class="sr-only" for="tenant_name">name</label>
-          <input id="tenant_name" name="tenant[tenant_name]" minlength="3" maxlength="16" pattern="[a-zA-Z][a-zA-Z0-9\-]{1,15}" placeholder="{{ page.booking.placeholder }}" data-error-msg="{{ page.booking.tenanterror }}" required>
+          <input id="tenant_name" name="tenant_name" minlength="3" maxlength="16" pattern="[a-zA-Z][a-zA-Z0-9\-]{1,15}" placeholder="{{ page.booking.placeholder }}" data-error-msg="{{ page.booking.tenanterror }}" required>
         </div>
         <div class="inline" style="vertical-align: middle">
           <h3 style="margin: 14px 0" onclick="$('#tenant_name').focus()">.sonetin.com</h3>
@@ -42,7 +42,7 @@
     <p class="text-muted small">{{ page.booking.form.help }}</p>
     <div class="form-group">
       <label class="sr-only" for="email">{{ page.booking.form.email }}</label>
-      <input id="email" name="tenant[client_first_user][email]" class="form-control" type="email" placeholder="{{ page.booking.form.email }}" required>
+      <input id="email" name="email" class="form-control" type="email" placeholder="{{ page.booking.form.email }}" required>
     </div>
     <!--
     <div class="form-group">
@@ -52,13 +52,12 @@
     -->
     <div class="form-group">
       <label class="sr-only" for="firstname">{{ page.booking.form.first }}</label>
-      <input id="firstname" name="tenant[client_first_user][firstname]" class="form-control" placeholder="{{ page.booking.form.first }}" required>
+      <input id="firstname" name="firstname" class="form-control" placeholder="{{ page.booking.form.first }}" required>
     </div>
     <div class="form-group">
       <label class="sr-only" for="lastname">{{ page.booking.form.last }}</label>
-      <input id="lastname" name="tenant[client_first_user][lastname]" class="form-control" placeholder="{{ page.booking.form.last }}" required>
+      <input id="lastname" name="lastname" class="form-control" placeholder="{{ page.booking.form.last }}" required>
     </div>
-  <input type="hidden" name="tenant[client_first_user][login]" value="" id="booking_login">
     <!--
     <div class="form-group">
       <label class="sr-only" for="promo">{{ page.booking.form.promo }}</label>
