@@ -1,6 +1,6 @@
 <form id="booking" action="https://corp.sonetin.com/api/tenants" method="post" class="form-inline animated fadeInUp" role="form" data-error-msg="{{ page.booking.formerror }}" data-error-flood="{{ page.booking.flooderror }}">
   <input type="hidden" name="tenant[lang]" value="{{ page.locale }}">
-  <input type="hidden" name="tenant[current_plan]" value="" id="booking_plan">
+  <input type="hidden" name="tenant[current_plan]" value="free" id="booking_plan">
   <script>
     function urlParameter(param) {
       param = param.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
