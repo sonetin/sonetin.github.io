@@ -10,6 +10,26 @@ function formValues() {
   }, {});
 }
 
+function simpleFormValues(){
+  var keys = {
+    "tenant[client_first_user][email]": "email",
+    "tenant[client_first_user][firstname]": "firstname",
+    "tenant[client_first_user][lastname]": "lastname",
+    "tenant[current_plan]": "plan",
+    "tenant[lang]": "lang",
+    "tenant[tenant_name]": "tenant_name"
+  }
+
+  var values = formValues()
+  var simpleFormValues = {}
+
+  $.each(keys, function(k, v){
+    simpleFormValues[v] = values[k]
+  })
+
+  return simpleFormValues;
+}
+
 function booking_check() {
   analytics.track('Booking check', formValues());
   var tenant_name = $('#tenant_name').val();
@@ -106,8 +126,7 @@ function booking_create() {
       }
     }
   });
-  $.post('http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a', $('#booking').serialize())
-
+  $.post('http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a', $.param(simpleFormValues()))
   return false;
 }
 
