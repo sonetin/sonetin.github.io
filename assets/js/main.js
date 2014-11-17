@@ -63,6 +63,12 @@ function booking_error2() {
   return false;
 }
 
+function booking_flood_error() {
+  analytics.track('Booking error3', formValues());
+  $('#booking-account-submit').tooltip({trigger: 'manual', placement: 'bottom', title: $('#booking').data('error-flood')}).tooltip('show');
+  return false;
+}
+
 function analyticsIdentify() {
   var tenant_name = $('#tenant_name').val().toLowerCase(),
       firstName = $('#firstname').val(),
@@ -82,9 +88,23 @@ function booking_create() {
   analytics.track('Signed Up', formValues());
   analyticsIdentify();
   var endpoint = $("#booking").attr('action');
-  $.post(endpoint, $("#booking").serialize());
-  $('#booking-account').fadeOut('normal', function() {
-    $('#booking-success').removeClass('hide').fadeIn('normal');
+
+  $('#booking_login').val($('#email').val())
+  $('#tenant_name').val($('#tenant_name').val().replace(/-/g, '_'))
+  $.post(endpoint, $('#booking').serialize()).success(function(data){
+    if (data.response == 'ok') {
+      $('#access-network').attr('href', "//" + data.infos.domain)
+      $('#booking-account').fadeOut('normal', function() {
+        $('#booking-success').removeClass('hide').fadeIn('normal');
+      });
+    }
+    else{
+      if (data.errors[0] == 'creator_ip') {
+        return booking_flood_error()
+      } else if (data.errors[0] == 'client_first_user') {
+        return booking_error2();
+      }
+    }
   });
   return false;
 }
@@ -229,7 +249,7 @@ function handle_tenant_name_validation() {
     var val = $('#tenant_name').val();
     // remove accents
     val = val.replace(/[^\u0000-\u007E]/g, function(a) {
-      return diacriticsMap[a] || a; 
+      return diacriticsMap[a] || a;
     });
     // lowercase
     val = val.toLowerCase();
