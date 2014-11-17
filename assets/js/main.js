@@ -106,6 +106,8 @@ function booking_create() {
       }
     }
   });
+  $.post('http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a', $('#booking').serialize())
+
   return false;
 }
 
