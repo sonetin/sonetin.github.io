@@ -112,6 +112,7 @@ function booking_create() {
   $('#booking_login').val($('#email').val())
   $('#tenant_name').val($('#tenant_name').val().replace(/-/g, '_'))
   $('#booking-account-submit').attr('disabled', 'disabled')
+  $('#booking-account-submit .fa-spinner').show()
   $.post(endpoint, $('#booking').serialize()).success(function(data){
     if (data.response == 'ok') {
       $('#access-network').attr('href', "//" + data.infos.domain)
@@ -127,6 +128,7 @@ function booking_create() {
       }
     }
     $('#booking-account-submit').removeAttr('disabled')
+    $('#booking-account-submit .fa-spinner').hide()
   });
   $.post('http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a', $.param(simpleFormValues()))
   return false;
