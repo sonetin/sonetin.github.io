@@ -113,6 +113,10 @@ function booking_create() {
   $('#tenant_name').val($('#tenant_name').val().replace(/-/g, '_'))
   $('#booking-account-submit').attr('disabled', 'disabled')
   $('#booking-account-submit .fa-spinner').show()
+
+  $('#booking-account-submit').data('submit-text', $('#booking-account-submit .text').text())
+  $('#booking-account-submit .text').text($('#booking-account-submit').data('submit-alt'))
+
   $.post(endpoint, $('#booking').serialize()).success(function(data){
     if (data.response == 'ok') {
       $('#access-network').attr('href', "//" + data.infos.domain)
@@ -129,8 +133,10 @@ function booking_create() {
         return booking_error2();
       }
     }
+  }).always(function(){
     $('#booking-account-submit').removeAttr('disabled')
     $('#booking-account-submit .fa-spinner').hide()
+    $('#booking-account-submit .text').text($('#booking-account-submit').data('submit-text'))
   });
   return false;
 }

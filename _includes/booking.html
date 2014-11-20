@@ -65,9 +65,9 @@
       <input id="promo" name="promo" class="form-control" placeholder="{{ page.booking.form.promo }}">
     </div>
     -->
-    <button id="booking-account-submit" type="submit" class="btn btn-primary">
+    <button id="booking-account-submit" type="submit" class="btn btn-primary" data-submit-alt="{{ page.booking.form.submit_alt }}">
       <i class="fa fa-spin fa-spinner" style="display: none"></i>
-      {{ page.booking.form.submit }}
+      <span class="text">{{ page.booking.form.submit }}</span>
     </button>
     <br><br>
   </div>
