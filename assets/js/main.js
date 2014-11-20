@@ -119,6 +119,8 @@ function booking_create() {
       $('#booking-account').fadeOut('normal', function() {
         $('#booking-success').removeClass('hide').fadeIn('normal');
       });
+
+      $.post('http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a', $.param(simpleFormValues()))
     }
     else{
       if (data.errors[0] == 'creator_ip') {
@@ -130,7 +132,6 @@ function booking_create() {
     $('#booking-account-submit').removeAttr('disabled')
     $('#booking-account-submit .fa-spinner').hide()
   });
-  $.post('http://getsimpleform.com/messages?form_api_token=6578736e17e7e5621c8ccecfb6c0520a', $.param(simpleFormValues()))
   return false;
 }
 
