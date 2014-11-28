@@ -116,6 +116,7 @@ function booking_create() {
 
   $('#booking-account-submit').data('submit-text', $('#booking-account-submit .text').text())
   $('#booking-account-submit .text').text($('#booking-account-submit').data('submit-alt'))
+  $('#booking-account-submit').tooltip('hide');
 
   $.post(endpoint, $('#booking').serialize()).success(function(data){
     if (data.response == 'ok') {
