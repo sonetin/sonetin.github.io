@@ -120,7 +120,7 @@ function booking_create() {
 
   $.post(endpoint, $('#booking').serialize()).success(function(data){
     if (data.response == 'ok') {
-      $('#access-network').attr('href', "//" + data.infos.domain)
+      $('#access-network').attr('action', "//" + data.infos.domain + '/users/autologin')
       $('#booking-account').fadeOut('normal', function() {
         $('#booking-success').removeClass('hide').fadeIn('normal');
       });
