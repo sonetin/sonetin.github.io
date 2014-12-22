@@ -58,7 +58,7 @@
       <label class="sr-only" for="lastname">{{ page.booking.form.last }}</label>
       <input id="lastname" name="tenant[client_first_user][lastname]" class="form-control" placeholder="{{ page.booking.form.last }}" required>
     </div>
-  <input type="hidden" name="tenant[client_first_user][login]" value="" id="booking_login">
+    <input type="hidden" name="tenant[client_first_user][login]" value="" id="booking_login">
     <!--
     <div class="form-group">
       <label class="sr-only" for="promo">{{ page.booking.form.promo }}</label>
@@ -69,6 +69,7 @@
       <i class="fa fa-spin fa-spinner" style="display: none"></i>
       <span class="text">{{ page.booking.form.submit }}</span>
     </button>
+    <p class="text-muted small">{{ page.booking.form.terms }}</p>
     <br><br>
   </div>
 </form>
