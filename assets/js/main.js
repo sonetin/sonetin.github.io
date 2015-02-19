@@ -38,7 +38,7 @@ function booking_check() {
   // update the value
   $('#tenant_name').val(tenant_name);
   var tenant_name_valid = tenant_name.search(new RegExp("^"+$('#tenant_name').attr('pattern')+"$")) >= 0;
-  if($.inArray(tenant_name, ['', 'www', 'api', 'app', 'files']) != -1) {
+  if($.inArray(tenant_name, ['', 'www', 'api', 'app', 'files', 'developers']) != -1) {
     return booking_error();
   }
   if(!tenant_name_valid) {
