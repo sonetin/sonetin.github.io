@@ -106,8 +106,10 @@
     var form = document.createElement('form');
     form.method = method;
     form.action = url;
+    form.style = "display: none";
+    document.body.appendChild(form);
     form.submit();
-  };
+  }
 
   function createCommunity(data) {
     if(data['exists']) return signupError('exists');
