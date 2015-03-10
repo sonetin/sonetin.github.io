@@ -1,5 +1,8 @@
 gems:
   - jekyll-redirect-from
+
+url: https://www.sonetin.com
+
 tagline:
   en: "Your Private Communities"
   fr: "Vos Communautés Privées"
