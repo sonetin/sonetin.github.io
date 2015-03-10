@@ -1,132 +1,150 @@
 ---
 locale: fr
 layout: default
-title: SonetIN | Votre Réseau Social Privé
-main_page: true
+title: "SONETIN: Vos Communautés Privées"
 
-mynetwork:
-  header: Votre Réseau Social Privé.
-  recommandation: "Faites comme <span id='recommander'>_</span>, créez&hellip;"
+heading:
+  one: |
+    Retrouvez vos <span rotating>équipes, voisins, familles, amis, classes, associations, collègues</span>
+  two: |
+    <span light>dans votre</span> communauté privée
 
-booking:
-  title: Je crée mon réseau social privé
-  action: Je réserve gratuitement
-  desc: Saisissez le nom de votre entreprise, association ou projet.<br>Un réseau social privé vous sera mis à disposition sous peu.
-  placeholder: mon-projet
-  name_available: Ce nom est disponible !
-  tenanterror: Nom déjà réservé ou invalide
-  formerror: Le formulaire contient des erreurs, merci de les corriger
-  flooderror: Vous venez tout juste de créer un autre réseau, réessayez plutard
-  change_name: changer de nom
-  form:
-    help: "Veuillez renseigner les informations pour la création de votre compte administrateur :"
-    terms: "En cliquant sur 'Créer votre réseau social privé', vous reconnaissez avoir lu et accepté les <a href='/assets/files/SonetIN_Conditions_Generales_Vente_20141220.pdf' target='_blank'>Conditions Générales de Vente</a>"
-    email: Email
-    password: Mot de passe
-    first: Prénom
-    last: Nom
-    promo: Code promo
-    submit: Créer votre réseau social privé
-    submit_alt: Nous préparons votre réseau...
-  success: |
-    <h2>Bienvenue !</h2>
-    <h4>Votre réseau social privé est prêt&hellip;</h4>
-    <h4>Un email vous a été envoyé à l'adresse indiquée.</h4>
-    <form action="" method="post" accept-charset="utf-8" id="access-network">
-      <button type="submit" class="btn btn-lg btn-primary">Accéder à mon réseau !</a>
-    </form>
-  now: Commencez maintenant
+misc:
+  see_features: Voir les fonctionnalités
 
-yourdata:
-  header: Gardez le contrôle de vos données
+signup:
+  title: Créez votre communauté <span brand>sonetin</span> en un instant
+  fields:
+    email: Adresse Email
+    name: Nom Complet
+    network: Nom de Communauté
+  validation:
+    name: Veuillez saisir votre nom complet.
+  submit: Inscription gratuite
+
+what:
   text: |
-    Avec SonetIN, vous gardez le contrôle sur vos données.<br>
-    Vos messages, fichiers et photos restent votre propriété.
+    un <strong>réseau social intelligent</strong> dédié à votre communauté
 
-usages:
-  header: Un espace privé, <span class="bg-warning animated flash">&nbsp;gratuit et illimité&nbsp;</span>
-  subheader: avec vos amis, votre association, votre entreprise
-  list:
-    - title: Communiquez efficacement
-      icon: comments
-      content: Échangez des idées, des documents, planifiez des évènements, créez des communautés pour développer de nouvelles synergies.
-    - title: Partagez votre savoir
-      icon: lightbulb-o
-      content: Partagez la connaissance individuelle de vos collaborateurs. Développez l’intelligence collective de votre entreprise.
-    - title: Échangez où que vous soyez
-      icon: crosshairs
-      content: Accédez en permanence à tout type d’information. À votre bureau, en déplacement (mobile, tablette) ou à domicile.
-    - title: Développez des communautés externes
-      icon: users
-      content: Créez un réseau social avec vos clients, fournisseurs et partenaires, pour gérer efficacement vos projets dans un environnement sécurisé.
-    - title: Renforcez la confiance
-      icon: bullhorn
-      content: Facilitez la mise en relation des personnes au sein de communautés et augmentez la reconnaissance entre pairs au bénéfice de tous.
-    - title: Protégez vos données
-      icon: lock
-      content: Un hébergement sécurisé dans un datacentre localisé en France. Avec une haute disponibilité de service.
+overview:
+  title: à l’intérieur
+  browser: navigateur
+  mobile: mobile
+  desktop: bureau
+  desktop_title: Ma Communauté
+  features:
+    - title: Social
+      icon: ion-ios-people-outline
+      desc: Un réseau social, un fil d’actualités, des messages
+    - title: Accessible
+      icon: ion-iphone
+      desc: Sur mobile, tablette et PC
+    - title: Privé
+      icon: ion-locked
+      desc: Vos données sécurisées, hébergées en France
+    - title: Pas de pubs
+      icon: ion-ios-mic-outline
+      desc: Vous n’êtes pas le produit
+    - title: Intelligent
+      icon: ion-help-buoy
+      desc: Automatisez grâce à nos intégrations
+    - title: Ouvert
+      icon: ion-code
+      desc: Ouvrez votre communauté aux clients, fournisseurs et partenaires
 
-intelligence:
-  header: Révélez l'Intelligence Collective de votre réseau
-  list:
-    - Favorisez les dynamiques d'équipes
-    - Récompensez les membres actifs
-    - Repérez les experts et les influenceurs
-    - Retrouvez les contenus similaires
-
-references: Nos références
-
-features:
-  - title: Publication
-    icon: comments-o
-    desc: ": Partagez des messages, documents, photos, vidéos, musiques"
-  - title: Profil détaillé
-    icon: user
-    desc: contact, biographie, intérêts et passions
-  - title: Fil d'actualité
-    icon: home
-    desc: centralisé intégrant les médias interactifs issus du web
-  - title: Annuaire intelligent des membres
-    icon: sitemap
-    desc: ""
-  - title: Espaces de travail
-    icon: users
-    desc: dédiés par thèmes ou par projet
-  - title: Recherche instantanée
-    icon: search
-    desc: parmi tous les contenus et documents
-  - title: Personnalisation
-    icon: wrench
-    desc: de votre réseau à votre image
-  - title: Événements
-    icon: calendar
-    desc: ": inscription et synchronisation avec vos agendas"
+download:
+  buttons:
+    appstore:  Disponible sur<br><strong>APP STORE</strong>
+    playstore: Disponible sur<br><strong>PLAY STORE</strong>
+    browser:   Accéder depuis le<br><strong>NAVIGATEUR</strong>
+    mac:       Disponible sur<br><strong>MAC OSX</strong>
+    windows:   Et bientôt sur<br><strong>WINDOWS</strong>
 
 integrations:
-  title: Plus de 50 services intégrés
+  title: intégrations
+  api:
+    label: Et accéder à vos données via notre API
+    mail_subject: SONETIN - montre moi ton API!
+    c2a: Documentation de l’API
 
-services:
-  header: Assistance au paramétrage et formation des utilisateurs
-  subheader: Bénéficiez de l'expertise des membres de l'équipe SonetIN
+pricing:
+  title: formules
+  traversing_info: nombre de membres illimité + nombre de messages illimité
+  plans:
+    free:
+      title: Gratuite
+      features:
+        - Personnalisation
+        - Auto-promotion SONETIN
+        - Limites de l’offre gratuite
+      c2a: Inscription gratuite
+    premium:
+      title: Premium
+      price: <strong>300 €</strong> / mois
+      features:
+        - Marque blanche
+        - Statistiques
+        - Support
+        - API
+        - Intégrations tierces
+      c2a: Inscription gratuite
+    tailored:
+      title: Sur mesure
+      features:
+        - Knowledge graph
+        - Intégrations avancées
+        - Fonctionnalités avancées
+      c2a: Nous contacter
+      mail_subject: SONETIN - J'en veux plus !
+
+features:
+  title: fonctionnalités avancées
   list:
-    - title: Personnalisation de votre réseau
-      icon: paw
-      desc: Accessibilité de votre réseau, design, organisation des informations, synchronisation avec vos comptes sociaux grand public
-    - title: Formation des membres de votre réseau
-      icon: graduation-cap
-      desc: Formations personnalisées « découverte » ou « fonctions avancées », en webinar par notre équipe
-    - title: Community Management
-      icon: tree
-      desc: Confiez l'animation de votre espace à notre réseau d'experts en Community Management
-  more:
-    text: |
-      Ces prestations s'effectuent sur devis en fonction de vos besoins.<br>
-      Afin d'établir une proposition personnalisée, répondez à ce formulaire, nous prendrons contact avec vous sous 24h.
-    submit: Nous contacter
+    - "Authentification en un clic"
+    - "Prévisualisation et indexation des fichiers"
+    - "Annonces globales"
+    - "Événements payants"
+    - "Site vitrine publique pour votre marque"
+    - "Synchronise vos flux RSS, YouTube, <abbr title='Facebook'>Fb</abbr>, Twitter"
+    - "Catalogue de produits"
+    - "Catalogue d’offres de postes"
+    - "Graphez votre réseau: découvrez votre influence"
+    - "Attribution automatique de badges personnalisés"
+    - "Application native multi-plateformes en marque blanche"
+    - "Résumés automatiques des messages longs"
+    - "Contenus similaires et liés"
+    - "Découvrez les experts et influenceurs de domaines"
+    - "Discussions audio et vidéo*"
+  roadmap: "* : sur notre feuille de route"
+  reserved: Ces fonctionnalités sont réservées à nos clients Premium ou Sur mesure
+  interesting:
+    label: Intéressé(e) ?
+    mail_subject: SONETIN - organisons une démo
+    c2a: Organisons une démo
+
+
+booking:
+  name_available: This name is available!
+  tenanterror: This network is already taken or invalid
+  formerror: Please fill out this form correctly
+  flooderror: You've just created a network. Please wait a moment and retry
+  change_name: change the name
+  form:
+    help: "Please fill in the following information for creating your administrator account:"
+    terms: "By clicking 'Create your private social network' you are agreeing to the <a href='/assets/files/SonetIN_Conditions_Generales_Vente_20141220.pdf' target='_blank'>Terms and Conditions [french document]</a>"
+    submit_alt: Your network is being prepared...
+  success: |
+    <h2>Welcome!</h2>
+    <h4>Your private social network is ready&hellip;</h4>
+    <h4>You should have received an email with all the necessary information to log in.</h4>
+    <form action="" method="post" accept-charset="utf-8" id="access-network">
+      <button type="submit" class="btn btn-lg btn-primary">Go to my network!</a>
+    </form>
+  now: Get Started
 
 api:
-  header: Accédez à vos données avec nos API
-  subheader: et socialisez vos applications mobiles
+  header: Access your data with our API
+  subheader: and add a social layer to your mobile apps
   label: Coming soon
 ---
 

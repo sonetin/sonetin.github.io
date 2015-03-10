@@ -1,72 +1,60 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lang="{{ page.locale }}" lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lang="{{ page.locale }}" lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lang="{{ page.locale }}" lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ page.locale }}"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{ page.title }}</title>
-    <link rel="icon" href="/favicon.ico" sizes="16x16" type="image/png">
-    <meta name="description" content="{% if page.locale == 'fr' %}{{ site.description.fr }}{% else %}{{ site.description.en }}{% endif %}">
-    <meta name="keywords" content="{% if page.locale == 'fr' %}{{ site.keywords.fr }}{% else %}{{ site.keywords.en }}{% endif %}">
-    <meta name="viewport" content="width=device-width">
-    <link rel='index' title='SonetIN' href='//www.sonetin.com/{{ page.locale }}/' />
+<html lang="{{ page.locale }}"><!-- manifest="cache.manifest" -->
+<head>
+  <meta charset="utf-8">
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300|Merriweather:300">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
-    <link rel="stylesheet/less" type="text/assets/css" href="/assets/css/main.less">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.1.0/es5-shim.min.js"></script>
-    <![endif]-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.4.1/less.min.js"></script>
-    {% include segmentio-script.html %}
-    {% include uservoice-widget.html %}
-  </head>
-  <body>
+  <title>{{ page.title }}</title>
+  <meta name="description" value="{% if page.locale == 'fr' %}{{ site.description.fr }}{% else %}{{ site.description.en }}{% endif %}">
+  <meta name="keywords" value="{% if page.locale == 'fr' %}{{ site.keywords.fr }}{% else %}{{ site.keywords.en }}{% endif %}">
+  <meta name="author" value="SONETIN">
 
-    <header class="background">
-      {% include nav.html %}
-    </header>
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+  <link rel="index" title="Sonetin" href='//www.sonetin.com/{{ page.locale }}/'>
 
-    <div id="wrap">
-      <div id="main">
-        <div id="content">
-          {% if page.header %}
-            <section id="titles" class="section-blue">
-              <div class="container">
-                <h1 class="text-center">{{ page.header }}</h1>
-                {% if page.subheader %}
-                  <h2 class="text-center">{{ page.subheader }}</h2>
-                {% endif %}
-              </div>
-            </section>
-          {% endif %}
-          {{ content }}
-        </div>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SONETIN">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{% if page.locale == 'fr' %}{{ site.description.fr }}{% else %}{{ site.description.en }}{% endif %}">
+  <meta property="og:image" content="http://www.sonetin.com/assets/img/icon-120.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@sonet_in">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{% if page.locale == 'fr' %}{{ site.description.fr }}{% else %}{{ site.description.en }}{% endif %}">
+  <meta name="twitter:image" content="https://www.sonetin.com/assets/img/icon-120.png">
 
-      </div>
-    </div>
+  <link rel="shortcut icon" href="/assets/img/icon-32.png" sizes="16x16 32x32 48x48" type="image/png">
+  <link rel="icon" href="/assets/img/icon-256.png" sizes="256x256" type="image/png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/img/icon-152.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/icon-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/img/icon-120.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/img/icon-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/img/icon-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/img/icon-57.png">
+  <meta name="msapplication-TileImage" content="/assets/img/icon-144.png">
 
-    {% include footer.html %}
+  <link rel="stylesheet" href="/assets/css/lib/animate.min.css">
+  <link rel="stylesheet" href="/assets/css/lib/ionicons.min.css">
+  <link rel="stylesheet" href="/assets/css/lib/ladda.min.css">
+  <link rel="stylesheet" href="/assets/css/lib/simpletextrotator.min.css">
+  <link rel="stylesheet" href="/assets/css/lib/sweet-alert.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!--[if lt IE 10]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.0.7/jquery.placeholder.min.js"></script>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
-    <![endif]-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
-    <script>
-      var h = window.innerHeight|| document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-      h = h / 5;
-      new WOW({boxClass: 'animated', offset: h}).init();
-    </script>
-    <script src="/assets/js/main.js" async></script>
-  </body>
+  <script src="/assets/js/lib/html5shiv.min.js"></script>
+  <script src="/assets/js/lib/jquery.min.js"></script>
+  <script src="/assets/js/lib/jquery.simple-text-rotator.min.js"></script>
+  <script src="/assets/js/lib/spin.min.js"></script>
+  <script src="/assets/js/lib/ladda.min.js"></script>
+  <script src="/assets/js/lib/sweet-alert.min.js"></script>
+  <script src="/assets/js/lib/wow.min.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script>
+    new WOW({boxClass: 'animated', mobile: false}).init();
+  </script>
+</head>
+
+<body>
+  {{ content }}
+  {% include footer.html %}
+</body>
 </html>

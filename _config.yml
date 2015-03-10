@@ -1,72 +1,11 @@
-markdown: rdiscount
-pygments: true
+gems:
+  - jekyll-redirect-from
+tagline:
+  en: "Your Private Communities"
+  fr: "Vos Communautés Privées"
 description:
   en: "Your Private Social Network. A private free & unlimited space, with your friends, association, company."
   fr: "Votre Réseau Social Privé. Un espace privé, gratuit et illimité, avec vos amis, votre association, votre entreprise."
 keywords:
   en: "free,social,network,friends,coworkers"
   fr: "reseau,social,gratuit,amis,collegues,network,free"
-navigation:
-  en:
-    - text: Usages
-      url: '../en/#features'
-    - text: Solution
-      url: '../en/#overview'
-    - text: Services
-      url: '../en/#services'
-    - text: <strong>Go Premium</strong>
-      url: '../en/pricing.html'
-      color: red
-      notscrollable: true
-  fr:
-    - text: Usages
-      url: '../fr/#features'
-    - text: Solution
-      url: '../fr/#overview'
-    - text: Services
-      url: '../fr/#services'
-    - text: <strong>Go Premium</strong>
-      url: '../fr/pricing.html'
-      color: red
-      notscrollable: true
-footer:
-  en:
-    - "company:":
-      - text: About us
-        url: about.html
-      - text: Press
-        url: press.html
-      - text: Contact us
-        url: contact.html
-      - text: Terms
-        url: legal.html
-    - "community:":
-      - text: Blog
-        url: http://blog.sonetin.com
-      - text: Twitter
-        url: http://twitter.com/sonet_in
-    - "language:":
-      - text: English
-        url: ../en/
-      - text: Français
-        url: ../fr/
-  fr:
-    - "entreprise :":
-      - text: A propos
-        url: a-propos.html
-      - text: Presse
-        url: presse.html
-      - text: Nous contacter
-        url: contact.html
-      - text: Légal
-        url: legal.html
-    - "communauté :":
-      - text: Blog
-        url: http://blog.sonetin.com
-      - text: Twitter
-        url: http://twitter.com/sonet_in
-    - "langue :":
-      - text: English
-        url: ../en/
-      - text: Français
-        url: ../fr/

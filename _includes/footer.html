@@ -1,36 +1,39 @@
 {% if page.locale == 'fr' %}
-  {% assign footer_links = site.footer.fr %}
+  {% assign tagline = site.tagline.fr %}
+  {% assign press_page = 'presse.html' %}
 {% else %}
-  {% assign footer_links = site.footer.en %}
+  {% assign tagline = site.tagline.en %}
+  {% assign press_page = 'press.html' %}
 {% endif %}
 
-<footer class="section-dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-4">
-        <a class="brand" href="../{{ page.locale }}/">
-          <img class="logo" src="../assets/img/logo-white.png" title="SonetIN" alt="SonetIN S.A.S">
-        </a>
-        <p>
-          <address>
-            <i class="fa fa-map-marker"></i>
-            <a href="https://goo.gl/maps/jyW2c" target="_blank">12 cité Falguière, 75015 Paris</a><br>
-            <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
-            <a href="tel:+33176361164">+33 (0)1 76 36 11 64</a>
-          </address>
-        </p>
-      </div>
-      <div class="col-xs-6 col-sm-6 col-md-8">
-        {% for category in footer_links %}
-          {% assign category_links = category.first.last %}
-          <ul class="list-inline">
-            <li><h5>{{ category | first | first | capitalize }}</h5></li>
-            {% for link in category_links %}
-              <li><a href="{{ link.url }}">{{ link.text }}</a></li>
-            {% endfor %}
-          </ul>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+<footer>
+  
+  <aside>
+    <a brand logo href="/{{ page.locale }}/#top">SONETIN</a>
+    <span>&nbsp;{{ tagline }}</span>
+  </aside>
+
+  <ul right inline dots>
+    <li><a normal-link target="_blank" href="http://twitter.com/sonet_in">Twitter</a></li>
+    <li><a normal-link href="http://blog.sonetin.com/">Blog</a></li>
+    <li><a normal-link href="https://support.sonetin.com/?lang={{ page.locale }}">Support</a></li>
+    <li><a normal-link href="{{ press_page }}">Presse</a></li>
+    <li><a normal-link href="legal.html">Légal</a></li>
+    <li><a normal-link href="mailto:contact@sonetin.com?subject=SONETIN - API">API</a></li>
+    <!--<li><a normal-link href="/en/" title="English">EN</a> / <a normal-link href="/fr/" title="Français">FR</a></li>-->
+    <li>
+      <span class="ion-location"></span>
+      <select nochrome onchange="switchLocale(this)">
+        <option value="/en/" {% if page.locale == 'en' %}selected{% endif %}>English</option>
+        <option value="/fr/" {% if page.locale == 'fr' %}selected{% endif %}>Français</option>
+      </select>
+    </li>
+  </ul>
+
 </footer>
+
+<script>
+function switchLocale(locale) {
+  document.location.href = locale.options[locale.selectedIndex].value;
+}
+</script>

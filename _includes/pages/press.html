@@ -1,17 +1,52 @@
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:700|PT+Sans:700|PT+Serif">
+<style>
+  .article {
+    text-align: center;
+    background: #fff;
+    margin: 10px 5px;
+    padding-top: 15px;
+  }
+  .article a {
+    color: #222;
+    text-decoration: none;
+    display: inline-block;
+    padding: 25px 10px 10px;
+  }
+  .article h1 {
+    font-size: 24px;
+  }
+  .article h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .article p {
+    text-align: justify;
+    text-indent: 14px;
+    font-size: 14px;
+  }
+  .article:after {
+    content: "";
+    display: block;
+    border-bottom: 4px dashed #fff;
+    margin: 0 5px 8px;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+
 <section id="press" class="section-light section-thin">
   <div class="container">
   <h3>{{ page.recent }} →</h3>
-  <ul class="columns">
+  <ul inline columns>
     {% for article in page.articles reversed %}
       <li class="animated fadeInUp" data-wow-delay=".{{ forloop.index | times: 2 }}s">
         <div class="article">
           <a href="{{ article.url }}">
             <h1>{{ article.display_title }}</h1>
-            <hr>
             {% if article.display_subtitle %}
               <h2>{{ article.display_subtitle }}</h2>
-              <hr>
             {% endif %}
             <p><span style="text-transform: uppercase; border-bottom: 1px dotted #555">{{ article.source }}</span>, {{ article.date | date: "%-d %b" }}— {{ article.display_body }}</p>
             <p class="small text-muted">{% if article.author %}— {{ article.author }}{% endif %}</p>
