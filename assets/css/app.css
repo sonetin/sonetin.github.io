@@ -251,6 +251,7 @@ select[nochrome]:hover {
 [rotate-90] {
   display: inline-block;
   transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
 }
 [noselect] {
   -webkit-touch-callout: none;
@@ -587,6 +588,7 @@ video[fullscreen] {
   border: 0;
   height: calc(4 * (35vw - 4vw));
   transform: scale(.25);
+  -webkit-transform: scale(.25);
 }
 
 [mac-ui] {
@@ -628,6 +630,7 @@ video[fullscreen] {
   border: 0;
   height: calc(3 * (35vw - 2.2vw));
   transform: scale(.333);
+  -webkit-transform: scale(.333);
 }
 
 [iphone-ui] {
@@ -672,4 +675,5 @@ video[fullscreen] {
   border-color: transparent;
   height: 140vw;
   transform: scale(.5);
+  -webkit-transform: scale(.5);
 }
