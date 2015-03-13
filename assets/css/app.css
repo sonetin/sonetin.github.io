@@ -261,6 +261,13 @@ select[nochrome]:hover {
   user-select: none;
   cursor: default;
 }
+[rounded] {
+  -webkit-border-radius: 99em;
+  border-radius: 99em;
+}
+[circled] {
+  border: 3px solid rgba(255,255,255,.7);
+}
 aside {
   float: left;
   margin-right: 30px;

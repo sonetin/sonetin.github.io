@@ -1,248 +1,262 @@
-  <section center fullscreen id="top">
+<section center fullscreen id="top">
 
-    {% include fullscreen-video.html video="cafe" %}
+  {% include fullscreen-video.html video="cafe" %}
 
-    <div overlay-darken fullscreen>
+  <div overlay-darken fullscreen>
 
-      <nav menu class="animated fadeIn" data-wow-delay=".5s">
-        <a href="#what" small class="ion-arrow-down-b" title="{{ page.misc.see_features }}"></a>
-      </nav>
+    <nav menu class="animated fadeIn" data-wow-delay=".5s">
+      <a href="#what" small class="ion-arrow-down-b" title="{{ page.misc.see_features }}"></a>
+    </nav>
 
-      <span push-5 brand logo noselect>SONETIN</span>
+    <span push-5 brand logo noselect>SONETIN</span>
 
-      <h1 push-20>
-        <strong>{{ page.heading.one }}</strong>
-        <br>
-        {{ page.heading.two }}
-      </h1>
+    <h1 push-20>
+      <strong>{{ page.heading.one }}</strong>
+      <br>
+      {{ page.heading.two }}
+    </h1>
 
-      {% include signup-form.html %}
-    </div>
-  </section>
+    {% include signup-form.html %}
+  </div>
+</section>
 
-  <section slide section-thin white center id="what">
-    <p zoom class="animated fadeIn">{{ page.what.text }}</p>
-  </section>
+<section slide section-thin white center id="what">
+  <p zoom class="animated fadeIn">{{ page.what.text }}</p>
 
-  <section slide blue center id="overview">
-    
-    <h2>{{ page.overview.title }}</h2>
-
-    <ul inline stack>
-      <li class="animated fadeInUp">
-        <div zoom semi-transparent>
-          <p>{{ page.overview.browser }}</p>
-        </div>
-        <div browser-ui>
-          <iframe src="https://app.sonetin.com/"></iframe>
-        </div>
-      </li>
-      <li class="animated fadeInUp">
-        <div iphone-ui>
-          <iframe src="https://app.sonetin.com/"></iframe>
-        </div>
-        <div zoom semi-transparent>
-          <p>{{ page.overview.mobile }}</p>
-        </div>
-      </li>
-      <li class="animated fadeInUp">
-        <div zoom semi-transparent>
-          <p>{{ page.overview.desktop }}</p>
-        </div>
-        <div mac-ui title="{{ page.overview.desktop_title }}">
-          <iframe src="https://app.sonetin.com/"></iframe>
-        </div>
-      </li>
-    </ul>
-
-    <hr>
-
-    <table zoom grid responsive>
-      <tr>
-        {% for feature in page.overview.features %}
-          {% if forloop.index0 == 3 %}</tr><tr>{% endif %}
-          <td>
-            <span grid-full-cell class="{{ feature.icon }}"></span>
-            <h3>{{ feature.title }}</h3>
-            <span unzoom>{{ feature.desc }}</span>
-          </td>
-        {% endfor %}
-      </tr>
-    </table>
-
-  </section>
-
-  <section slide section-large white center id="download">
-    <div>
-      <a button grey class="animated bounceIn" data-wow-delay=".4s" href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=954165045">
-        <span class="ion-social-apple"></span>
-        {{ page.download.buttons.appstore }}
-      </a>
-      &nbsp;
-      <a button green class="animated bounceIn" data-wow-delay=".2s" href="https://play.google.com/store/apps/details?id=com.sonetin">
-        <span class="ion-android-playstore"></span>
-        {{ page.download.buttons.playstore }}
-      </a>
-      &nbsp;
-      <!--<a button red class="animated bounceIn" data-wow-delay="0s" href="https://app.sonetin.com/">
-        <span class="ion-social-chrome"></span>
-        {{ page.download.buttons.browser }}
-      </a>
-      &nbsp;-->
-      <a button lightgrey class="animated bounceIn" data-wow-delay=".4s" href="https://files.sonetin.com/app/mac/Sonetin-1.0.8.dmg">
-        <span class="ion-social-apple"></span>
-        {{ page.download.buttons.mac }}
-      </a>
-      &nbsp;
-      <a button lightblue class="animated bounceIn" data-wow-delay=".2s">
-        <span class="ion-social-windows"></span>
-        {{ page.download.buttons.windows }}
-      </a>
-    </div>
-  </section>
-
-  <section slide center id="integrations" show-titles>
-
-    <h2>{{ page.integrations.title }}</h2>
-
-    <table zoom grid responsive>
-      <tr>
+  <table zoom grid responsive>
+    <tr>
+      {% for product in page.products.list %}
+        {% if forloop.index0 == 5 %}</tr><tr>{% endif %}
         <td>
-          <span grid-full-cell class="ion-social-twitter-outline"></span>
-          <h3>Twitter</h3>
-        </td>
-        <td>
-          <span grid-full-cell class="ion-social-google-outline"></span>
-          <h3>Google Drive</h3>
-        </td>
-        <td>
-          <span grid-full-cell class="ion-social-dropbox-outline"></span>
-          <h3>Dropbox</h3>
-        </td>
-        <td>
-          <span grid-full-cell class="ion-social-linkedin-outline"></span>
-          <h3>LinkedIn</h3>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span grid-full-cell class="ion-social-rss-outline"></span>
-          <h3>RSS</h3>
-        </td>
-        <td>
-          <span grid-full-cell class="ion-social-facebook-outline"></span>
-          <h3>Facebook</h3>
-        </td>
-        <td>
-          <span grid-full-cell class="ion-social-googleplus-outline"></span>
-          <h3>Google+</h3>
-        </td>
-        <td>
-          <span grid-full-cell class="ion-card"></span>
-          <h3>Stripe</h3>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span grid-full-cell class="ion-social-youtube-outline"></span>
-          <h3>YouTube</h3>
-        </td>
-        <td unzoom colspan="2">
-          <span>{{ page.integrations.api.label }}</span>
-          <a href="mailto:contact@sonetin.com?subject={{ page.integrations.api.mail_subject }}">
-            <span class="ion-code-download" title="{{ page.integrations.api.c2a }}"></span>
+          <a normal-link href="/{{ page.locale }}/{{ product.path }}" style="color: #345">
+            <span grid-full-cell class="{{ product.icon }}"></span>
+            <h3>{{ product.title }}</h3>
           </a>
         </td>
-        <td>
-          <span grid-full-cell class="ion-more"></span>
-          <h3>&nbsp;</h3>
-        </td>
-      </tr>
-    </table>
-
-  </section>
-
-  <section slide green center id="pricing">
-    
-    <h2>{{ page.pricing.title }}</h2>
-
-    <div traversing-information show-desktop class="animated fadeIn" data-wow-delay=".75s">{{ page.pricing.traversing_info }}</div>
-
-    <table responsive>
-        <td>
-          <table plan class="animated bounceIn" data-wow-delay=".25s">
-            <thead>
-              <tr><th><h3>{{ page.pricing.plans.free.title }}</h3></th></tr>
-            </thead>
-            <tbody>
-              <tr show-desktop><td><br><br><br></td></tr>
-              {% for feature in page.pricing.plans.free.features %}
-                <tr><td>{{ feature }}</td></tr>
-              {% endfor %}
-            </tbody>
-            <tfooter>
-              <tr><td><a href="#top">{{ page.pricing.plans.free.c2a }}</a></td></tr>
-            </tfooter>
-          </table>
-        </td>
-        <td>
-          <table plan highlight class="animated bounceIn">
-            <thead>
-              <tr><th><h3>{{ page.pricing.plans.premium.title }}</h3></th></tr>
-            </thead>
-            <tbody>
-              <tr><td>{{ page.pricing.plans.premium.price }}</td></tr>
-              <tr show-desktop><td><br><br><br><br></td></tr>
-              {% for feature in page.pricing.plans.premium.features %}
-                <tr><td>{{ feature }}</td></tr>
-              {% endfor %}
-            </tbody>
-            <tfooter>
-              <tr><td><a href="#top">{{ page.pricing.plans.premium.c2a }}</a></td></tr>
-            </tfooter>
-          </table>
-        </td>
-        <td>
-          <table plan class="animated bounceIn" data-wow-delay=".25s">
-            <thead>
-              <tr><th><h3>{{ page.pricing.plans.tailored.title }}</h3></th></tr>
-            </thead>
-            <tbody>
-              <tr show-desktop><td><br><br><br></td></tr>
-              {% for feature in page.pricing.plans.tailored.features %}
-                <tr><td>{{ feature }}</td></tr>
-              {% endfor %}
-            </tbody>
-            <tfooter>
-              <tr><td><a subtle href="mailto:contact@sonetin.com?subject={{ page.pricing.plans.tailored.mail_subject }}">{{ page.pricing.plans.tailored.c2a }}</a></td></tr>
-            </tfooter>
-          </table>
-        </td>
-    </table>
-
-    <div left>
-      {% for qa in page.pricing.q_and_a %}
-        <h4>{{ qa.q }}</h4>
-        <p>{{ qa.a }}</p>
       {% endfor %}
-    </div>
+    </tr>
+  </table>
+</section>
 
-  </section>
+<section slide blue center id="overview">
+  
+  <h2>{{ page.overview.title }}</h2>
 
-  <section slide red id="features">
+  <ul inline stack>
+    <li class="animated fadeInUp">
+      <div zoom semi-transparent>
+        <p>{{ page.overview.browser }}</p>
+      </div>
+      <div browser-ui>
+        <iframe src="https://app.sonetin.com/"></iframe>
+      </div>
+    </li>
+    <li class="animated fadeInUp">
+      <div iphone-ui>
+        <iframe src="https://app.sonetin.com/"></iframe>
+      </div>
+      <div zoom semi-transparent>
+        <p>{{ page.overview.mobile }}</p>
+      </div>
+    </li>
+    <li class="animated fadeInUp">
+      <div zoom semi-transparent>
+        <p>{{ page.overview.desktop }}</p>
+      </div>
+      <div mac-ui title="{{ page.overview.desktop_title }}">
+        <iframe src="https://app.sonetin.com/"></iframe>
+      </div>
+    </li>
+  </ul>
 
-    <h2>{{ page.features.title }}</h2>
+  <hr>
 
-    <ul ticks columns-2 zoom>
-      {% for feature in page.features.list %}
-        <li>{{ feature }}</li>
+  <table zoom grid responsive>
+    <tr>
+      {% for feature in page.overview.features %}
+        {% if forloop.index0 == 3 %}</tr><tr>{% endif %}
+        <td>
+          <span grid-full-cell class="{{ feature.icon }}"></span>
+          <h3>{{ feature.title }}</h3>
+          <span unzoom>{{ feature.desc }}</span>
+        </td>
       {% endfor %}
-    </ul>
+    </tr>
+  </table>
 
-    <p><small>{{ page.features.roadmap }}</small></p>
+</section>
 
-    <p center>{{ page.features.reserved }}</p>
+<section slide section-large white center id="download">
+  <div>
+    <a button grey class="animated bounceIn" data-wow-delay=".4s" href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=954165045">
+      <span class="ion-social-apple"></span>
+      {{ page.download.buttons.appstore }}
+    </a>
+    &nbsp;
+    <a button green class="animated bounceIn" data-wow-delay=".2s" href="https://play.google.com/store/apps/details?id=com.sonetin">
+      <span class="ion-android-playstore"></span>
+      {{ page.download.buttons.playstore }}
+    </a>
+    &nbsp;
+    <!--<a button red class="animated bounceIn" data-wow-delay="0s" href="https://app.sonetin.com/">
+      <span class="ion-social-chrome"></span>
+      {{ page.download.buttons.browser }}
+    </a>
+    &nbsp;-->
+    <a button lightgrey class="animated bounceIn" data-wow-delay=".4s" href="https://files.sonetin.com/app/mac/Sonetin-1.0.8.dmg">
+      <span class="ion-social-apple"></span>
+      {{ page.download.buttons.mac }}
+    </a>
+    &nbsp;
+    <a button lightblue class="animated bounceIn" data-wow-delay=".2s">
+      <span class="ion-social-windows"></span>
+      {{ page.download.buttons.windows }}
+    </a>
+  </div>
+</section>
 
-    <p center class="animated fadeIn" data-wow-delay=".5s"><span zoom>{{ page.features.interesting.label }}</span> <a href="mailto:contact@sonetin.com?subject={{ page.features.interesting.mail_subject }}">{{ page.features.interesting.c2a }}</a></p>
+<section slide center id="integrations" show-titles>
 
-  </section>
+  <h2>{{ page.integrations.title }}</h2>
+
+  <table zoom grid responsive>
+    <tr>
+      <td>
+        <span grid-full-cell class="ion-social-twitter-outline"></span>
+        <h3>Twitter</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-google-outline"></span>
+        <h3>Google Drive</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-dropbox-outline"></span>
+        <h3>Dropbox</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-linkedin-outline"></span>
+        <h3>LinkedIn</h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span grid-full-cell class="ion-social-rss-outline"></span>
+        <h3>RSS</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-facebook-outline"></span>
+        <h3>Facebook</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-googleplus-outline"></span>
+        <h3>Google+</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-card"></span>
+        <h3>Stripe</h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span grid-full-cell class="ion-social-youtube-outline"></span>
+        <h3>YouTube</h3>
+      </td>
+      <td unzoom colspan="2">
+        <span>{{ page.integrations.api.label }}</span>
+        <a href="mailto:contact@sonetin.com?subject={{ page.integrations.api.mail_subject }}">
+          <span class="ion-code-download" title="{{ page.integrations.api.c2a }}"></span>
+        </a>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-more"></span>
+        <h3>&nbsp;</h3>
+      </td>
+    </tr>
+  </table>
+
+</section>
+
+<section slide green center id="pricing">
+  
+  <h2>{{ page.pricing.title }}</h2>
+
+  <div traversing-information show-desktop class="animated fadeIn" data-wow-delay=".75s">{{ page.pricing.traversing_info }}</div>
+
+  <table responsive>
+      <td>
+        <table plan class="animated bounceIn" data-wow-delay=".25s">
+          <thead>
+            <tr><th><h3>{{ page.pricing.plans.free.title }}</h3></th></tr>
+          </thead>
+          <tbody>
+            <tr show-desktop><td><br><br><br></td></tr>
+            {% for feature in page.pricing.plans.free.features %}
+              <tr><td>{{ feature }}</td></tr>
+            {% endfor %}
+          </tbody>
+          <tfooter>
+            <tr><td><a href="#top">{{ page.pricing.plans.free.c2a }}</a></td></tr>
+          </tfooter>
+        </table>
+      </td>
+      <td>
+        <table plan highlight class="animated bounceIn">
+          <thead>
+            <tr><th><h3>{{ page.pricing.plans.premium.title }}</h3></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>{{ page.pricing.plans.premium.price }}</td></tr>
+            <tr show-desktop><td><br><br><br><br></td></tr>
+            {% for feature in page.pricing.plans.premium.features %}
+              <tr><td>{{ feature }}</td></tr>
+            {% endfor %}
+          </tbody>
+          <tfooter>
+            <tr><td><a href="#top">{{ page.pricing.plans.premium.c2a }}</a></td></tr>
+          </tfooter>
+        </table>
+      </td>
+      <td>
+        <table plan class="animated bounceIn" data-wow-delay=".25s">
+          <thead>
+            <tr><th><h3>{{ page.pricing.plans.tailored.title }}</h3></th></tr>
+          </thead>
+          <tbody>
+            <tr show-desktop><td><br><br><br></td></tr>
+            {% for feature in page.pricing.plans.tailored.features %}
+              <tr><td>{{ feature }}</td></tr>
+            {% endfor %}
+          </tbody>
+          <tfooter>
+            <tr><td><a subtle href="mailto:contact@sonetin.com?subject={{ page.pricing.plans.tailored.mail_subject }}">{{ page.pricing.plans.tailored.c2a }}</a></td></tr>
+          </tfooter>
+        </table>
+      </td>
+  </table>
+
+  <div left>
+    {% for qa in page.pricing.q_and_a %}
+      <h4>{{ qa.q }}</h4>
+      <p>{{ qa.a }}</p>
+    {% endfor %}
+  </div>
+
+</section>
+
+<section slide red id="features">
+
+  <h2>{{ page.features.title }}</h2>
+
+  <ul ticks columns-2 zoom>
+    {% for feature in page.features.list %}
+      <li>{{ feature }}</li>
+    {% endfor %}
+  </ul>
+
+  <p><small>{{ page.features.roadmap }}</small></p>
+
+  <p center>{{ page.features.reserved }}</p>
+
+  <p center class="animated fadeIn" data-wow-delay=".5s"><span zoom>{{ page.features.interesting.label }}</span> <a href="mailto:contact@sonetin.com?subject={{ page.features.interesting.mail_subject }}">{{ page.features.interesting.c2a }}</a></p>
+
+</section>

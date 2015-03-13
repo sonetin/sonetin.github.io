@@ -4,25 +4,25 @@
   <meta charset="utf-8">
 
   <title>{{ page.title }}</title>
-  <meta name="description" value="{% if page.locale == 'fr' %}{{ site.description.fr }}{% else %}{{ site.description.en }}{% endif %}">
-  <meta name="keywords" value="{% if page.locale == 'fr' %}{{ site.keywords.fr }}{% else %}{{ site.keywords.en }}{% endif %}">
+  <meta name="description" value="{{ page.description }}">
+  <meta name="keywords" value="{{ page.keywords }}">
   <meta name="author" value="SONETIN">
 
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
-  <link rel="index" title="Sonetin" href='//www.sonetin.com/{{ page.locale }}/'>
+  <link rel="index" title="SONETIN" href='{{ site.url }}{{ page.locale }}/'>
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SONETIN">
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{% if page.locale == 'fr' %}{{ site.description.fr }}{% else %}{{ site.description.en }}{% endif %}">
+  <meta property="og:description" content="{{ page.description }}">
   <meta property="og:image" content="https://www.sonetin.com/assets/img/icon-120.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@sonet_in">
   <meta name="twitter:title" content="{{ page.title }}">
-  <meta name="twitter:description" content="{% if page.locale == 'fr' %}{{ site.description.fr }}{% else %}{{ site.description.en }}{% endif %}">
+  <meta name="twitter:description" content="{{ page.description }}">
   <meta name="twitter:image" content="https://www.sonetin.com/assets/img/icon-120.png">
 
   <link rel="shortcut icon" href="/assets/img/icon-32.png" sizes="16x16 32x32 48x48" type="image/png">

@@ -3,12 +3,121 @@ gems:
 
 url: https://www.sonetin.com
 
-tagline:
-  en: "Your Private Communities"
-  fr: "Vos Communautés Privées"
-description:
-  en: "Your Private Social Network. A private free & unlimited space, with your friends, association, company."
-  fr: "Votre Réseau Social Privé. Un espace privé, gratuit et illimité, avec vos amis, votre association, votre entreprise."
-keywords:
-  en: "free,social,network,friends,coworkers"
-  fr: "reseau,social,gratuit,amis,collegues,network,free"
+defaults:
+  - # en
+    values:
+      layout: default
+      locale: en
+
+      tagline: Your Private Communities
+      description: "Your Private Social Network. A private free & unlimited space, with your friends, association, company."
+      keywords: "free,social,network,friends,coworkers"
+
+      signup:
+        title: Create your <span brand>sonetin</span> community in seconds
+        fields:
+          email: Email Address
+          name: Full Name
+          network: Community Name
+        validation:
+          name: Please enter your full name.
+        submit: Sign up for free
+
+      products:
+        title: also available for
+        list:
+          - title: Families
+            icon: ion-person-stalker
+            path: for/your-family.html
+          - title: Friends
+            icon: ion-beer
+            path: for/friends.html
+          - title: Businesses
+            icon: ion-briefcase
+            path: for/businesses.html
+          - title: Startups
+            icon: ion-erlenmeyer-flask
+            path: for/startups.html
+          - title: Associations
+            icon: ion-chatbubbles
+            path: for/associations.html
+          - title: Schools
+            icon: ion-university
+            path: for/schools.html
+          - title: Neighbors
+            icon: ion-location
+            path: for/neighbors.html
+          - title: Property management
+            icon: ion-home
+            path: for/property-management.html
+          - title: Guilds
+            icon: ion-ios-game-controller-b
+            path: for/player-guilds.html
+          - title: Inmates
+            icon: ion-lock-combination
+            path: for/inmates.html
+
+      proofs:
+        title: Don’t take our word for it...
+
+      more_details: <span brand>SONETIN</span> in details
+
+  - # fr
+    scope:
+      path: fr
+
+    values:
+      locale: fr
+
+      tagline: Vos Communautés Privées
+      description: "Votre Réseau Social Privé. Un espace privé, gratuit et illimité, avec vos amis, votre association, votre entreprise."
+      keywords: "reseau,social,gratuit,amis,collegues,network,free"
+
+      signup:
+        title: Créez votre communauté <span brand>sonetin</span> en un instant
+        fields:
+          email: Adresse Email
+          name: Nom Complet
+          network: Nom de Communauté
+        validation:
+          name: Veuillez saisir votre nom complet.
+        submit: Inscription gratuite
+
+      products:
+        title: également disponible pour
+        list:
+          - title: Famille
+            icon: ion-person-stalker
+            path: pour/votre-famille.html
+          - title: Amis
+            icon: ion-beer
+            path: pour/vos-amis.html
+          - title: Sociétés
+            icon: ion-briefcase
+            path: pour/societes.html
+          - title: Startups
+            icon: ion-erlenmeyer-flask
+            path: pour/startups.html
+          - title: Associations
+            icon: ion-chatbubbles
+            path: pour/associations.html
+          - title: Écoles
+            icon: ion-university
+            path: pour/ecoles.html
+          - title: Voisins
+            icon: ion-location
+            path: pour/voisins.html
+          - title: Syndics
+            icon: ion-home
+            path: pour/syndics.html
+          - title: Guildes
+            icon: ion-ios-game-controller-b
+            path: pour/guildes-de-joueurs.html
+          - title: Détenus
+            icon: ion-lock-combination
+            path: pour/detenus.html
+
+      proofs:
+        title: Ne nous prenez pas au mot...
+
+      more_details: <span brand>SONETIN</span> dans le détail

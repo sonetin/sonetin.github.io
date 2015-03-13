@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<section center fullscreen id="top">
+
+  {% include fullscreen-video.html video=page.video %}
+
+  <div overlay-darken fullscreen>
+
+    <span push-5 brand logo noselect>SONETIN</span>
+
+    <h1 push-20>
+      <strong>{{ page.heading.one }}</strong>
+      <br>
+      {{ page.heading.two }}
+    </h1>
+
+    {% include signup-form.html %}
+  </div>
+</section>
+
+{% if page.proofs.list.size > 0 %}
+<section slide green center>
+  {% for proof in page.proofs.list %}
+    <p><img rounded circled src="{{ proof.pic }}"></p>
+    <div style="display: inline-block; max-width: 30%">
+      <q>{{ proof.quote }}</q>
+      - <a brand normal-link href="{{ proof.url }}">{{ proof.name }}</a>
+    </div>
+    <p unzoom>
+      <span class="ion-star"></span>
+      <span class="ion-star"></span>
+      <span class="ion-star"></span>
+      <span class="ion-star"></span>
+      <span class="ion-star"></span>
+    </p>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section slide section-thin white center id="what">
+
+  <p zoom class="animated fadeIn">{{ page.products.title }}</p>
+
+  <table zoom grid responsive>
+    <tr>
+      {% for product in page.products.list %}
+        {% if forloop.index0 == 5 %}</tr><tr>{% endif %}
+        <td>
+          <a normal-link href="/{{ page.locale }}/{{ product.path }}" style="color: #345">
+            <span grid-full-cell class="{{ product.icon }}"></span>
+            <h3>{{ product.title }}</h3>
+          </a>
+        </td>
+      {% endfor %}
+    </tr>
+  </table>
+
+</section>
+
+<section slide blue center>
+  <br>
+  <a button zoom href="/{{ page.locale }}/#overview">{{ page.more_details }}</a>
+  <br><br>
+</section>

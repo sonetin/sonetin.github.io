@@ -1,24 +1,10 @@
 <form id="signupForm" push-20 class="animated fadeInUp" data-wow-delay=".5s"
     method="post" action="https://corp.sonetin.com/api/tenants">
   <p zoom>{{ page.signup.title }}</p>
+  <input name="tenant[type]" type="hidden" value="{{ page.network_type }}">
   <input name="tenant[lang]" type="hidden" value="{{ page.locale }}">
-  <input name="tenant[current_plan]" type="hidden" value="free" id="booking_plan">
-  <script>
-    function urlParameter(param) {
-      param = param.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-      var regexS = "[\\?&]"+param+"=([^&#]*)";
-      var regex = new RegExp(regexS);
-      var results = regex.exec(window.location.href);
-      if(results == null) return null;
-      else return results[1];
-    }
-    window.onload = function() {
-      var plan = urlParameter('plan');
-      if(plan != null) {
-        document.getElementById('booking_plan').value = plan;
-      }
-    }
-  </script>
+  <input name="tenant[current_plan]" type="hidden" value="free">
+
   <input name="tenant[client_first_user][email]" required type="email" placeholder="{{ page.signup.fields.email }}">
   <input name="tenant[client_first_user][login]" type="hidden">
 
@@ -32,7 +18,6 @@
   <button type="submit" button class="ladda-button" data-style="slide-left">
     <span class="ladda-label">{{ page.signup.submit }}</span>
   </button>
-
 </form>
 
 <script>

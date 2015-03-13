@@ -1,16 +1,14 @@
 {% if page.locale == 'fr' %}
-  {% assign tagline = site.tagline.fr %}
   {% assign press_page = 'presse.html' %}
 {% else %}
-  {% assign tagline = site.tagline.en %}
   {% assign press_page = 'press.html' %}
 {% endif %}
 
 <footer>
   
   <aside>
-    <a brand logo href="/{{ page.locale }}/#top">SONETIN</a>
-    <span>&nbsp;{{ tagline }}</span>
+    <span brand logo>SONETIN</span>
+    <span>&nbsp;{{ page.tagline }}</span>
   </aside>
 
   <ul right inline dots>
