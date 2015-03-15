@@ -9,12 +9,12 @@ defaults:
       layout: default
       locale: en
 
-      tagline: Your Private Communities
+      tagline: Your Private Community
       description: "Your Private Social Network. A private free & unlimited space, with your friends, association, company."
       keywords: "free,social,network,friends,coworkers"
 
       signup:
-        title: Create your <span brand>sonetin</span> community in seconds
+        title: Create your dedicated <span brand>sonetin</span> community in seconds
         fields:
           email: Email Address
           name: Full Name
@@ -62,6 +62,12 @@ defaults:
 
       more_details: <span brand>SONETIN</span> in details
 
+      nav:
+        support: Support
+        press: Press
+        legal: Legal
+        api: API
+
   - # fr
     scope:
       path: fr
@@ -69,12 +75,12 @@ defaults:
     values:
       locale: fr
 
-      tagline: Vos Communautés Privées
+      tagline: Votre Communauté Privée
       description: "Votre Réseau Social Privé. Un espace privé, gratuit et illimité, avec vos amis, votre association, votre entreprise."
       keywords: "reseau,social,gratuit,amis,collegues,network,free"
 
       signup:
-        title: Créez votre communauté <span brand>sonetin</span> en un instant
+        title: Créez votre communauté dédiée <span brand>sonetin</span> en un instant
         fields:
           email: Adresse Email
           name: Nom Complet
@@ -121,3 +127,9 @@ defaults:
         title: Ne nous prenez pas au mot...
 
       more_details: <span brand>SONETIN</span> dans le détail
+
+      nav:
+        support: Support
+        press: Presse
+        legal: Légal
+        api: API
