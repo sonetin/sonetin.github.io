@@ -13,8 +13,8 @@ function goto(element, func) {
 }
 
 $(function() {
-  $("[rotating]").textrotator({
-    animation: "flipUp", // Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+  $("[rotating]").Morphext({
+    animation: "pulse", // Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
     separator: ",",
     speed: 2000
   });
