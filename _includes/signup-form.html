@@ -40,7 +40,7 @@
       form.querySelector("[name='tenant[client_first_user][lastname]']").value = name[1];
       // tenant title
       var community_name = form.querySelector("[name='network']").value;
-      var title_field  = form.querySelector("[name='tenant[tenant_title]']");
+      var title_field  = form.querySelector("[name='tenant[title_platform]']");
       title_field.value = community_name;
       // tenant name
       var tenant_name = cleanNetworkName(community_name);
