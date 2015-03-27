@@ -1,7 +1,7 @@
 <form id="signupForm" push-20 class="animated fadeInUp" data-wow-delay=".5s"
     method="post" action="https://corp.sonetin.com/api/tenants">
   <p zoom>{{ page.signup.title }}</p>
-  <input name="tenant[type]" type="hidden" value="{{ page.network_type }}">
+  <input name="tenant[tenant_type]" type="hidden" value="{{ page.network_type }}">
   <input name="tenant[lang]" type="hidden" value="{{ page.locale }}">
   <input name="tenant[current_plan]" type="hidden" value="free">
 
