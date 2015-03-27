@@ -13,7 +13,8 @@
   <input name="tenant[client_first_user][lastname]" type="hidden">
 
   <input name="network" required minlength="3" maxlength="16" placeholder="{{ page.signup.fields.network }}">
-  <input name="tenant[tenant_name]" type="hidden" minlength="3" maxlength="16" pattern="[a-zA-Z][a-zA-Z0-9_]{1,14}[a-zA-Z0-9]" id="tenant_name">
+  <input name="tenant[title_platform]" type="hidden" id="tenant_title">
+  <input name="tenant[tenant_name]" type="hidden" minlength="3" maxlength="16" pattern="[a-zA-Z][a-zA-Z0-9_]{1,14}[a-zA-Z0-9]">
 
   <button type="submit" button class="ladda-button" data-style="slide-left">
     <span class="ladda-label">{{ page.signup.submit }}</span>
@@ -37,8 +38,11 @@
       var name = nameDetails(form.querySelector("[name='name']").value);
       form.querySelector("[name='tenant[client_first_user][firstname]']").value = name[0];
       form.querySelector("[name='tenant[client_first_user][lastname]']").value = name[1];
-      // tenant name
+      // tenant title
       var community_name = form.querySelector("[name='network']").value;
+      var title_field  = form.querySelector("[name='tenant[tenant_title]']");
+      title_field.value = community_name;
+      // tenant name
       var tenant_name = cleanNetworkName(community_name);
       var tenant_field = form.querySelector("[name='tenant[tenant_name]']");
       tenant_field.value = tenant_name;
