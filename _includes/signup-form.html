@@ -129,6 +129,8 @@
         return signupError(data.errors[0]);
       }
     });
+
+    analytics.track("Platform created", data.infos);
   }
 
   function nameDetails(fullname) {
