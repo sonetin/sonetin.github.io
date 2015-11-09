@@ -2,11 +2,6 @@
  * Sonetin scripts
  **/
 
-// Force using HTTPS
-if ((window.location.host == "www.sonetin.com") && (window.location.protocol != "https:")) {
-  window.location.protocol = "https";
-}
-
 function goto(element, func) {
   $("html, body").animate({ scrollTop: $('#'+$(element).attr('href').split('#')[1]).offset().top }, 500, func);
   return false;
