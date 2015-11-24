@@ -117,69 +117,26 @@
   </div>
 </section>
 
-<section slide center id="integrations" show-titles>
+<section slide red id="features">
 
-  <h2>{{ page.integrations.title }}</h2>
+  <h2>{{ page.features.title }}</h2>
 
-  <table zoom grid responsive>
-    <tr>
-      <td>
-        <span grid-full-cell class="ion-social-twitter-outline"></span>
-        <h3>Twitter</h3>
-      </td>
-      <td>
-        <span grid-full-cell class="ion-social-google-outline"></span>
-        <h3>Google Drive</h3>
-      </td>
-      <td>
-        <span grid-full-cell class="ion-social-dropbox-outline"></span>
-        <h3>Dropbox</h3>
-      </td>
-      <td>
-        <span grid-full-cell class="ion-social-linkedin-outline"></span>
-        <h3>LinkedIn</h3>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span grid-full-cell class="ion-social-rss-outline"></span>
-        <h3>RSS</h3>
-      </td>
-      <td>
-        <span grid-full-cell class="ion-social-facebook-outline"></span>
-        <h3>Facebook</h3>
-      </td>
-      <td>
-        <span grid-full-cell class="ion-social-googleplus-outline"></span>
-        <h3>Google+</h3>
-      </td>
-      <td>
-        <span grid-full-cell class="ion-card"></span>
-        <h3>Stripe</h3>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span grid-full-cell class="ion-social-youtube-outline"></span>
-        <h3>YouTube</h3>
-      </td>
-      <td unzoom colspan="2">
-        <span>{{ page.integrations.api.label }}</span>
-        <a href="mailto:contact@sonetin.com?subject={{ page.integrations.api.mail_subject }}">
-          <span class="ion-code-download" title="{{ page.integrations.api.c2a }}"></span>
-        </a>
-      </td>
-      <td>
-        <span grid-full-cell class="ion-more"></span>
-        <h3>&nbsp;</h3>
-      </td>
-    </tr>
-  </table>
+  <ul ticks columns-2 zoom>
+    {% for feature in page.features.list %}
+      <li>{{ feature }}</li>
+    {% endfor %}
+  </ul>
+
+  <p><small>{{ page.features.roadmap }}</small></p>
+
+  <p center>{{ page.features.reserved }}</p>
+
+  <p center class="animated fadeIn" data-wow-delay=".5s"><span zoom>{{ page.features.interesting.label }}</span> <a href="mailto:contact@sonetin.com?subject={{ page.features.interesting.mail_subject }}">{{ page.features.interesting.c2a }}</a></p>
 
 </section>
 
 <section slide green center id="pricing">
-  
+
   <h2>{{ page.pricing.title }}</h2>
 
   <div traversing-information show-desktop class="animated fadeIn" data-wow-delay=".75s">{{ page.pricing.traversing_info }}</div>
@@ -245,20 +202,63 @@
 
 </section>
 
-<section slide red id="features">
+<section slide center id="integrations" show-titles>
 
-  <h2>{{ page.features.title }}</h2>
+  <h2>{{ page.integrations.title }}</h2>
 
-  <ul ticks columns-2 zoom>
-    {% for feature in page.features.list %}
-      <li>{{ feature }}</li>
-    {% endfor %}
-  </ul>
-
-  <p><small>{{ page.features.roadmap }}</small></p>
-
-  <p center>{{ page.features.reserved }}</p>
-
-  <p center class="animated fadeIn" data-wow-delay=".5s"><span zoom>{{ page.features.interesting.label }}</span> <a href="mailto:contact@sonetin.com?subject={{ page.features.interesting.mail_subject }}">{{ page.features.interesting.c2a }}</a></p>
+  <table zoom grid responsive>
+    <tr>
+      <td>
+        <span grid-full-cell class="ion-social-twitter-outline"></span>
+        <h3>Twitter</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-google-outline"></span>
+        <h3>Google Drive</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-dropbox-outline"></span>
+        <h3>Dropbox</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-linkedin-outline"></span>
+        <h3>LinkedIn</h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span grid-full-cell class="ion-social-rss-outline"></span>
+        <h3>RSS</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-facebook-outline"></span>
+        <h3>Facebook</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-social-googleplus-outline"></span>
+        <h3>Google+</h3>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-card"></span>
+        <h3>Stripe</h3>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span grid-full-cell class="ion-social-youtube-outline"></span>
+        <h3>YouTube</h3>
+      </td>
+      <td unzoom colspan="2">
+        <span>{{ page.integrations.api.label }}</span>
+        <a href="mailto:contact@sonetin.com?subject={{ page.integrations.api.mail_subject }}">
+          <span class="ion-code-download" title="{{ page.integrations.api.c2a }}"></span>
+        </a>
+      </td>
+      <td>
+        <span grid-full-cell class="ion-more"></span>
+        <h3>&nbsp;</h3>
+      </td>
+    </tr>
+  </table>
 
 </section>
