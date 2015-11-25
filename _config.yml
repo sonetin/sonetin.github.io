@@ -83,7 +83,7 @@ defaults:
       keywords: "reseau,social,gratuit,amis,collegues,network,free"
 
       signup:
-        title: Créez votre communauté dédiée <span brand>sonetin</span> en un instant
+        title: Créez votre communauté dédiée sécurisée <span brand>sonetin</span> en un instant
         fields:
           email: Adresse Email
           name: Nom Complet
