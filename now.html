@@ -1,0 +1,163 @@
+---
+layout: now
+locale: en
+title: SONETIN NOW
+description: The collaborative text whiteboard.
+keywords: sonetin, now, collaborative, whiteboard
+placeholder: |
+  Give me a name.
+
+  And start writing.
+---
+
+<style>
+html {
+  height: 100%;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: local('AvenirRegular'),
+       url("fonts/Avenir-Regular.eot") format("embedded-opentype"),
+       url("fonts/Avenir-Regular.woff2") format("woff2"),
+       url("fonts/Avenir-Regular.woff") format("woff"),
+       url("fonts/Avenir-Regular.ttf") format("truetype"),
+       url("fonts/Avenir-Regular.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: local('AvenirBold'),
+       url("fonts/Avenir-Bold.eot") format("embedded-opentype"),
+       url("fonts/Avenir-Bold.woff2") format("woff2"),
+       url("fonts/Avenir-Bold.woff") format("woff"),
+       url("fonts/Avenir-Bold.ttf") format("truetype"),
+       url("fonts/Avenir-Bold.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  background: #d0e0ee;
+  height: inherit;
+  font-family: 'Avenir', 'Helvetica Neue', sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: #979797;
+  opacity: .5;
+  margin: 25px -40px;
+}
+[button] {
+  color: #fff;
+  background: #01d392;
+  border-radius: 3px;
+  padding: 3px 10px;
+}
+[avatar] {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+ul[noindent] {
+  padding-left: 0;
+  list-style-type: none;
+}
+.tine-container {
+  display: block;
+  height: inherit;
+  margin-right: 300px;
+}
+#editor {
+  width: 100%;
+  height: 100%;
+}
+#sidepanel {
+  float: right;
+  position: relative;
+  display: inline-block;
+  height: calc(100% - 80px);
+  width: 220px;
+  padding: 40px;
+  color: #9b9b9b;
+  font-size: 11px;
+}
+#sharing {
+  font-size: 13px;
+  margin-bottom: 30px;
+  text-align: right;
+}
+#connected ul {
+  font-size: 13px;
+}
+#connected ul li {
+  padding: 3px 0;
+}
+#connected [avatar] {
+  margin-right: 10px;
+}
+#notice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #d8d8d8;
+  border-top: 1px solid rgba(51,51,51,.5);
+  line-height: 15px;
+}
+#notice p {
+  margin-left: 40px;
+}
+#notice a.logo {
+  float: left;
+  margin-right: 10px;
+  opacity: .5;
+  transition: opacity 100ms ease;
+}
+#notice a.logo img {
+  height: 30px;
+}
+#notice:hover a.logo {
+  opacity: .6;
+}
+#notice a.logo:hover {
+  opacity: 1;
+}
+</style>
+
+<div id="sidepanel">
+  <div id="sharing">
+    <span>The document is <span button>shared</span></span>
+  </div>
+  <div id="connected">
+    <p>Connected right now:</p>
+    <ul noindent>
+      <li>
+        <img avatar src="http://api.adorable.io/avatars/40/me.png">
+        me
+      </li>
+      <li><i>Invite someone</i></li>
+    </ul>
+  </div>
+  <hr>
+  <p id="document">
+    Document created 2d ago
+    <br>
+    Last updated 40s ago
+  </p>
+  <div id="notice">
+    <p><a class="logo" target="_blank" href="https://www.sonetin.com/"><img src="https://www.sonetin.com/assets/img/icon-32.png" alt="SONETIN"></a> This service is brought to you by<br><a target="_blank" href="https://www.sonetin.com/"> SONETIN</a>, your private community</p>
+  </div>
+</div>
+<textarea id="editor" placeholder="{{ page.placeholder }}"></textarea>
+
+<script>new Tine("#editor", { tips: true })</script>
