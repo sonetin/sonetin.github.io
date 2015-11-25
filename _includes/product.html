@@ -10,6 +10,7 @@
 }
 [browser-ui] {
   zoom: .75;
+  z-index: 0;
 }
 [iphone-ui] {
   zoom: .4;
@@ -20,36 +21,24 @@
   width: 90%;
   margin-top: 15vw;
 }
-
-@-webkit-keyframes color_change {
-	from { background: yellow; }
-	to { background: red; }
-}
-@-moz-keyframes color_change {
-	from { background: yellow; }
-	to { background: red; }
-}
-@keyframes color_change {
-	from { background: yellow; }
-	to { background: red; }
-}
-[animated-logo] {
-	-webkit-animation: color_change 3s infinite alternate;
-	-moz-animation: color_change 3s infinite alternate;
-	animation: color_change 3s infinite alternate;
+[back] {
+  position: absolute;
+  z-index: -1;
 }
 </style>
 
 <div id="product">
   <div browser-ui>
     <!--<iframe src="https://app.sonetin.com/"></iframe>-->
-    <img src="/assets/img/product/web.png" animated-logo>
+    <img src="/assets/img/product/web.gif" back>
+    <img src="/assets/img/product/web.png">
   </div>
 
   <div iphone-ui>
     <!--<iframe src="https://app.sonetin.com/"></iframe>-->
     <div>
-      <img src="/assets/img/product/mobile.png" animated-logo>
+      <img src="/assets/img/product/mobile.gif" back>
+      <img src="/assets/img/product/mobile.png">
     </div>
   </div>
 </div>
