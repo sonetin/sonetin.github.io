@@ -17,7 +17,7 @@ defaults:
       keywords: "free,social,network,friends,coworkers"
 
       signup:
-        title: Create your dedicated <span brand>sonetin</span> community in seconds
+        title: Create your dedicated, secure <span brand>sonetin</span> community in seconds
         fields:
           email: Email Address
           name: Full Name
