@@ -431,6 +431,17 @@ h1 {
   font-size: 48px;
   font-weight: 400;
   margin: 0;
+  transition: font-size 100ms ease;
+}
+@media (max-width: 639px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 819px) {
+  h1 {
+    font-size: 32px;
+  }
 }
 h2 {
   font-family: 'Avenir Next Condensed', 'Avenir Next LT Pro Condensed', 'Helvetica Neue', sans-serif;
