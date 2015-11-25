@@ -59,9 +59,28 @@ layout: default
     </tr>
   </table>
 
+  <br>
 </section>
 
+
 <section slide blue center>
+
+  {% if page.overview.features %}
+  <table zoom grid responsive>
+    <tr>
+      {% for feature in page.overview.features %}
+        {% if forloop.index0 == 4 %}</tr><tr>{% endif %}
+        <td>
+          <span grid-full-cell class="{{ feature.icon }}"></span>
+          <h3>{{ feature.title }}</h3>
+          <span unzoom>{{ feature.desc }}</span>
+        </td>
+      {% endfor %}
+    </tr>
+  </table>
+  {% endif %}
+
+  <br>
   <br>
   <a button zoom href="/{{ page.locale }}/#overview">{{ page.more_details }}</a>
   <br><br>

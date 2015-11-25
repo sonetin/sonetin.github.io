@@ -357,13 +357,13 @@ table a {
 
 table[grid] {
   table-layout: fixed;
-  width: 80%;
+  width: 75%;
   margin: auto;
 }
 table[grid] td {
   border: solid rgba(255,255,255,.2);
   border-width: 0 1px 1px 0;
-  padding: 40px 20px;
+  padding: 0 20px;
   position: relative;
 }
 table[grid] td:last-child {
@@ -374,7 +374,7 @@ table[grid] tr:last-child > td {
 }
 table[grid] [grid-full-cell] {
   position: absolute;
-  font-size: 250%;
+  font-size: 200%;
   left: 0;
   right: 0;
   opacity: .1;
