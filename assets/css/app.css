@@ -417,14 +417,14 @@ label {
   font-family: 'Avenir Next LT Pro Condensed';
   font-style: normal;
   font-weight: normal;
-  src: local('Avenir Next LT Pro Condensed'), url('fonts/AvenirNextLTPro-Cn.woff') format('woff');
+  src: local('Avenir Next LT Pro Condensed'), url('assets/fonts/AvenirNextLTPro-Cn.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Avenir Next LT Pro Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Avenir Next LT Pro Regular'), url('fonts/AvenirNextLTPro-Regular.woff') format('woff');
+  src: local('Avenir Next LT Pro Regular'), url('assets/fonts/AvenirNextLTPro-Regular.woff') format('woff');
 }
 
 h1 {
