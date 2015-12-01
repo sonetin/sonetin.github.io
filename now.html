@@ -160,4 +160,19 @@ ul[noindent] {
 </div>
 <textarea id="editor" placeholder="{{ page.placeholder }}"></textarea>
 
-<script>new Tine("#editor", { tips: true })</script>
+<script>
+document.addEventListener("now-collaboration-on", function(e) {
+  console.debug("event", "on", e);
+});
+document.addEventListener("now-collaboration-off", function(e) {
+  console.debug("event", "off", e);
+});
+document.addEventListener("now-collaboration-connected", function(e) {
+  console.debug("event", "connected", e);
+});
+document.addEventListener("now-collaboration-disconnected", function(e) {
+  console.debug("event", "disconnected", e);
+});
+
+new Tine("#editor", { tips: true })
+</script>
