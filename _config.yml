@@ -56,9 +56,6 @@ defaults:
           - title: Guilds
             icon: ion-ios-game-controller-b
             path: for/player-guilds.html
-          - title: Inmates
-            icon: ion-lock-combination
-            path: for/inmates.html
 
       proofs:
         title: Don’t take our word for it...
@@ -122,9 +119,6 @@ defaults:
           - title: Guildes
             icon: ion-ios-game-controller-b
             path: pour/guildes-de-joueurs.html
-          - title: Détenus
-            icon: ion-lock-combination
-            path: pour/detenus.html
 
       proofs:
         title: Ne nous prenez pas au mot...
